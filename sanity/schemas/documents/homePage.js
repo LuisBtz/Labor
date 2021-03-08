@@ -12,7 +12,14 @@ export default {
       name: 'title',
       title: ' Site Title',
       type: 'string',
-      hidden: true,
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+      },
     },
     {
       name: 'promo',
@@ -55,7 +62,8 @@ export default {
         {
           title: 'Exhibitions hihlight',
           name: 'exhibitionH',
-          type: 'string',
+          type: 'reference',
+          to: [{ type: 'exhibitions' }],
         },
       ],
     },
@@ -67,7 +75,8 @@ export default {
         {
           title: 'Artist hihlight',
           name: 'artistH',
-          type: 'string',
+          type: 'reference',
+          to: [{ type: 'artists' }],
         },
       ],
     },
@@ -79,7 +88,8 @@ export default {
         {
           title: 'Publication hihlight',
           name: 'artistH',
-          type: 'string',
+          type: 'reference',
+          to: [{ type: 'publications' }],
         },
       ],
     },
@@ -91,12 +101,20 @@ export default {
         {
           title: 'New',
           name: 'new',
-          type: 'string',
+          type: 'reference',
+          to: [{ type: 'news' }],
         },
       ],
     },
+    {
+      name: 'editorialModule',
+      title: 'Editorial Module',
+      type: 'editorialModule',
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seoModule',
+    },
   ],
-  initialValue: {
-    title: 'Home Page',
-  },
 }
