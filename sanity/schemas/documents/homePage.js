@@ -21,38 +21,44 @@ export default {
         source: 'title',
       },
     },
+    // {
+    //   name: 'promo',
+    //   title: 'Promo Banner',
+    //   type: 'object',
+    //   collapsible: true,
+    //   fields: [
+    //     {
+    //       name: 'file',
+    //       title: 'Image or video',
+    //       type: 'file',
+    //     },
+    //     {
+    //       name: 'headline',
+    //       title: 'Headline',
+    //       type: 'string',
+    //     },
+    //     {
+    //       name: 'subHeadline',
+    //       title: 'Sub headeline',
+    //       type: 'string',
+    //     },
+    //     {
+    //       name: 'textButtonBanner',
+    //       title: 'Button Text',
+    //       type: 'string',
+    //     },
+    //     {
+    //       name: 'urlBanner',
+    //       title: 'Button Url',
+    //       type: 'url',
+    //     },
+    //   ],
+    // },
     {
-      name: 'promo',
-      title: 'Promo Banner',
-      type: 'object',
-      collapsible: true,
-      fields: [
-        {
-          name: 'file',
-          title: 'Image or video',
-          type: 'file',
-        },
-        {
-          name: 'headline',
-          title: 'Headline',
-          type: 'string',
-        },
-        {
-          name: 'subHeadline',
-          title: 'Sub headeline',
-          type: 'string',
-        },
-        {
-          name: 'textButtonBanner',
-          title: 'Button Text',
-          type: 'string',
-        },
-        {
-          name: 'urlBanner',
-          title: 'Button Url',
-          type: 'url',
-        },
-      ],
+      name: 'exhibitionsHF',
+      title: 'Exhibition Highlights Full',
+      type: 'reference',
+      to: [{ type: 'exhibitions' }],
     },
     {
       name: 'exhibitionsHighlights',
@@ -77,6 +83,32 @@ export default {
           name: 'artistH',
           type: 'reference',
           to: [{ type: 'artists' }],
+        },
+      ],
+    },
+    {
+      name: 'marquee',
+      title: 'Marquee',
+      type: 'object',
+      fields: [
+        {
+          name: 'marqueeText',
+          title: 'Marquee Text',
+          type: 'text',
+        },
+        {
+          name: 'url',
+          title: 'Url',
+          type: 'url',
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ['http', 'https'],
+            }),
+        },
+        {
+          name: 'openTab',
+          title: 'Open in a new tab',
+          type: 'boolean',
         },
       ],
     },
