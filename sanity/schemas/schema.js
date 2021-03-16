@@ -4,6 +4,13 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
+import fullImage from './objects/editorialModules/fullImage'
+import mainHeadline from './objects/editorialModules/mainHeadline'
+import bodyText from './objects/editorialModules/bodyText'
+import imageTwoColumns from './objects/editorialModules/imageTwoColumns'
+import quote from './objects/editorialModules/quote'
+import carousel from './objects/editorialModules/carousel'
+
 import metadata from './documents/settings/metadata'
 import header from './documents/settings/header'
 import footer from './documents/settings/footer'
@@ -26,6 +33,13 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    fullImage,
+    mainHeadline,
+    bodyText,
+    imageTwoColumns,
+    quote,
+    carousel,
+
     metadata,
     header,
     footer,
