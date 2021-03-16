@@ -4,6 +4,12 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Carousel',
+      name: 'title',
+      type: 'string',
+      description: 'This text is only displayed in Sanity'
+    },
+    {
       name: 'addImage',
       title: 'Add Image',
       type: 'array',
@@ -39,20 +45,10 @@ export default {
       ],
     },
   ],
+
   preview: {
     select: {
-      caption0: 'addImage[0].imageCarouselEditorial.caption',
-      caption1: 'addImage[1].imageCarouselEditorial.caption',
-      caption2: 'addImage[2].imageCarouselEditorial.caption',
-      caption3: 'addImage[3].imageCarouselEditorial.caption',
-    },
-    prepare: ({ caption0, caption1, caption2, caption3 }) => {
-      const caption = [caption0, caption1, caption2].filter(Boolean)
-      const title = authors.length > 0 ? `by ${caption.join(', ')}` : ''
-      const hasMoreAuthors = Boolean(caption3)
-      return {
-        title: hasMoreAuthors ? `${title}…` : title,
-      }
+      title: 'title',
     },
   },
 }
