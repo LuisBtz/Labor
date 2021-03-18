@@ -47,32 +47,6 @@ export default {
         },
       ],
     },
-    {
-      name: 'exhibitionsModule',
-      title: 'Exhibitions',
-      type: 'array',
-      of: [
-        {
-          title: 'Exhibitions',
-          name: 'exhibitions',
-          type: 'reference',
-          to: [{ type: 'exhibitions' }],
-        },
-      ],
-    },
-    {
-      name: 'newsModule',
-      title: 'News',
-      type: 'array',
-      of: [
-        {
-          title: 'News',
-          name: 'news',
-          type: 'reference',
-          to: [{ type: 'news' }],
-        },
-      ],
-    },
 
     {
       name: 'seo',
