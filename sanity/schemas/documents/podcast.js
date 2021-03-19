@@ -37,7 +37,7 @@ export default {
     {
       name: 'date',
       title: 'Date',
-      type: 'date',
+      type: 'string',
     },
     {
       name: 'episodePlayer',
