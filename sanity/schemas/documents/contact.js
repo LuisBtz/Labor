@@ -23,24 +23,33 @@ export default {
       },
     },
     {
-      name: 'adress',
-      title: 'Adresss',
-      type: 'string',
-    },
-    {
-      title: 'Phone Numbers',
-      name: 'phone',
-      type: 'string',
-    },
-    {
-      title: 'Emails',
-      name: 'emails',
-      type: 'string',
-    },
-    {
-      title: 'Location',
-      name: 'location',
-      type: 'string',
+      name: 'team',
+      title: 'Team',
+      type: 'array',
+      of: [
+        {
+          name: 'job',
+          title: 'Add member',
+          type: 'object',
+          fields: [
+            {
+              name: 'position',
+              title: 'Position',
+              type: 'string'
+            },
+            {
+              name: 'name',
+              title: 'Name',
+              type: 'string'
+            },
+            {
+              name: 'mail',
+              title: 'E-mail',
+              type: 'string'
+            },
+          ]
+        }
+      ]
     },
     {
       name: 'seo',
