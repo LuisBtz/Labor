@@ -8,21 +8,26 @@ import styled from 'styled-components';
 
 
 function Layout({ children }) {
-    return (
-      <>
-        <Normalizer />
-        <Typography />
-        <GlobalStyle />
-        <Header />
-        <Main>{children}</Main>
-      </>
-    )
-  }
-  
+  return (
+    <>
+      <Normalizer />
+      <Typography />
+      <GlobalStyle />
+      <Header />
+      <Main>{children}</Main>
+    </>
+  )
+}
 
-  const Main = styled.main`
-    margin-top: 90px;
+
+const Main = styled.main`
+    background: var(--white);
+    padding-top: 90px;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 60px;
+    }
   `
 
 
-  export default Layout
+export default Layout
