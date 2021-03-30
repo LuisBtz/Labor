@@ -36,6 +36,7 @@ const Header = () => {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  font-family: var(--ocr);
   ul.pages {
       display: grid;
       grid-template-columns: 1fr 1fr;

@@ -20,6 +20,10 @@ import ntregeot from '../../assets/fonts/NTBauMono-Regular.eot';
 import ntregwoff from '../../assets/fonts/NTBauMono-Regular.woff';
 import ntregwoff2 from '../../assets/fonts/NTBauMono-Regular.woff2';
 
+import ocreot from '../../assets/fonts/OCR-A.eot';
+import ocrwoff from '../../assets/fonts/OCR-A.woff';
+import ocrwoff2 from '../../assets/fonts/OCR-A.woff2';
+
 
 export const Typography = createGlobalStyle`
 
@@ -73,6 +77,16 @@ export const Typography = createGlobalStyle`
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'OCR A';
+    src: url('${ocreot}');
+    src: url('${ocreot}?#iefix') format('embedded-opentype'),
+        url('${ocrwoff2}') format('woff2'),
+        url('${ocrwoff}') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --light: 'NT Bau Mono Light';
@@ -80,6 +94,11 @@ export const Typography = createGlobalStyle`
     --medium: 'NT Bau Mono Medium';
     --bold: 'NT Bau Mono Bold';
     --black: 'NT Bau Mono Black';
+    --ocr: 'OCR A';
+}
+
+a {
+    color: black;
 }
 
 `
