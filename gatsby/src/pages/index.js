@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
-import FullImage from '../components/modules/FullImage'
+import FullImage from '../components/home/FullImage'
 
 
 

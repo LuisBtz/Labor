@@ -101,4 +101,9 @@ a {
     color: black;
 }
 
+h1 {
+    font-size: 76.29px;
+    font-family: var(--black);
+}
+
 `
