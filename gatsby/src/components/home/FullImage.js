@@ -1,28 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 // markup
-const FullImage = ( ) => {
+const FullImage = ( {data} ) => {
 
-const data = useStaticQuery(graphql`
-        query  {
-          datoCmsHome {
-            homeHeroPost {
-              ... on DatoCmsExhibition {
-                coverThumbnailImage {
-                  gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
-                }
-                title
-                date
-                author
-              }
-            }
-          }
-        }
-  `) 
+
 
 
 const getDataImage = getImage(data.datoCmsHome.homeHeroPost.coverThumbnailImage);
