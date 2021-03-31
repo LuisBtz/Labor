@@ -5,12 +5,14 @@ import SEO from "../components/layout/seo"
 
 import FullImage from '../components/home/FullImage'
 import ExhibitionSection from '../components/home/ExhibitionSection'
+import ArtistSection from '../components/home/ArtistSection'
 
 export const data = graphql`
   query  {
     datoCmsHome(
     homeHeroPost: {locale: {eq: "es"}}
     exhibitionsHighlights: {elemMatch: {locale: {eq: "es"}}}
+    artistHighlights: {elemMatch: {locale: {eq: "es"}}}
   ) {
         homeHeroPost {
           coverThumbnailImage {
@@ -32,6 +34,17 @@ export const data = graphql`
           metaInfo
           id
         }
+        artistHighlights {
+          name
+          slug
+          metaInfo
+          id
+          from
+          abstract
+          thumbnailImage {
+            gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
+          }
+        }
       }
     }
   ` 
@@ -44,6 +57,7 @@ const IndexPage = ( { data } ) => {
       <SEO title="Home" />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
+      <ArtistSection data={data} />
     </Layout>
     
   )
