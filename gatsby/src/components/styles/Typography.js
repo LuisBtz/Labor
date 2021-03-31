@@ -106,4 +106,8 @@ h1 {
     font-family: var(--black);
 }
 
+h2 {
+    font-size: 48.83px;
+}
+
 `
