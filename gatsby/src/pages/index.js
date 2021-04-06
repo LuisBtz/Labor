@@ -6,6 +6,7 @@ import SEO from "../components/layout/seo"
 import FullImage from '../components/home/FullImage'
 import ExhibitionSection from '../components/home/ExhibitionSection'
 import ArtistSection from '../components/home/ArtistSection'
+import MarqueeSection from "../components/home/MarqueeSection"
 
 export const data = graphql`
   query  {
@@ -45,6 +46,8 @@ export const data = graphql`
             gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
           }
         }
+        marqueeText
+      marqueeLink
       }
     }
   ` 
@@ -58,6 +61,7 @@ const IndexPage = ( { data } ) => {
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />
+      <MarqueeSection data={data} />
     </Layout>
     
   )
