@@ -8,6 +8,8 @@ import ExhibitionSection from '../components/home/ExhibitionSection'
 import ArtistSection from '../components/home/ArtistSection'
 import MarqueeSection from "../components/home/MarqueeSection"
 import PublicationSection from "../components/home/PublicationSection"
+import NewsSection from "../components/home/NewsSection"
+import NewsLetter from "../components/home/NewsLetter"
 
 export const data = graphql`
   query  {
@@ -16,6 +18,7 @@ export const data = graphql`
     exhibitionsHighlights: {elemMatch: {locale: {eq: "es"}}}
     artistHighlights: {elemMatch: {locale: {eq: "es"}}}
     publicationsHighlights: {elemMatch: {locale: {eq: "es"}}}
+    newsHighlights: {elemMatch: {locale: {eq: "es"}}}
   ) {
         homeHeroPost {
           coverThumbnailImage {
@@ -62,7 +65,11 @@ export const data = graphql`
             gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
           }
         }
-
+        newsHighlights {
+        articleHeadline
+        metaInfo
+          slug
+        }
       }
     }
   ` 
@@ -78,6 +85,8 @@ const IndexPage = ( { data } ) => {
       <ArtistSection data={data} />
       <MarqueeSection data={data} />
       <PublicationSection data={data} />
+      <NewsSection data={data} />
+      <NewsLetter />
     </Layout>
     
   )

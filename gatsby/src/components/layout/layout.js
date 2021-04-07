@@ -4,6 +4,7 @@ import { GlobalStyle } from "../styles/GlobalStyle"
 import { Typography } from "../styles/Typography"
 import Header from '../layout/header'
 import styled from 'styled-components';
+import Footer from "./footer"
 
 
 
@@ -15,6 +16,7 @@ function Layout({ children }) {
       <GlobalStyle />
       <Header />
       <Main>{children}</Main>
+      <Footer />
     </>
   )
 }
