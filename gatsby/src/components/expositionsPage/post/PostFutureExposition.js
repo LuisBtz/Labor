@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 // markup
-const PostCurrentExposition = ( {data } ) => {
+const PostFutureExposition = ( {data } ) => {
 
   const image = getImage(data.coverThumbnailImage);
   const date = data.date;
@@ -19,7 +19,7 @@ const PostCurrentExposition = ( {data } ) => {
             />
             <Text>
               <Date>{date} - {pastCurrentOrFuture}</Date>
-            <h2>{title}</h2>
+            <h3>{title}</h3>
             <Author>↖ {author}</Author>
             </Text>
     </PostExpositionWrapper>
@@ -28,7 +28,7 @@ const PostCurrentExposition = ( {data } ) => {
   }
 
   const PostExpositionWrapper = styled.div`
-width: 100%;
+width: 33.3333vw;
 `
 
   const Text = styled.div`
@@ -36,23 +36,23 @@ width: 100%;
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 20px;
-  h2 {
-      font-size: 86.29px;
+  h3 {
+      font-size: 31.25px;
       font-family: var(--bold)
   }
 
 `
 
 const Date = styled.p`
-font-size: 16.24px;
+font-size: 10.24px;
 `
 
 const Author = styled.p`
-    font-size: 39.06px;
+    font-size: 16px;
 `
 
 
 
 
 
-  export default PostCurrentExposition
+  export default PostFutureExposition

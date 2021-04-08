@@ -30,6 +30,17 @@ const FullImage = ({ data }) => {
 
 const FullImageContainer = styled.section`
     width: 100%;
+    background: var(--white);
+/* padding-top: 90px; */
+padding-top: 35vw;
+
+@media screen and (max-width: 1200px) {
+  padding-top: 38vw;
+}
+
+@media screen and (max-width: 768px) {
+  padding-top: 47vw;
+}
   `
 
 const Text = styled.div`

@@ -77,6 +77,7 @@ export const data = graphql`
 
 // markup
 const IndexPage = ( { data } ) => {
+  
   return (
     <Layout>
       <SEO title="Home" />

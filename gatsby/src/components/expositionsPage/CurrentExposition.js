@@ -1,17 +1,41 @@
 import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 import PostCurrentExposition from './post/PostCurrentExposition';
 
 
 // markup
-const CurrentExposition = ( {dataCurrent} ) => {
+const CurrentExposition = ( ) => {
+
+
+  const dataCurrent = useStaticQuery(graphql`
+  query  {
+        allDatoCmsExhibition(
+    filter: {locale: {eq: "es"}, pastCurrentOrFuture: {eq: "Current"}}
+  ) {
+            edges {
+            node {
+              title
+              pastCurrentOrFuture
+              date
+              author
+              slug
+              id
+              coverThumbnailImage {
+                gatsbyImageData(layout: FULL_WIDTH, forceBlurhash: true, width: 1200)
+              }
+            }
+          }
+        }
+    }
+  `)
 
 
     return (
       <CurrentExpositionContainer>
-          {dataCurrent.allDatoCmsExhibition.edges.map(({ node }) => {
+          {dataCurrent.allDatoCmsExhibition.edges.slice(0,1).map(({ node }) => {
             return (
-                <PostCurrentExposition title={node.title} pastCurrentOrFuture={node.pastCurrentOrFuture} date={node.date} author={node.author} date={node.date} slug={node.slug} coverThumbnailImage={node.coverThumbnailImage} key={node.id} />
+                <PostCurrentExposition data={node} key={node.id} />
             )
           })}
       </CurrentExpositionContainer>

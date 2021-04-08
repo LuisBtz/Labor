@@ -3,38 +3,24 @@ import { Normalizer } from "../styles/Normalizer"
 import { GlobalStyle } from "../styles/GlobalStyle"
 import { Typography } from "../styles/Typography"
 import Header from '../layout/header'
-import styled from 'styled-components';
 import Footer from "./footer"
 
 
 
 function Layout({ children }) {
+
+  
   return (
     <>
       <Normalizer />
       <Typography />
       <GlobalStyle />
       <Header />
-      <Main>{children}</Main>
+      <main>{children}</main>
       <Footer />
     </>
   )
 }
-
-
-const Main = styled.main`
-    background: var(--white);
-    /* padding-top: 90px; */
-    padding-top: 35vw;
-
-    @media screen and (max-width: 1200px) {
-      padding-top: 38vw;
-    }
-
-    @media screen and (max-width: 768px) {
-      padding-top: 47vw;
-    }
-  `
 
 
 export default Layout

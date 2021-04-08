@@ -6,6 +6,7 @@ import logo from '../../assets/images/logo-labor.svg'
 
 // markup
 const Header = () => {
+
   window.addEventListener('scroll', () => {
     console.log(window.pageYOffset);
     if (window.pageYOffset > 0) {
@@ -15,6 +16,8 @@ const Header = () => {
     }
 
   });
+
+
 
   return (
     <NavStyle>
@@ -29,7 +32,7 @@ const Header = () => {
         <li><Link to='./' >noticias</Link></li>
         <li><Link to='./' >contacto</Link></li>
       </ul>
-      <Link to='./' className="logo">
+      <Link to='/' className="logo">
         <img src={logo} id="img" alt="labor" />
       </Link>
       <ul className="lang">
