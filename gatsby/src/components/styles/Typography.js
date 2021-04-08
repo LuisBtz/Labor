@@ -89,25 +89,81 @@ export const Typography = createGlobalStyle`
 }
 
 :root {
-    --light: 'NT Bau Mono Light';
-    --regular: 'NT Bau Mono Regular';
-    --medium: 'NT Bau Mono Medium';
-    --bold: 'NT Bau Mono Bold';
-    --black: 'NT Bau Mono Black';
-    --ocr: 'OCR A';
+    --light: 'NT Bau Mono Light', monospace;
+    --regular: 'NT Bau Mono Regular', monospace;
+    --medium: 'NT Bau Mono Medium', monospace;
+    --bold: 'NT Bau Mono Bold', monospace;
+    --black: 'NT Bau Mono Black', monospace;
+    --ocr: 'OCR A', monospace;
 }
 
 a {
-    color: black;
+    color: var(--black);
 }
 
 h1 {
-    font-size: 76.29px;
+    font-size: var(--jumbo);
     font-family: var(--black);
 }
 
 h2 {
-    font-size: 48.83px;
+    font-size: var(--headline-2);
+}
+
+h3 {
+    font-size: var(--headline-3);
+}
+
+h4 {
+    font-size: var(--headline-4);
+}
+
+h5 {
+    font-size: var(--headline-5);
+}
+
+h6 {
+    font-size: var(--headline-6);
+}
+
+p, a, li {
+  font-size: var(--paragraph);
+  line-height: 132%;
+}
+
+.small {
+  font-size: var(--small);
+}
+
+.detail {
+  font-size: var(--detail);
+  letter-spacing: .8px;
+}
+
+h1, h2, h3, h4, h5, h6, p.detail, p.caps {
+  text-transform: uppercase !important;
+  line-height: 100%;
+  font-weight: normal;
+}
+
+.regular {
+  font-family: var(--regular);
+}
+
+.light {
+  font-family: var(--light);
+}
+
+.medium {
+  font-family: var(--medium);
+}
+
+.bold {
+  font-family: var(--bold);
+}
+
+.black {
+  font-family: var(--black);
 }
 
 `

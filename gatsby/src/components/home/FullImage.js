@@ -4,40 +4,61 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 // markup
-const FullImage = ( {data} ) => {
+const FullImage = ({ data }) => {
 
 
 
 
-const getDataImage = getImage(data.datoCmsHome.homeHeroPost.coverThumbnailImage);
-const title = data.datoCmsHome.homeHeroPost.title;
-const author = data.datoCmsHome.homeHeroPost.author;
-const date = data.datoCmsHome.homeHeroPost.date;
+  const getDataImage = getImage(data.datoCmsHome.homeHeroPost.coverThumbnailImage);
+  const title = data.datoCmsHome.homeHeroPost.title;
+  const author = data.datoCmsHome.homeHeroPost.author;
+  const date = data.datoCmsHome.homeHeroPost.date;
 
-    return (
-      <FullImageContainer>
-          <GatsbyImage
-            image={getDataImage}
-            />
-            <Text>
-              <h1>{title}</h1>
-              <p>↖ {author} <br /> {date}</p>
-            </Text>
-      </FullImageContainer>
-      
-    )
-  }
+  return (
+    <FullImageContainer>
+      <GatsbyImage
+        image={getDataImage}
+      />
+      <Text>
+        <h1>{title}</h1>
+        <h6 className="regular">↖ {author} <br /> {date}</h6>
+      </Text>
+    </FullImageContainer>
 
-  const FullImageContainer = styled.section`
+  )
+}
+
+const FullImageContainer = styled.section`
     width: 100%;
   `
 
-  const Text = styled.div`
+const Text = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 20px;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  padding: 0 1rem;
+
+  h6 {
+    padding-top: .5rem;
+    line-height: 120%;
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    grid: none;
+    margin-bottom: 3.5rem;
+    
+    h1 {
+      font-size: var(--headline-3);
+    }
+
+    h6 {
+      font-size: var(--paragraph);
+      max-width: 50%;
+      margin-left: 50%;
+    }
+  }
 `
 
 
@@ -46,4 +67,4 @@ const date = data.datoCmsHome.homeHeroPost.date;
 
 
 
-  export default FullImage
+export default FullImage

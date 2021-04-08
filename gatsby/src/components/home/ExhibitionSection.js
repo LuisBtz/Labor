@@ -6,22 +6,27 @@ import PostExposition from './posts/PostExposition'
 
 
 // markup
-const ExhibitionSection = ( {data} ) => {
+const ExhibitionSection = ({ data }) => {
 
-    return (
-      <ExhibitionContainer>
-        {data.datoCmsHome.exhibitionsHighlights.map(({ title, author, coverThumbnailImage, date, metaInfo, slug, id}) => {
-                return (
-                    <PostExposition title={title} author={author} coverThumbnailImage={coverThumbnailImage} slug={slug} date={date} metaInfo={metaInfo} key={id} />
-                )
-                })}
-      </ExhibitionContainer>
-      
-    )
-  }
+  return (
+    <ExhibitionContainer>
+      {data.datoCmsHome.exhibitionsHighlights.map(({ title, author, coverThumbnailImage, date, metaInfo, slug, id }) => {
+        return (
+          <PostExposition title={title} author={author} coverThumbnailImage={coverThumbnailImage} slug={slug} date={date} metaInfo={metaInfo} key={id} />
+        )
+      })}
+    </ExhibitionContainer>
 
-  const ExhibitionContainer = styled.section`
+  )
+}
+
+const ExhibitionContainer = styled.section`
     display: flex;
+
+    /* Mobile */
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   `
 
 
@@ -29,4 +34,4 @@ const ExhibitionSection = ( {data} ) => {
 
 
 
-  export default ExhibitionSection
+export default ExhibitionSection

@@ -4,6 +4,19 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --black: #000000;
       --white: #FFFFFF;
+
+      --jumbo-xl: 86.29px;
+      --jumbo: 4.768rem;
+      --headline-1: 3.815rem;
+      --headline-2: 3.052rem;
+      --headline-3: 2.441rem;
+      --headline-4: 1.953rem;
+      --headline-5: 1.563rem;
+      --headline-6: 1.25rem;
+      --paragraph: 1rem;
+      --small: 0.8rem;
+      --detail: 0.64rem;
+      --detail-xs: 0.512rem;
     }
 
     body {
@@ -11,5 +24,17 @@ export const GlobalStyle = createGlobalStyle`
         font-family: var(--regular);
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    ::selection {
+      background: black;
+      color: white;
     }
 `
