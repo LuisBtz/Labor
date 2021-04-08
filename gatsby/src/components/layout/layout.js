@@ -24,10 +24,15 @@ function Layout({ children }) {
 
 const Main = styled.main`
     background: var(--white);
-    padding-top: 90px;
+    /* padding-top: 90px; */
+    padding-top: 35vw;
+
+    @media screen and (max-width: 1200px) {
+      padding-top: 38vw;
+    }
 
     @media screen and (max-width: 768px) {
-      padding-top: 60px;
+      padding-top: 47vw;
     }
   `
 

@@ -61,11 +61,15 @@ const NavStyle = styled.nav`
       display: grid;
       grid-template-columns: 1fr 1fr;
         a {
+          line-height: 100%;
           text-transform: uppercase;
           color: var(--white);
             :hover{
               text-decoration: line-through;
             }
+        }
+        li {
+          line-height: 100%;
         }
   }
   a.logo {
@@ -91,9 +95,13 @@ const NavStyle = styled.nav`
     grid-template-columns: 1fr;
     align-self: center;
     justify-self: right;
+      li {
+        line-height: 100%;
+      }
       a {
         text-transform: uppercase;
         color: var(--white);
+        line-height: 100%;
       }
   }
   #mobile-button {

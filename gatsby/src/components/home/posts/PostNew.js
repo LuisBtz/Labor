@@ -2,21 +2,39 @@ import React from 'react'
 import styled from 'styled-components';
 
 // markup
-const PostNew = ( { articleHeadline, metaInfo, slug } ) => {
+const PostNew = ({ articleHeadline, metaInfo, slug }) => {
 
-    return (
-        <PostNewsWrapper>
-            <p>{metaInfo}</p>
-            <h2>{articleHeadline}</h2>
-        </PostNewsWrapper>
-      
-    )
+  return (
+    <PostNewsWrapper>
+      <p class="detail">{metaInfo}</p>
+      <h2>{articleHeadline}</h2>
+    </PostNewsWrapper>
+  )
+}
+
+const PostNewsWrapper = styled.div`
+  width: 50vw;
+  padding: 1rem;
+  margin-bottom: 5rem;
+
+  h2 {
+    margin: 1rem 0;
+    max-width: 95%;
   }
 
-  const PostNewsWrapper = styled.div`
-  width: 50vw;
+  /* Mobile */ 
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    padding: 1rem;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
+    h2 {
+      font-size: var(--headline-4);
+    }
+  }
 `
 
 
 
-  export default PostNew
+export default PostNew
