@@ -23,7 +23,7 @@ const Header = () => {
       </button>
       <ul className="pages">
         <li><Link to='./' >Artistas</Link></li>
-        <li><Link to='./' >Exposiciones</Link></li>
+        <li><Link to='/expositions' >Exposiciones</Link></li>
         <li><Link to='./' >Publicaciones</Link></li>
         <li><Link to='./' >podcast</Link></li>
         <li><Link to='./' >noticias</Link></li>
