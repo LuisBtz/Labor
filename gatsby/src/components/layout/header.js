@@ -27,7 +27,7 @@ const Header = () => {
       <ul className="pages">
         <li><Link to='./' >Artistas</Link></li>
         <li><Link to='/expositions' >Exposiciones</Link></li>
-        <li><Link to='./' >Publicaciones</Link></li>
+        <li><Link to='/publications' >Publicaciones</Link></li>
         <li><Link to='./' >podcast</Link></li>
         <li><Link to='./' >noticias</Link></li>
         <li><Link to='./' >contacto</Link></li>
