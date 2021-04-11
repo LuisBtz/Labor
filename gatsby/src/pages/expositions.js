@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+import Seo from "../components/layout/seo"
 import CurrentExposition from "../components/expositionsPage/CurrentExposition"
 import FutureExposition from "../components/expositionsPage/FutureExposition"
 import PastExposition from "../components/expositionsPage/PastExposition"
@@ -8,10 +8,10 @@ import PastExposition from "../components/expositionsPage/PastExposition"
 
 
 // markup
-const ExpositionsPage = () => {
+const Publications = () => {
   return (
     <Layout>
-      <SEO title="Expositions" />
+      <Seo title="Expositions" />
       <CurrentExposition />
       <FutureExposition />
       <PastExposition />
@@ -20,4 +20,4 @@ const ExpositionsPage = () => {
   )
 }
 
-export default ExpositionsPage;
+export default Publications;

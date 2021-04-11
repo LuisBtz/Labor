@@ -1,11 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
-import PostPublicationPage from './Post/PostPublicationPage';
+import PostPublicationsPage from './Post/PostPublicationsPage';
 
 
 // markup
-const PublicationPage = ( ) => {
+const PublicationsPage = ( ) => {
 
 
   const dataPublication = useStaticQuery(graphql`
@@ -32,7 +32,7 @@ const PublicationPage = ( ) => {
       <PublicationContainer>
           {dataPublication.allDatoCmsPublication.edges.map(({ node }) => {
             return (
-                <PostPublicationPage data={node} key={node.id} />
+                <PostPublicationsPage data={node} key={node.id} />
             )
           })}
       </PublicationContainer>
@@ -59,4 +59,4 @@ const PublicationPage = ( ) => {
 
 
 
-  export default PublicationPage
+  export default PublicationsPage

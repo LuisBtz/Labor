@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import PublicationPage from '../components/publicationsPage/PublicationPage'
+import Seo from "../components/layout/seo"
+import PublicationsPage from '../components/publicationsPage/PublicationsPage'
 
 // markup
 const ExpositionsPage = () => {
   return (
     <Layout>
-      <SEO title="Expositions" />
-      <PublicationPage />
+      <Seo title="Expositions" />
+      <PublicationsPage />
     </Layout>
     
   )

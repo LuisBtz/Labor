@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 // markup
-const PostPublicationPage = ( {data } ) => {
+const PostPublicationsPage = ( {data } ) => {
 
   const image = getImage(data.coverThumbnailImage);
   const date = data.date;
@@ -77,4 +77,4 @@ const Abstract = styled.p`
 
 
 
-  export default PostPublicationPage
+  export default PostPublicationsPage

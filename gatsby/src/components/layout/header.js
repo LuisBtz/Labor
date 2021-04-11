@@ -7,15 +7,6 @@ import logo from '../../assets/images/logo-labor.svg'
 // markup
 const Header = () => {
 
-  window.addEventListener('scroll', () => {
-    console.log(window.pageYOffset);
-    if (window.pageYOffset > 0) {
-      document.getElementById('img').classList.add('shrink');
-    } else {
-      document.getElementById('img').classList.remove('shrink');
-    }
-
-  });
 
 
 
@@ -25,7 +16,7 @@ const Header = () => {
         Menu
       </button>
       <ul className="pages">
-        <li><Link to='./' >Artistas</Link></li>
+        <li><Link to='/artists' >Artistas</Link></li>
         <li><Link to='/expositions' >Exposiciones</Link></li>
         <li><Link to='/publications' >Publicaciones</Link></li>
         <li><Link to='./' >podcast</Link></li>
@@ -33,7 +24,7 @@ const Header = () => {
         <li><Link to='./' >contacto</Link></li>
       </ul>
       <Link to='/' className="logo">
-        <img src={logo} id="img" alt="labor" />
+        <img src={logo} alt="labor" />
       </Link>
       <ul className="lang">
         <li><Link>Español</Link></li>

