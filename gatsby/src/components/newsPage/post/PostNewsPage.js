@@ -5,37 +5,31 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostPublicationsPage = ( {data } ) => {
+const PostNewsPage = ( {data } ) => {
 
   const image = getImage(data.coverThumbnailImage);
-  const date = data.date;
-  const title = data.title;
-  const author = data.author;
-  const abstract = data.abstract;
+  const date = data.meta.createdAt;
+  const title = data.articleHeadline;
   const slug = data.slug;
 
     return (
-      <PostExpositionWrapper
+      <PostNewsWrapper
       to={`/publications/${slug}`}
       >
-        <ImageStyle
+        <GatsbyImage
             image={image}
             />
             <Text>
-              <p className='detail'>{date}</p>
               <h5>{title}</h5>
-              <p className="caps">{author}</p>
-              <Abstract>{abstract}</Abstract>
+              <p className="caps">{date}</p>
             </Text>
-    </PostExpositionWrapper>
+    </PostNewsWrapper>
       
     )
   }
 
-  const PostExpositionWrapper = styled(Link)`
-      min-width: 46vw;
-      padding-right: 2vw;
-      display: flex;
+  const PostNewsWrapper = styled(Link)`
+      width: 33.3333vw;
 
       /* Mobile */
       @media screen and (max-width: 768px) {
@@ -45,18 +39,9 @@ const PostPublicationsPage = ( {data } ) => {
       }
 `
 
-const ImageStyle = styled(GatsbyImage)`
-    width: 50%;
-
-    /* Mobile */
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
-`
 
 const Text = styled.div`
   box-sizing: border-box;
-  width: 50%;
   margin-top: 1rem;
   margin-bottom: 5rem;
   padding: .5rem 1rem;
@@ -72,13 +57,5 @@ const Text = styled.div`
   }
 `
 
-const Abstract = styled.p`
-  margin-top: 25px;
-  font-size: 16px;
-  text-indent: 2rem;
-`
 
-
-
-
-  export default PostPublicationsPage
+  export default PostNewsPage

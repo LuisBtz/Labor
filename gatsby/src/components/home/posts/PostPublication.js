@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from 'gatsby';
 
 
 // markup
@@ -8,7 +9,9 @@ const PostPublication = ({ title, date, author, slug, abstract, coverThumbnailIm
   const image = getImage(coverThumbnailImage);
 
   return (
-    <PostPublicationWrapper>
+    <PostPublicationWrapper
+    to={`/publications/${slug}`}
+    >
       <ImageStyle
         image={image}
       />
@@ -23,7 +26,7 @@ const PostPublication = ({ title, date, author, slug, abstract, coverThumbnailIm
   )
 }
 
-const PostPublicationWrapper = styled.div`
+const PostPublicationWrapper = styled(Link)`
   min-width: 46vw;
   padding-right: 2vw;
   display: flex;

@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react'
 import styled from 'styled-components';
 
@@ -5,14 +6,16 @@ import styled from 'styled-components';
 const PostNew = ({ articleHeadline, metaInfo, slug }) => {
 
   return (
-    <PostNewsWrapper>
+    <PostNewsWrapper
+      to={`/news/${slug}`}
+    >
       <p class="detail">{metaInfo}</p>
       <h2>{articleHeadline}</h2>
     </PostNewsWrapper>
   )
 }
 
-const PostNewsWrapper = styled.div`
+const PostNewsWrapper = styled(Link)`
   width: 50vw;
   padding: 1rem;
   margin-bottom: 5rem;

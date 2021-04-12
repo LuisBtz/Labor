@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from 'gatsby';
 
 
 // markup
@@ -8,7 +9,9 @@ const PostExposition = ({ title, author, coverThumbnailImage, date, metaInfo, sl
   const image = getImage(coverThumbnailImage);
 
   return (
-    <PostExpositionWrapper>
+    <PostExpositionWrapper
+      to={`/expositions/${slug}`}
+    >
       <GatsbyImage
         image={image}
       />
@@ -22,7 +25,7 @@ const PostExposition = ({ title, author, coverThumbnailImage, date, metaInfo, sl
   )
 }
 
-const PostExpositionWrapper = styled.div`
+const PostExpositionWrapper = styled(Link)`
 width: 50vw;
 
 /* Mobile */

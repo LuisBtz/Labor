@@ -44,7 +44,8 @@ const PublicationsPage = ( ) => {
         padding-top: 90px;
         background: var(--white);
         cursor: ew-resize;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         overflow: scroll;
         margin-bottom: 5rem;
 

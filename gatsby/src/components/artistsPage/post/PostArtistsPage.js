@@ -13,7 +13,9 @@ const PostArtistsPage = ( {data } ) => {
 
     return (
       <PostArtistsWrapper>
-        <Link> <GatsbyImage image={image}  />{name}</Link>
+        <Link
+          to={`/artists/${slug}`}
+        > <GatsbyImage image={image}  />{name}</Link>
     </PostArtistsWrapper>
       
     )

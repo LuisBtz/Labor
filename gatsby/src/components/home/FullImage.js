@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from 'gatsby';
 
 
 // markup
@@ -13,9 +14,12 @@ const FullImage = ({ data }) => {
   const title = data.datoCmsHome.homeHeroPost.title;
   const author = data.datoCmsHome.homeHeroPost.author;
   const date = data.datoCmsHome.homeHeroPost.date;
+  const slug = data.datoCmsHome.homeHeroPost.slug;
 
   return (
-    <FullImageContainer>
+    <FullImageContainer
+    to={`/exposition/${slug}`}
+    >
       <GatsbyImage
         image={getDataImage}
       />
@@ -28,7 +32,7 @@ const FullImage = ({ data }) => {
   )
 }
 
-const FullImageContainer = styled.section`
+const FullImageContainer = styled(Link)`
     width: 100%;
     background: var(--white);
 /* padding-top: 90px; */
