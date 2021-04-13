@@ -5,7 +5,7 @@ import PostArtistsPage from './post/PostArtistsPage';
 
 
 // markup
-const ArtistsPage = ( ) => {
+const ArtistsPage = () => {
 
 
   const dataArtists = useStaticQuery(graphql`
@@ -26,35 +26,36 @@ const ArtistsPage = ( ) => {
 `)
 
 
-    return (
-      <ArtistsContainer>
-          {dataArtists.allDatoCmsArtist.edges.map(({ node }) => {
-            return (
-                <PostArtistsPage data={node} key={node.id} />
-            )
-          })}
-      </ArtistsContainer>
-      
-    )
-  }
+  return (
+    <ArtistsContainer>
+      {dataArtists.allDatoCmsArtist.edges.map(({ node }) => {
+        return (
+          <PostArtistsPage data={node} key={node.id} />
+        )
+      })}
+    </ArtistsContainer>
 
-  const ArtistsContainer = styled.section`
+  )
+}
+
+const ArtistsContainer = styled.section`
         padding-top: 90px;
         background: var(--white);
-        cursor: ew-resize;
         display: flex;
-        overflow: scroll;
-        margin-bottom: 5rem;
+        flex-wrap: wrap;
 
         /* Mobile */
         @media screen and (max-width: 768px) {
-          flex-direction: column;
+          /* flex-direction: column; */
           margin-bottom: 3rem;
+          padding-top: 65px;
+          /* overflow: hidden; */
         }
+
   `
 
 
 
 
 
-  export default ArtistsPage
+export default ArtistsPage

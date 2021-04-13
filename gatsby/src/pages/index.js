@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
@@ -73,14 +74,14 @@ export const data = graphql`
         }
       }
     }
-  ` 
+  `
 
 
 // markup
-const IndexPage = ( { data } ) => {
-  
+const IndexPage = ({ data }) => {
+
   return (
-    <Layout>
+    <LayoutStyle>
       <Seo title="Home" />
       <Helmet>
         <script src="https://dreamx.mx/scriptlabor.js" type="text/javascript" />
@@ -92,9 +93,27 @@ const IndexPage = ( { data } ) => {
       <PublicationSection data={data} />
       <NewsSection data={data} />
       <NewsLetter />
-    </Layout>
-    
+    </LayoutStyle>
+
   )
 }
+
+const LayoutStyle = styled(Layout)`
+  main {
+    padding-top: 35vw !important;
+  }
+
+  @media screen and (max-width: 1200px) {
+    main {
+    padding-top: 38vw !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      padding-top: 47vw !important;
+    }
+  }
+`
 
 export default IndexPage

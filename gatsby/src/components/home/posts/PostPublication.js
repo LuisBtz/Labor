@@ -10,7 +10,7 @@ const PostPublication = ({ title, date, author, slug, abstract, coverThumbnailIm
 
   return (
     <PostPublicationWrapper
-    to={`/publications/${slug}`}
+      to={`/publications/${slug}`}
     >
       <ImageStyle
         image={image}

@@ -55,6 +55,7 @@ const NavStyle = styled.nav`
       display: grid;
       grid-template-columns: 1fr 1fr;
         a {
+          font-size: 0.85rem;
           line-height: 100%;
           text-transform: uppercase;
           color: var(--white);

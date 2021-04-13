@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
       --small: 0.8rem;
       --detail: 0.64rem;
       --detail-xs: 0.512rem;
+
+      --gutter: 1rem;
     }
 
     body {
@@ -26,6 +28,11 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
+        font-feature-settings: 'salt' on;
+    }
+
+    main {
+      background: var(--white) !important;
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */

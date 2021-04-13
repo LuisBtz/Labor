@@ -5,30 +5,30 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostNewsPage = ( {data } ) => {
+const PostNewsPage = ({ data }) => {
 
   const image = getImage(data.coverThumbnailImage);
   const date = data.meta.createdAt;
   const title = data.articleHeadline;
   const slug = data.slug;
 
-    return (
-      <PostNewsWrapper
+  return (
+    <PostNewsWrapper
       to={`/publications/${slug}`}
-      >
-        <GatsbyImage
-            image={image}
-            />
-            <Text>
-              <h5>{title}</h5>
-              <p className="caps">{date}</p>
-            </Text>
+    >
+      <GatsbyImage
+        image={image}
+      />
+      <Text>
+        <h5><span className="arrow">↑</span> {title}</h5>
+        <p className="caps">{date}</p>
+      </Text>
     </PostNewsWrapper>
-      
-    )
-  }
 
-  const PostNewsWrapper = styled(Link)`
+  )
+}
+
+const PostNewsWrapper = styled(Link)`
       width: 33.3333vw;
 
       /* Mobile */
@@ -58,4 +58,4 @@ const Text = styled.div`
 `
 
 
-  export default PostNewsPage
+export default PostNewsPage

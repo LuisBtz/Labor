@@ -5,7 +5,7 @@ import PostPublicationsPage from './Post/PostPublicationsPage';
 
 
 // markup
-const PublicationsPage = ( ) => {
+const PublicationsPage = () => {
 
 
   const dataPublication = useStaticQuery(graphql`
@@ -28,36 +28,38 @@ const PublicationsPage = ( ) => {
   `)
 
 
-    return (
-      <PublicationContainer>
-          {dataPublication.allDatoCmsPublication.edges.map(({ node }) => {
-            return (
-                <PostPublicationsPage data={node} key={node.id} />
-            )
-          })}
-      </PublicationContainer>
-      
-    )
+  return (
+    <PublicationContainer>
+      {dataPublication.allDatoCmsPublication.edges.map(({ node }) => {
+        return (
+          <PostPublicationsPage data={node} key={node.id} />
+        )
+      })}
+    </PublicationContainer>
+
+  )
+}
+
+const PublicationContainer = styled.section`
+  padding-top: 90px;
+  background: var(--white);
+  cursor: ew-resize;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: var(--gutter);
+  overflow: scroll;
+  margin-bottom: 5rem;
+
+
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 3rem;
   }
-
-  const PublicationContainer = styled.section`
-        padding-top: 90px;
-        background: var(--white);
-        cursor: ew-resize;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        overflow: scroll;
-        margin-bottom: 5rem;
-
-        /* Mobile */
-        @media screen and (max-width: 768px) {
-          flex-direction: column;
-          margin-bottom: 3rem;
-        }
   `
 
 
 
 
 
-  export default PublicationsPage
+export default PublicationsPage

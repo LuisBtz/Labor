@@ -18,7 +18,7 @@ const FullImage = ({ data }) => {
 
   return (
     <FullImageContainer
-    to={`/exposition/${slug}`}
+      to={`/exposition/${slug}`}
     >
       <GatsbyImage
         image={getDataImage}
@@ -35,20 +35,12 @@ const FullImage = ({ data }) => {
 const FullImageContainer = styled(Link)`
     width: 100%;
     background: var(--white);
-/* padding-top: 90px; */
-padding-top: 35vw;
-
-@media screen and (max-width: 1200px) {
-  padding-top: 38vw;
-}
-
-@media screen and (max-width: 768px) {
-  padding-top: 47vw;
-}
+    padding-top: 90px;
   `
 
 const Text = styled.div`
   display: grid;
+  grid-gap: 5rem;
   grid-template-columns: 2fr 1fr;
   margin-top: 1rem;
   margin-bottom: 5rem;

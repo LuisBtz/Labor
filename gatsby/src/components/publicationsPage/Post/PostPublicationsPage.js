@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostPublicationsPage = ( {data } ) => {
+const PostPublicationsPage = ({ data }) => {
 
   const image = getImage(data.coverThumbnailImage);
   const date = data.date;
@@ -14,35 +14,35 @@ const PostPublicationsPage = ( {data } ) => {
   const abstract = data.abstract;
   const slug = data.slug;
 
-    return (
-      <PostExpositionWrapper
+  return (
+    <PostExpositionWrapper
       to={`/publications/${slug}`}
-      >
-        <ImageStyle
-            image={image}
-            />
-            <Text>
-              <p className='detail'>{date}</p>
-              <h5>{title}</h5>
-              <p className="caps">{author}</p>
-              <Abstract>{abstract}</Abstract>
-            </Text>
+    >
+      <ImageStyle
+        image={image}
+      />
+      <Text>
+        <p className='detail'>{date}</p>
+        <h5><span className="arrow">↖</span>  {title}</h5>
+        <p className="caps">{author}</p>
+        <Abstract>{abstract}</Abstract>
+      </Text>
     </PostExpositionWrapper>
-      
-    )
+
+  )
+}
+
+const PostExpositionWrapper = styled(Link)`
+  min-width: 46vw;
+  padding-right: 2vw;
+  display: flex;
+
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    min-width: 75vw;
+    padding-right: 0;
+    flex-direction: column;
   }
-
-  const PostExpositionWrapper = styled(Link)`
-      min-width: 46vw;
-      padding-right: 2vw;
-      display: flex;
-
-      /* Mobile */
-      @media screen and (max-width: 768px) {
-        min-width: 100vw;
-        padding-right: 0;
-        flex-direction: column;
-      }
 `
 
 const ImageStyle = styled(GatsbyImage)`
@@ -81,4 +81,4 @@ const Abstract = styled.p`
 
 
 
-  export default PostPublicationsPage
+export default PostPublicationsPage
