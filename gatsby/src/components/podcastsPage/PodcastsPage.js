@@ -5,7 +5,7 @@ import PostPodcastsPage from './post/PostPodcastsPage';
 
 
 // markup
-const PodcastsPage = ( ) => {
+const PodcastsPage = () => {
 
 
   const dataPodcasts = useStaticQuery(graphql`
@@ -25,27 +25,35 @@ const PodcastsPage = ( ) => {
 `)
 
 
-    return (
-      <PodcastsContainer>
-          {dataPodcasts.allDatoCmsPodcast.edges.map(({ node }) => {
-            return (
-                <PostPodcastsPage data={node} key={node.id} />
-            )
-          })}
-      </PodcastsContainer>
-      
-    )
-  }
+  return (
+    <PodcastsContainer>
+      {dataPodcasts.allDatoCmsPodcast.edges.map(({ node }) => {
+        return (
+          <PostPodcastsPage data={node} key={node.id} />
+        )
+      })}
+    </PodcastsContainer>
 
-  const PodcastsContainer = styled.section`
-        padding-top: 90px;
-        background: var(--white);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+  )
+}
+
+const PodcastsContainer = styled.section`
+    padding-top: 90px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (max-width: 960px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   `
 
 
 
 
 
-  export default PodcastsPage
+export default PodcastsPage

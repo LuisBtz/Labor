@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostFutureExposition = ( {data } ) => {
+const PostFutureExposition = ({ data }) => {
 
   const image = getImage(data.coverThumbnailImage);
   const date = data.date;
@@ -14,49 +14,58 @@ const PostFutureExposition = ( {data } ) => {
   const pastCurrentOrFuture = data.pastCurrentOrFuture;
   const slug = data.slug;
 
-    return (
-      <PostExpositionWrapper
+  return (
+    <PostExpositionWrapper
       to={`/expositions/${slug}`}
-      >
-        <GatsbyImage
-            image={image}
-            />
-            <Text>
-              <Date>{date} - {pastCurrentOrFuture}</Date>
-            <h3>{title}</h3>
-            <Author>↖ {author}</Author>
-            </Text>
+    >
+      <GatsbyImage
+        image={image}
+      />
+      <Text>
+        <Date className="caps">{date} - {pastCurrentOrFuture}</Date>
+        <h3>{title}</h3>
+        <Author className="caps"><span className="arrow">↑</span> {author}</Author>
+      </Text>
     </PostExpositionWrapper>
-      
-    )
-  }
 
-  const PostExpositionWrapper = styled(Link)`
-width: 33.3333vw;
+  )
+}
+
+const PostExpositionWrapper = styled(Link)`
+width: 50vw;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+  }
 `
 
-  const Text = styled.div`
+const Text = styled.div`
   width: 80%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 20px;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding: 1rem;
   h3 {
-      font-size: 31.25px;
-      font-family: var(--bold)
+    font-size: var(--headline-4);
+    font-family: var(--bold);
+    margin: 1rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 
 `
 
 const Date = styled.p`
-font-size: 10.24px;
+  font-size: var(--detail);
 `
 
 const Author = styled.p`
-    font-size: 16px;
+  font-size: var(--paragraph);
 `
 
 
 
 
 
-  export default PostFutureExposition
+export default PostFutureExposition

@@ -5,7 +5,7 @@ import PostCurrentExposition from './post/PostCurrentExposition';
 
 
 // markup
-const CurrentExposition = ( ) => {
+const CurrentExposition = () => {
 
 
   const dataCurrent = useStaticQuery(graphql`
@@ -31,24 +31,25 @@ const CurrentExposition = ( ) => {
   `)
 
 
-    return (
-      <CurrentExpositionContainer>
-          {dataCurrent.allDatoCmsExhibition.edges.slice(0,1).map(({ node }) => {
-            return (
-                <PostCurrentExposition data={node} key={node.id} />
-            )
-          })}
-      </CurrentExpositionContainer>
-      
-    )
-  }
+  return (
+    <CurrentExpositionContainer>
+      {dataCurrent.allDatoCmsExhibition.edges.slice(0, 1).map(({ node }) => {
+        return (
+          <PostCurrentExposition data={node} key={node.id} />
+        )
+      })}
+    </CurrentExpositionContainer>
 
-  const CurrentExpositionContainer = styled.section`
+  )
+}
+
+const CurrentExpositionContainer = styled.section`
     width: 100%;
+    overflow: hidden;
   `
 
 
 
 
 
-  export default CurrentExposition
+export default CurrentExposition

@@ -97,6 +97,7 @@ const NavStyle = styled.nav`
         text-transform: uppercase;
         color: var(--white);
         line-height: 100%;
+        font-size: 0.85rem;
       }
   }
   #mobile-button {

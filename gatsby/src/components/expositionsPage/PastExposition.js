@@ -5,7 +5,7 @@ import PostPastExposition from './post/PostPastExposition';
 
 
 // markup
-const PastExposition = ( ) => {
+const PastExposition = () => {
 
 
   const dataPast = useStaticQuery(graphql`
@@ -31,32 +31,38 @@ const PastExposition = ( ) => {
   `)
 
 
-    return (
-      <PastExpositionContainer>
-          <p>Exposiciones pasadas↓</p>
-          <PastPosts>
-            {dataPast.allDatoCmsExhibition.edges.map(({ node }) => {
-                return (
-                    <PostPastExposition data={node} key={node.id} />
-                )
-            })}
-          </PastPosts>
-      </PastExpositionContainer>
-      
-    )
-  }
+  return (
+    <PastExpositionContainer>
+      <p className="caps medium head">Exposiciones pasadas <span className="arrow">↓</span></p>
+      <PastPosts>
+        {dataPast.allDatoCmsExhibition.edges.map(({ node }) => {
+          return (
+            <PostPastExposition data={node} key={node.id} />
+          )
+        })}
+      </PastPosts>
+    </PastExpositionContainer>
 
-  const PastExpositionContainer = styled.section`
+  )
+}
+
+const PastExpositionContainer = styled.section`
     width: 100%;
+    border-top: solid 1px #f2f2f2;
+
+    .head {
+      padding: 1.5rem 1rem;
+    }
   `
 
 
 const PastPosts = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `
 
 
 
 
 
-  export default PastExposition
+export default PastExposition

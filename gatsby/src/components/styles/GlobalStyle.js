@@ -35,6 +35,10 @@ export const GlobalStyle = createGlobalStyle`
       background: var(--white) !important;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     /* Hide scrollbar for Chrome, Safari and Opera */
     ::-webkit-scrollbar {
       display: none;
