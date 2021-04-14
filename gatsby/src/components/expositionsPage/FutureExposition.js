@@ -33,7 +33,10 @@ const FutureExposition = () => {
 
   return (
     <FutureExpositionContainer>
-      <p className="caps medium head">Exposiciones futuras <span className="arrow">↓</span></p>
+      <section id="FuturasTop">
+        <p className="caps medium head">Exposiciones futuras <span className="arrow">↓</span></p>
+      </section>
+
       <FuturePosts>
         {dataFuture.allDatoCmsExhibition.edges.map(({ node }) => {
           return (
@@ -48,10 +51,20 @@ const FutureExposition = () => {
 
 const FutureExpositionContainer = styled.section`
     width: 100%;
-    border-top: solid 1px #f2f2f2;
+
+    #FuturasTop {
+      padding-top: 6rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      #FuturasTop {
+        padding-top: 4rem;
+      }
+    }
 
     .head {
-      padding: 1.5rem 1rem;
+      padding: 1.25rem;
+      border-top: solid 1px #f2f2f2;
     }
   `
 

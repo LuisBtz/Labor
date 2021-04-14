@@ -38,16 +38,18 @@ width: 100%;
 const Text = styled.div`
   width: 80%;
   margin-top: 1rem;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   padding: 1rem;
+
   h2 {
-      font-size: var(--jumbo-xl);
-      font-family: var(--bold);
-      margin: 2rem 0;
+    font-size: var(--jumbo-xl);
+    font-family: var(--bold);
+    margin: 2rem 0;
   }
 
   @media screen and (max-width: 768px) {
-    margin-bottom: 4rem;
+    margin-bottom: 0;
+    margin-top: 0;
     width: 100%;
 
     h2 {

@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+    html {
+      scroll-behavior: smooth;
+    }
+    
     :root {
       --black: #000000;
       --white: #FFFFFF;
@@ -47,5 +51,17 @@ export const GlobalStyle = createGlobalStyle`
     ::selection {
       background: black;
       color: white;
+    }
+
+    button {
+      -webkit-appearance: none;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:focus {
+      outline: 0;
     }
 `

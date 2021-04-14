@@ -54,6 +54,10 @@ const Text = styled.div`
     margin: 1rem 0;
   }
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
 `
 
 const Date = styled.p`

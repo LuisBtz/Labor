@@ -33,7 +33,10 @@ const PastExposition = () => {
 
   return (
     <PastExpositionContainer>
-      <p className="caps medium head">Exposiciones pasadas <span className="arrow">↓</span></p>
+      <section id="PasadasTop">
+        <p className="caps medium head">Exposiciones pasadas <span className="arrow">↓</span></p>
+      </section>
+
       <PastPosts>
         {dataPast.allDatoCmsExhibition.edges.map(({ node }) => {
           return (
@@ -48,10 +51,20 @@ const PastExposition = () => {
 
 const PastExpositionContainer = styled.section`
     width: 100%;
-    border-top: solid 1px #f2f2f2;
+
+    #PasadasTop {
+      padding-top: 6rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      #PasadasTop {
+        padding-top: 4rem;
+      }
+    }
 
     .head {
-      padding: 1.5rem 1rem;
+      padding: 1.25rem;
+      border-top: solid 1px #f2f2f2;
     }
   `
 
