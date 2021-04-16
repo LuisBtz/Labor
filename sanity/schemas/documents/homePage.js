@@ -56,13 +56,14 @@ export default {
     // },
     {
       name: 'exhibitionsHF',
-      title: 'Exhibition Highlights Full',
+      title: 'Hero Home Post',
       type: 'reference',
       to: [{ type: 'exhibitions' }],
     },
     {
       name: 'exhibitionsHighlights',
       title: 'Exhibition Highlights',
+      validation: Rule => Rule.required().min(2).max(2),
       type: 'array',
       of: [
         {
@@ -81,36 +82,14 @@ export default {
         {
           title: 'Artist hihlight',
           name: 'artistH',
-          type: 'reference',
-          to: [{ type: 'artists' }],
+          type: 'artistH',
         },
       ],
     },
     {
       name: 'marquee',
       title: 'Marquee',
-      type: 'object',
-      fields: [
-        {
-          name: 'marqueeText',
-          title: 'Marquee Text',
-          type: 'text',
-        },
-        {
-          name: 'url',
-          title: 'Url',
-          type: 'url',
-          validation: (Rule) =>
-            Rule.uri({
-              scheme: ['http', 'https'],
-            }),
-        },
-        {
-          name: 'openTab',
-          title: 'Open in a new tab',
-          type: 'boolean',
-        },
-      ],
+      type: 'marqueeInline',
     },
     {
       name: 'publicationHighlights',
@@ -119,9 +98,8 @@ export default {
       of: [
         {
           title: 'Publication hihlight',
-          name: 'artistH',
-          type: 'reference',
-          to: [{ type: 'publications' }],
+          name: 'publicationsH',
+          type: 'publicationsH',
         },
       ],
     },
@@ -132,9 +110,8 @@ export default {
       of: [
         {
           title: 'New',
-          name: 'new',
-          type: 'reference',
-          to: [{ type: 'news' }],
+          name: 'newLocale',
+          type: 'newLocale',
         },
       ],
     },

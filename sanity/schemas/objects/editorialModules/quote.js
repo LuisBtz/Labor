@@ -6,12 +6,12 @@ export default {
     {
       name: 'quoteText',
       title: 'Quote Text',
-      type: 'text',
+      type: 'quoteText',
     },
   ],
   preview: {
     select: {
-      title: 'quoteText',
+      title: 'quoteText.en',
     },
   },
 }

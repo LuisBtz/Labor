@@ -6,12 +6,17 @@ export default {
         {
             name: 'colophoneText',
             title: 'Colophone Text',
-            type: 'text',
+            type: 'colophoneText'
         },
-{
+        {
             name: 'technicalInfo',
             title: 'Technical Information',
-            type: 'text',
+            type: 'technicalInfo',
         },
     ],
+    preview: {
+        select: {
+          title: 'colophoneText.en'
+        }
+      }
 }

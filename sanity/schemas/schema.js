@@ -4,6 +4,38 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
+import inlineFullImage from './objects/inline/inlineFullImage'
+import imageInline from './objects/inline/imageInline'
+import recentNews from './objects/inline/recentNews'
+import newLocale from './objects/inline/newLocale'
+import exhibitionH from './objects/inline/exhibitionLocale'
+import socialNetwork from './objects/inline/socialNetwork'
+import artistH from './objects/inline/artistH'
+import publicationsH from './objects/inline/publicationsH'
+import marqueeInline from './objects/inline/marqueeInline'
+import thumbnailLocale from './objects/inline/thumbnailLocale'
+
+
+import captionLocale from './objects/locales/captionLocale'
+import textField from './objects/locales/textField'
+import buttons from './objects/locales/buttons'
+import buttonLocale from './objects/locales/buttonLocale'
+import bodyTextLocale from './objects/locales/bodyTextLocale'
+import quoteText from './objects/locales/quoteLocale'
+import imageCarouselEditorial from './objects/inline/inlineImageCarousel'
+import colophoneText from './objects/locales/colophoneLocale'
+import technicalInfo from './objects/locales/technicalInfoLocale'
+import textAreaLocale from './objects/locales/textAreaLocale'
+import seoTitleEn from './objects/locales/seoTitleLocaleEn'
+import seoTitleEs from './objects/locales/seoTitleLocaleEs'
+import positionLocale from './objects/locales/positionLocale'
+import marqueeLocaleEn from './objects/locales/marqueeLocaleEn'
+import marqueeLocaleEs from './objects/locales/marqueeLocaleEs'
+import metaLocale from './objects/locales/metaLocale'
+import fromLocale from './objects/locales/fromLocale'
+import abstractLocale from './objects/locales/abstractLocale'
+
+
 import fullImage from './objects/editorialModules/fullImage'
 import mainHeadline from './objects/editorialModules/mainHeadline'
 import bodyText from './objects/editorialModules/bodyText'
@@ -17,11 +49,10 @@ import colophon from './objects/editorialModules/colophon'
 import newsArticleHeader from './objects/editorialModules/newsArticleHeader'
 
 import metadata from './documents/settings/metadata'
-import header from './documents/settings/header'
-import footer from './documents/settings/footer'
 import editorialModule from './objects/editorialModules'
 import blockModule from './objects/blocks'
 import seoModule from './objects/seoModule'
+import teamContact from './objects/teamContact'
 
 import homePage from './documents/homePage'
 import artists from './documents/artists'
@@ -38,6 +69,37 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+
+    inlineFullImage,
+    imageInline,
+    imageCarouselEditorial,
+    recentNews,
+    newLocale,
+    exhibitionH,
+    socialNetwork,
+    artistH,
+    marqueeInline,
+    publicationsH,
+    thumbnailLocale,
+
+    captionLocale,
+    textField,
+    buttons,
+    buttonLocale,
+    bodyTextLocale,
+    quoteText,
+    colophoneText,
+    technicalInfo,
+    textAreaLocale,
+    seoTitleEn,
+    seoTitleEs,
+    positionLocale,
+    marqueeLocaleEn,
+    marqueeLocaleEs,
+    metaLocale,
+    fromLocale,
+    abstractLocale,
+
     fullImage,
     mainHeadline,
     bodyText,
@@ -51,11 +113,10 @@ export default createSchema({
     newsArticleHeader,
 
     metadata,
-    header,
-    footer,
     editorialModule,
     blockModule,
     seoModule,
+    teamContact,
 
     homePage,
     artists,

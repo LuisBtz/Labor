@@ -1,12 +1,9 @@
-import { i18n } from '../documentTranslations'
-
 export default {
   //
   name: 'artists',
   title: 'Artists',
   type: 'document',
   icon: () => `👩🏻‍🎨`,
-  i18n,
   fields: [
     {
       name: 'name',
@@ -22,32 +19,24 @@ export default {
       },
     },
     {
+      name: 'metaData',
+      title: 'Label',
+      type: 'metaLocale',
+    },
+    {
+      name: 'from',
+      title: 'From',
+      type: 'fromLocale',
+    },
+    {
+      name: 'abstract',
+      title: 'Abstract',
+      type: 'abstractLocale',
+    },
+    {
       name: 'thumbnail',
       title: 'Thumbnail Image',
       type: 'image',
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
-      fields: [
-        {
-          name: 'caption',
-          type: 'string',
-          title: 'Caption',
-          options: {
-            isHighlighted: true, // <-- make this field easily accessible
-          },
-        },
-        {
-          // Editing this field will be hidden behind an "Edit"-button
-          name: 'alternativeText',
-          type: 'string',
-          title: 'Alternative Text',
-          validation: (Rule) =>
-            Rule.required().error(
-              'You need to set an alternative text on the "Full Image" editorial module'
-            ),
-        },
-      ],
     },
     
     {

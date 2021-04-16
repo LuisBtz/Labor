@@ -12,15 +12,7 @@ export default {
     {
       name: 'recentNews',
       title: 'Related News',
-      type: 'array',
-      of: [
-        {
-          title: 'New',
-          name: 'new',
-          type: 'reference',
-          to: [{ type: 'news' }],
-        },
-      ],
+      type: 'recentNews',
     },
     ],
   preview: {

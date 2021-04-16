@@ -1,4 +1,3 @@
-import { i18n } from '../documentTranslations'
 
 export default {
   //
@@ -6,13 +5,11 @@ export default {
   title: 'Contact',
   type: 'document',
   icon: () => `☎️`,
-  i18n,
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      hidden: true,
     },
     {
       name: 'slug',
@@ -28,28 +25,9 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'job',
-          title: 'Add member',
-          type: 'object',
-          fields: [
-            {
-              name: 'position',
-              title: 'Position',
-              type: 'string'
-            },
-            {
-              name: 'name',
-              title: 'Name',
-              type: 'string'
-            },
-            {
-              name: 'mail',
-              title: 'E-mail',
-              type: 'string'
-            },
-          ]
-        }
-      ]
+          type: 'teamContact' 
+        },
+      ],
     },
     {
       name: 'seo',

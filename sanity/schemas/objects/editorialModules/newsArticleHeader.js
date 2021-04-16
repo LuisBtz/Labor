@@ -4,17 +4,19 @@ export default {
     type: 'object',
     fields: [
         {
-            name: 'cover',
-            title: 'Cover Image',
-            type: 'image',
-            options: {
-                    hotspot: true, // <-- Defaults to false
-                },
+          name: 'cover',
+          type: 'imageInline'
         },
         {
             name: 'headlineText',
             title: 'Headline Text',
-            type: 'string'
+            type: 'textField',
         },
     ],
+    preview: {
+        select: {
+          title: 'headlineText.en',
+          media: 'cover'
+        },
+      },
 }

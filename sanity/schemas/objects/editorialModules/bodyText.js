@@ -4,20 +4,20 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'paragraph',
-      title: 'Paragraph',
-      type: 'text',
+      name: 'en',
+      title: 'English',
+      type: 'bodyTextLocale'
     },
     {
-      name: 'headline',
-      title: 'Headline',
-      type: 'string',
-    },
+      name: 'es',
+      title: 'Español',
+      type: 'bodyTextLocale'
+    }
   ],
   preview: {
     select: {
-      title: 'paragraph',
-      subtitle: 'headline',
+      title: 'en.paragraph',
+      subtitle: 'en.headline',
     },
   },
 }

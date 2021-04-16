@@ -3,17 +3,44 @@ export default {
   name: 'metadata',
   title: 'Metadata',
   type: 'document',
-  icon: () => `🏠`,
+  icon: () => `⚙️`,
   fields: [
     {
       name: 'title',
       title: ' Site Title',
-      type: 'string',
+      type: 'textField',
     },
     {
       name: 'description',
       title: ' General description',
-      type: 'text',
+      type: 'textAreaLocale'
     },
-  ],
+    {
+      name: 'address',
+      title: 'Adress',
+      type: 'string'
+    },
+    {
+      name: 'mail',
+      title: 'E-Mail',
+      type: 'string'
+    },
+    {
+      name: 'tel',
+      title: 'Tel',
+      type: 'string'
+    },
+    {
+      name: 'socialMedia',
+      title: 'Social Media',
+      type: 'array',
+      of: [
+        {
+          name: 'socialNetwork',
+          title: 'Social Network',
+          type: 'socialNetwork',
+        }
+      ]
+    }
+  ]
 }

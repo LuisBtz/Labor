@@ -8,46 +8,28 @@ export default {
   icon: () => `📝`,
   i18n,
   fields: [
-    {
+    { 
       name: 'title',
       title: 'title',
-      type: 'string',
+      type: 'textField',
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'title.en',
       },
+    },
+    {
+      name: 'metaData',
+      title: 'Label',
+      type: 'metaLocale',
     },
     {
       name: 'thumbnailCover',
       title: 'Cover & Thumbnail Image',
       type: 'image',
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
-      fields: [
-        {
-          name: 'caption',
-          type: 'string',
-          title: 'Caption',
-          options: {
-            isHighlighted: true, // <-- make this field easily accessible
-          },
-        },
-        {
-          // Editing this field will be hidden behind an "Edit"-button
-          name: 'alternativeText',
-          type: 'string',
-          title: 'Alternative Text',
-          validation: (Rule) =>
-            Rule.required().error(
-              'You need to set an alternative text on the "Full Image" editorial module'
-            ),
-        },
-      ],
     },
     {
       title: 'Author',
@@ -82,4 +64,11 @@ export default {
       type: 'seoModule',
     },
   ],
+  preview: {
+    select: {
+      title: 'title.en',
+      subtitle: 'author',
+      media: 'thumbnailCover'
+    }
+  }
 }

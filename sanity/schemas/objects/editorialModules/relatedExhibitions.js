@@ -10,15 +10,12 @@ export default {
       description: 'This text is only displayed in Sanity'
     },
     {
-      name: 'recentNews',
+      name: 'recentExhibitions',
       title: 'Related Exhibitions',
       type: 'array',
       of: [
         {
-          title: 'Related Exhibitions',
-          name: 'exhibitionH',
-          type: 'reference',
-          to: [{ type: 'exhibitions' }],
+          type: 'exhibitionH',
         },
       ],
     },
