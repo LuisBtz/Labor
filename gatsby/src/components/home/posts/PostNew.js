@@ -10,7 +10,7 @@ const PostNew = ({ articleHeadline, metaInfo, slug }) => {
       to={`/news/${slug}`}
     >
       <p class="detail">{metaInfo}</p>
-      <h2>{articleHeadline}</h2>
+      <h2><span className="arrow">→</span> {articleHeadline}</h2>
     </PostNewsWrapper>
   )
 }

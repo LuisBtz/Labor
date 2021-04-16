@@ -5,7 +5,7 @@ import PostFutureExposition from './post/PostFutureExposition';
 
 
 // markup
-const FutureExposition = ( ) => {
+const FutureExposition = () => {
 
 
   const dataFuture = useStaticQuery(graphql`
@@ -31,32 +31,51 @@ const FutureExposition = ( ) => {
   `)
 
 
-    return (
-      <FutureExpositionContainer>
-          <p>Exposiciones futuras↓</p>
-          <FuturePosts>
-            {dataFuture.allDatoCmsExhibition.edges.map(({ node }) => {
-                return (
-                    <PostFutureExposition data={node} key={node.id} />
-                )
-            })}
-          </FuturePosts>
-      </FutureExpositionContainer>
-      
-    )
-  }
+  return (
+    <FutureExpositionContainer>
+      <section id="FuturasTop">
+        <p className="caps medium head">Exposiciones futuras <span className="arrow">↓</span></p>
+      </section>
 
-  const FutureExpositionContainer = styled.section`
+      <FuturePosts>
+        {dataFuture.allDatoCmsExhibition.edges.map(({ node }) => {
+          return (
+            <PostFutureExposition data={node} key={node.id} />
+          )
+        })}
+      </FuturePosts>
+    </FutureExpositionContainer>
+
+  )
+}
+
+const FutureExpositionContainer = styled.section`
     width: 100%;
+
+    #FuturasTop {
+      padding-top: 6rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      #FuturasTop {
+        padding-top: 4rem;
+      }
+    }
+
+    .head {
+      padding: 1.25rem;
+      border-top: solid 1px #f2f2f2;
+    }
   `
 
 
 const FuturePosts = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `
 
 
 
 
 
-  export default FutureExposition
+export default FutureExposition

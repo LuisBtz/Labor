@@ -17,7 +17,7 @@ const PostPublication = ({ title, date, author, slug, abstract, coverThumbnailIm
       />
       <Text>
         <p className='detail'>{date}</p>
-        <h5>{title}</h5>
+        <h5><span className="arrow">↖</span> {title}</h5>
         <p className="caps">{author}</p>
         <Abstract>{abstract}</Abstract>
       </Text>

@@ -18,7 +18,7 @@ const PostExposition = ({ title, author, coverThumbnailImage, date, metaInfo, sl
       <Text>
         <p className="detail regular">{metaInfo} - {date}</p>
         <h2 className="black">{title}</h2>
-        <p className="medium caps">↖ {author}</p>
+        <p className="medium caps"><span className="arrow">↑</span> {author}</p>
       </Text>
     </PostExpositionWrapper>
 

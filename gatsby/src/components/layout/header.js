@@ -7,7 +7,13 @@ import logo from '../../assets/images/logo-labor.svg'
 // markup
 const Header = () => {
 
+  // var btn = document.getElementById('mobile-button');
+  // var pgs = document.querySelector('ul.pages');
 
+  // btn.addEventListener('click', () => {
+  //   alert('lksjdf');
+  //   pgs.classList.toggle('show');
+  // });
 
 
   return (
@@ -51,35 +57,46 @@ const NavStyle = styled.nav`
   z-index: 1010;
   mix-blend-mode: exclusion;
 
+  @media screen and (max-width: 768px) {
+    background-color: var(--white);
+    mix-blend-mode: inherit;
+  }
+
   ul.pages {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-        a {
-          font-size: 0.85rem;
-          line-height: 100%;
-          text-transform: uppercase;
-          color: var(--white);
-            :hover{
-              text-decoration: line-through;
-            }
-        }
-        li {
-          line-height: 100%;
-        }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+      a {
+        font-size: 0.85rem;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: var(--white);
+          :hover{
+            text-decoration: line-through;
+          }
+      }
+      li {
+        line-height: 100%;
+      }
   }
   a.logo {
-      align-self: auto;
-      justify-self: center;
-      width: 100px;
-        #img {
-          width: 98vw;
-          position: fixed;
-          left: 50%;
-          top: 90px;
+    align-self: auto;
+    justify-self: center;
+    width: 100px;
+      #img {
+        width: 98vw;
+        position: fixed;
+        left: 50%;
+        top: 90px;
 
-          transform: translateX(-50%);
-          transition: all .75s ease-in-out;
-        }
+        transform: translateX(-50%);
+        transition: all .75s ease-in-out;
+      }
+
+      @media screen and (max-width: 768px) {
+        img {
+          filter: invert(1);
+          }
+      }
   }
   a.logo #img.shrink {
     width: 100px;
@@ -97,6 +114,7 @@ const NavStyle = styled.nav`
         text-transform: uppercase;
         color: var(--white);
         line-height: 100%;
+        font-size: 0.85rem;
       }
   }
   #mobile-button {
@@ -130,13 +148,32 @@ const NavStyle = styled.nav`
 
     ul.pages, ul.lang {
       display: none;
+        a {
+          color: var(--black);
+        }
+    }
+
+    ul.pages.show {
+      display: block;
+      position: fixed;
+      background: white;
+      left: 0;
+      padding: 1rem;
+      width: 100%;
+      top: 3.5rem;
+      border-top: solid 1px black;
+
+        li {
+          padding: .5rem 0;
+        }
     }
 
     ul.lang-mobile {
       display: flex;
       align-items: center;
-        li {
-          color: var(--white);
+      
+        li, a {
+          color: var(--black);
         }
     }
 
