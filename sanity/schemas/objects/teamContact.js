@@ -22,7 +22,8 @@ export default {
     ],
     preview: {
       select: {
-        title: 'quoteText.en',
+        title: 'name',
+        subtitle: 'position.en'
       },
     },
   }

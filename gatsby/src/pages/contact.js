@@ -3,46 +3,54 @@ import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import BlockContent from '@sanity/block-content-to-react';
+
 
 // markup
 const Contact = () => {
 
   const data = useStaticQuery(graphql`
     query  {
-        datoCmsContact(locale: {eq: "es"}) {
-            team {
-                name
-                memberPosition
-                eMail
-                id
-            }
-            horario
-            mapCode
+      sanityContact {
+        team {
+          name
+          email
+          position {
+            es
+          }
+          _key
         }
+        _rawHorario
+        mapCode
+      }
     }
     `)
 
   // const adress = data.datoCmsSetting.address;
   // const tel = data.datoCmsSetting.tel;
   // const mail = data.datoCmsSetting.mail;
-  const mapa = data.datoCmsContact.mapCode;
+  const mapa = data.sanityContact.mapCode;
 
   return (
     <Layout>
       <Seo title="Contact" />
       <Team>
-        {data.datoCmsContact.team.map(({ name, memberPosition, eMail, id }) => {
+        {data.sanityContact.team.map(({ name, position, email, _key }) => {
           return (
-            <div key={id}>
-              <p className="caps">{memberPosition}</p>
-              <h5>{name}</h5>
-              <a href={'mailto:' + eMail}>{eMail}</a>
+            <div key={_key}>
+              <p className="caps">{position.es}</p>
+              <h5>{name.es}</h5>
+              <a href={'mailto:' + email}>{email}</a>
             </div>
           )
         })}
       </Team>
       <HorarioMap>
-        <div className='horario' dangerouslySetInnerHTML={{ __html: data.datoCmsContact.horario }} />
+        <div className='horario'>
+          <BlockContent 
+            blocks={data.sanityContact._rawHorario} 
+          />
+        </div>
 
         <div className='mapa' dangerouslySetInnerHTML={{ __html: mapa }} />
       </HorarioMap>

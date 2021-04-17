@@ -16,11 +16,6 @@ export default  {
           Rule.uri({
             scheme: ['http', 'https'],
           }),
-      },
-      {
-        name: 'openTab',
-        title: 'Open in a new tab',
-        type: 'boolean',
       }
     ]
   }

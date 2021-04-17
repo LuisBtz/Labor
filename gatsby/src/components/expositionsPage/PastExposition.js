@@ -10,23 +10,27 @@ const PastExposition = () => {
 
   const dataPast = useStaticQuery(graphql`
   query  {
-        allDatoCmsExhibition(
-    filter: {locale: {eq: "es"}, pastCurrentOrFuture: {eq: "Past"}}
-  ) {
-            edges {
-            node {
-              title
-              pastCurrentOrFuture
-              date
-              author
-              slug
-              id
-              coverThumbnailImage {
-                gatsbyImageData(layout: FULL_WIDTH, forceBlurhash: true, width: 1200)
+    allSanityExhibitions(filter: {current: {eq: "past"}}) {
+        edges {
+          node {
+            title {
+              es
+            }
+            current
+            date
+            author
+            slug {
+              current
+            }
+            id
+            thumbnailCover {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
               }
             }
           }
         }
+      }
     }
   `)
 
@@ -38,7 +42,7 @@ const PastExposition = () => {
       </section>
 
       <PastPosts>
-        {dataPast.allDatoCmsExhibition.edges.map(({ node }) => {
+        {dataPast.allSanityExhibitions.edges.map(({ node }) => {
           return (
             <PostPastExposition data={node} key={node.id} />
           )

@@ -8,19 +8,23 @@ import PostCurrentExposition from './post/PostCurrentExposition';
 const CurrentExposition = () => {
   const dataCurrent = useStaticQuery(graphql`
   query  {
-    allDatoCmsExhibition(
-    filter: {locale: {eq: "es"}, pastCurrentOrFuture: {eq: "Current"}}
-  ) {
+      allSanityExhibitions(filter: {current: {eq: "current"}}) {
         edges {
           node {
-            title
-            pastCurrentOrFuture
+            title {
+              es
+            }
+            current
             date
             author
-            slug
+            slug {
+              current
+            }
             id
-            coverThumbnailImage {
-              gatsbyImageData(layout: FULL_WIDTH, forceBlurhash: true, width: 1200)
+            thumbnailCover {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
             }
           }
         }
@@ -35,7 +39,7 @@ const CurrentExposition = () => {
         <p className="caps medium head"></p>
       </section>
 
-      {dataCurrent.allDatoCmsExhibition.edges.slice(0, 1).map(({ node }) => {
+      {dataCurrent.allSanityExhibitions.edges.slice(0, 1).map(({ node }) => {
         return (
           <PostCurrentExposition data={node} key={node.id} />
         )

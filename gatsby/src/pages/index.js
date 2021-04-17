@@ -15,64 +15,103 @@ import NewsLetter from "../components/home/NewsLetter"
 
 export const data = graphql`
   query  {
-    datoCmsHome(
-    homeHeroPost: {locale: {eq: "es"}}
-    exhibitionsHighlights: {elemMatch: {locale: {eq: "es"}}}
-    artistHighlights: {elemMatch: {locale: {eq: "es"}}}
-    publicationsHighlights: {elemMatch: {locale: {eq: "es"}}}
-    newsHighlights: {elemMatch: {locale: {eq: "es"}}}
-  ) {
-        homeHeroPost {
-          coverThumbnailImage {
-            gatsbyImageData(layout: FULL_WIDTH, forceBlurhash: true, width: 1200)
-          }
-          author
-          date
-          title
-          slug
-        }
-        exhibitionsHighlights {
-          coverThumbnailImage {
-            gatsbyImageData(layout: FULL_WIDTH, forceBlurhash: true, width: 1200)
-          }
-          author
-          title
-          slug
-          date
-          metaInfo
-          id
-        }
-        artistHighlights {
-          name
-          slug
-          metaInfo
-          id
-          from
-          abstract
-          thumbnailImage {
-            gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
-          }
-        }
-        marqueeText
-        marqueeLink
-        publicationsHighlights {
-          title
-          date
-          abstract
-          author
-          slug
-          metaInfo
-          id
-          coverThumbnailImage {
-            gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
-          }
-        }
-        newsHighlights {
-        articleHeadline
-        metaInfo
-          slug
+    sanityHomePage {
+    exhibitionsHF {
+      thumbnailCover {
+        asset {
+          gatsbyImageData(layout: FULL_WIDTH, width: 10, outputPixelDensities: 1.5)
         }
       }
+      author
+      date
+      title {
+        es
+      }
+      slug {
+        current
+      }
+    }
+    exhibitionsHighlights {
+      title {
+        es
+      }
+      author
+      slug {
+        current
+      }
+      date
+      metaData {
+        es
+      }
+      id
+      thumbnailCover {
+        asset {
+          gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+        }
+      }
+    }
+    artistsHighlights {
+      name
+      slug {
+        current
+      }
+      metaData {
+        es
+      }
+      id
+      from {
+        es
+      }
+      abstract {
+        es
+      }
+      thumbnail {
+        asset {
+          gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+        }
+      }
+    }
+    marquee {
+      es {
+        url
+        marqueeText
+      }
+    }
+    publicationHighlights {
+      title {
+        es
+      }
+      date
+      abstract {
+        es
+      }
+      author
+      slug {
+        current
+      }
+      metaData {
+        es
+      }
+      id
+      thumbnailCover {
+        asset {
+          gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+        }
+      }
+    }
+    recentNews {
+      title {
+        es
+      }
+      metaData {
+        es
+      }
+      slug {
+        current
+      }
+      id
+    }
+  }
     }
   `
 

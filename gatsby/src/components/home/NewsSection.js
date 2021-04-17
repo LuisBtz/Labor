@@ -8,9 +8,9 @@ const NewsSection = ({ data }) => {
 
   return (
     <NewsContainer>
-      {data.datoCmsHome.newsHighlights.map(({ articleHeadline, metaInfo, slug, id }) => {
+      {data.sanityHomePage.recentNews.map(({ title, metaData, slug, id }) => {
         return (
-          <PostNew articleHeadline={articleHeadline} metaInfo={metaInfo} slug={slug} key={id} />
+          <PostNew title={title} metaData={metaData} slug={slug} key={id} />
         )
       })}
     </NewsContainer>

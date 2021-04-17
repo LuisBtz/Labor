@@ -10,24 +10,28 @@ const PodcastsPage = () => {
 
   const dataPodcasts = useStaticQuery(graphql`
     query  {
-        allDatoCmsPodcast(filter: {locale: {eq: "es"}}) {
+        allSanityPodcast(sort: { fields: [episodeNumber], order: ASC }) {
             edges {
-                node {
-                    coverThumbnailImage {
-                        gatsbyImageData(layout: FULL_WIDTH, width: 700, forceBlurhash: true)
-                        }
-                        slug
-                        id
-                    }
+              node {
+                id
+                slug {
+                  current
                 }
+                thumbnailCover {
+                  asset {
+                    gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                  }
+                }
+              }
             }
+          }
         }
 `)
 
 
   return (
     <PodcastsContainer>
-      {dataPodcasts.allDatoCmsPodcast.edges.map(({ node }) => {
+      {dataPodcasts.allSanityPodcast.edges.map(({ node }) => {
         return (
           <PostPodcastsPage data={node} key={node.id} />
         )

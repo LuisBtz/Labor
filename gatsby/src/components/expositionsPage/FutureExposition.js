@@ -10,23 +10,27 @@ const FutureExposition = () => {
 
   const dataFuture = useStaticQuery(graphql`
   query  {
-        allDatoCmsExhibition(
-    filter: {locale: {eq: "es"}, pastCurrentOrFuture: {eq: "Future"}}
-  ) {
-            edges {
-            node {
-              title
-              pastCurrentOrFuture
-              date
-              author
-              slug
-              id
-              coverThumbnailImage {
-                gatsbyImageData(layout: FULL_WIDTH, forceBlurhash: true, width: 1200)
+    allSanityExhibitions(filter: {current: {eq: "upcoming"}}) {
+        edges {
+          node {
+            title {
+              es
+            }
+            current
+            date
+            author
+            slug {
+              current
+            }
+            id
+            thumbnailCover {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
               }
             }
           }
         }
+      }
     }
   `)
 
@@ -38,7 +42,7 @@ const FutureExposition = () => {
       </section>
 
       <FuturePosts>
-        {dataFuture.allDatoCmsExhibition.edges.map(({ node }) => {
+        {dataFuture.allSanityExhibitions.edges.map(({ node }) => {
           return (
             <PostFutureExposition data={node} key={node.id} />
           )

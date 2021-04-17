@@ -53,9 +53,9 @@ const PublicationSection = ({ data }) => {
         </svg>
       </section>
 
-      {data.datoCmsHome.publicationsHighlights.map(({ title, date, author, slug, abstract, coverThumbnailImage, id }) => {
+      {data.sanityHomePage.publicationHighlights.map(({ title, date, abstract, author, slug, metaData, id, thumbnailCover }) => {
         return (
-          <PostPublication title={title} coverThumbnailImage={coverThumbnailImage} slug={slug} date={date} author={author} key={id} abstract={abstract} />
+          <PostPublication title={title} thumbnailCover={thumbnailCover} slug={slug} date={date} metaData={metaData} author={author} key={id} abstract={abstract} />
         )
       })}
     </PublicationContainer>

@@ -5,21 +5,21 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostPublication = ({ title, date, author, slug, abstract, coverThumbnailImage }) => {
-  const image = getImage(coverThumbnailImage);
+const PostPublication = ({ title, date, abstract, author, slug, thumbnailCover  }) => {
+  const image = getImage(thumbnailCover.asset);
 
   return (
     <PostPublicationWrapper
-      to={`/publications/${slug}`}
+      to={`/publications/${slug.current}`}
     >
       <ImageStyle
         image={image}
       />
       <Text>
         <p className='detail'>{date}</p>
-        <h5><span className="arrow">↖</span> {title}</h5>
+        <h5><span className="arrow">↖</span> {title.es}</h5>
         <p className="caps">{author}</p>
-        <Abstract>{abstract}</Abstract>
+        <Abstract>{abstract.es}</Abstract>
       </Text>
     </PostPublicationWrapper>
 

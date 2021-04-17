@@ -3,14 +3,14 @@ import React from 'react'
 import styled from 'styled-components';
 
 // markup
-const PostNew = ({ articleHeadline, metaInfo, slug }) => {
+const PostNew = ({ title, metaData, slug }) => {
 
   return (
     <PostNewsWrapper
-      to={`/news/${slug}`}
+      to={`/news/${slug.current}`}
     >
-      <p class="detail">{metaInfo}</p>
-      <h2><span className="arrow">→</span> {articleHeadline}</h2>
+      <p class="detail">{metaData.es}</p>
+      <h2><span className="arrow">→</span> {title.es}</h2>
     </PostNewsWrapper>
   )
 }

@@ -30,6 +30,16 @@ export default {
       ],
     },
     {
+      name: 'horario',
+      title: 'Horario',
+      type: 'blockModule'
+    },
+    {
+      name: 'mapCode',
+      title: 'Map Code',
+      type: 'string'
+    },
+    {
       name: 'seo',
       title: 'SEO',
       type: 'seoModule',

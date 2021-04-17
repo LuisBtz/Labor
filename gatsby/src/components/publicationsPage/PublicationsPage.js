@@ -10,27 +10,35 @@ const PublicationsPage = () => {
 
   const dataPublication = useStaticQuery(graphql`
   query  {
-            allDatoCmsPublication(filter: {locale: {eq: "es"}}) {
-            edges {
-            node {
-                date
-                title
-                author
-                abstract
-                slug
-                coverThumbnailImage {
-                gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
-                }
+      allSanityPublications {
+        edges {
+          node {
+            date
+            title {
+              es
             }
+            author
+            abstract {
+              es
             }
+            slug {
+              current
+            }
+            thumbnailCover {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+            }
+          }
         }
+      }
     }
   `)
 
 
   return (
     <PublicationContainer>
-      {dataPublication.allDatoCmsPublication.edges.map(({ node }) => {
+      {dataPublication.allSanityPublications.edges.map(({ node }) => {
         return (
           <PostPublicationsPage data={node} key={node.id} />
         )

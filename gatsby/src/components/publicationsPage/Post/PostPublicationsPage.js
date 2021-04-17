@@ -7,12 +7,12 @@ import { Link } from 'gatsby';
 // markup
 const PostPublicationsPage = ({ data }) => {
 
-  const image = getImage(data.coverThumbnailImage);
+  const image = getImage(data.thumbnailCover.asset);
   const date = data.date;
-  const title = data.title;
+  const title = data.title.es;
   const author = data.author;
-  const abstract = data.abstract;
-  const slug = data.slug;
+  const abstract = data.abstract.es;
+  const slug = data.slug.current;
 
   return (
     <PostExpositionWrapper

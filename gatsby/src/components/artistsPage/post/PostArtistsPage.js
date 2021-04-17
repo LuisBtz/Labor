@@ -7,9 +7,9 @@ import { Link } from 'gatsby';
 // markup
 const PostArtistsPage = ({ data }) => {
 
-  const image = getImage(data.thumbnailImage);
+  const image = getImage(data.thumbnail.asset);
   const name = data.name;
-  const slug = data.slug;
+  const slug = data.slug.current;
 
   return (
     <PostArtistsWrapper>

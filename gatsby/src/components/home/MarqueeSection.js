@@ -7,12 +7,12 @@ const MarqueeSection = ({ data }) => {
 
   return (
     <MarqueeContainer>
-      {data.datoCmsHome.marqueeLink ?
-        <a href={data.datoCmsHome.marqueeLink}>
-          <p>{data.datoCmsHome.marqueeText}</p>
+      {data.sanityHomePage.marquee.es.url ?
+        <a target='_blank' rel="noreferrer"  href={data.sanityHomePage.marquee.es.url}>
+          <p>{data.sanityHomePage.marquee.es.marqueeText}</p>
         </a>
         :
-        <p>{data.datoCmsHome.marqueeText}</p>}
+        <p>{data.sanityHomePage.marquee.es.marqueeText}</p>}
     </MarqueeContainer>
 
   )

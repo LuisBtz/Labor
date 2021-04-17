@@ -5,19 +5,19 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostExposition = ({ title, author, coverThumbnailImage, date, metaInfo, slug }) => {
-  const image = getImage(coverThumbnailImage);
+const PostExposition = ({ title, author, slug, date, metaData, thumbnailCover }) => {
+  const image = getImage(thumbnailCover.asset);
 
   return (
     <PostExpositionWrapper
-      to={`/expositions/${slug}`}
+      to={`/expositions/${slug.current}`}
     >
       <GatsbyImage
         image={image}
       />
       <Text>
-        <p className="detail regular">{metaInfo} - {date}</p>
-        <h2 className="black">{title}</h2>
+        <p className="detail regular">{metaData.es} - {date}</p>
+        <h2 className="black">{title.es}</h2>
         <p className="medium caps"><span className="arrow">↑</span> {author}</p>
       </Text>
     </PostExpositionWrapper>

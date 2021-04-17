@@ -7,8 +7,8 @@ import { Link } from 'gatsby';
 // markup
 const PostPodcastsPage = ( {data } ) => {
 
-  const image = getImage(data.coverThumbnailImage);
-  const slug = data.slug;
+  const image = getImage(data.thumbnailCover.asset);
+  const slug = data.slug.current;
 
     return (
       <PostPodcastsWrapper>

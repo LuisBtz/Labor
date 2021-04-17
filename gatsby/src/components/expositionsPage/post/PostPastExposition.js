@@ -7,12 +7,12 @@ import { Link } from 'gatsby';
 // markup
 const PostPastExposition = ({ data }) => {
 
-  const image = getImage(data.coverThumbnailImage);
+  const image = getImage(data.thumbnailCover.asset);
   const date = data.date;
-  const title = data.title;
+  const title = data.title.es;
   const author = data.author;
-  const pastCurrentOrFuture = data.pastCurrentOrFuture;
-  const slug = data.slug;
+  const pastCurrentOrFuture = data.current;
+  const slug = data.slug.current;
 
   return (
     <PostExpositionWrapper

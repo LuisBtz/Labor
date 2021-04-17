@@ -7,14 +7,11 @@ import { Link } from 'gatsby';
 // markup
 const FullImage = ({ data }) => {
 
-
-
-
-  const getDataImage = getImage(data.datoCmsHome.homeHeroPost.coverThumbnailImage);
-  const title = data.datoCmsHome.homeHeroPost.title;
-  const author = data.datoCmsHome.homeHeroPost.author;
-  const date = data.datoCmsHome.homeHeroPost.date;
-  const slug = data.datoCmsHome.homeHeroPost.slug;
+  const getDataImage = getImage(data.sanityHomePage.exhibitionsHF.thumbnailCover.asset);
+  const title = data.sanityHomePage.exhibitionsHF.title.es;
+  const author = data.sanityHomePage.exhibitionsHF.author;
+  const date = data.sanityHomePage.exhibitionsHF.date;
+  const slug = data.sanityHomePage.exhibitionsHF.slug.current;
 
   return (
     <FullImageContainer

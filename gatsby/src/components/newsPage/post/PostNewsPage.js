@@ -7,10 +7,10 @@ import { Link } from 'gatsby';
 // markup
 const PostNewsPage = ({ data }) => {
 
-  const image = getImage(data.coverThumbnailImage);
-  const date = data.meta.createdAt;
-  const title = data.articleHeadline;
-  const slug = data.slug;
+  const image = getImage(data.thumbnailCover.asset);
+  const date = data._createdAt;
+  const title = data.title.es;
+  const slug = data.slug.current;
 
   return (
     <PostNewsWrapper

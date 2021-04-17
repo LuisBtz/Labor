@@ -10,25 +10,29 @@ const ArtistsPage = () => {
 
   const dataArtists = useStaticQuery(graphql`
     query  {
-        allDatoCmsArtist(filter: {locale: {eq: "es"}}) {
-            edges {
-                node {
-                    name
-                    id
-                    slug
-                    thumbnailImage {
-                    gatsbyImageData(layout: FULL_WIDTH, width: 500, forceBlurhash: true)
-                    }
-                }
+      allSanityArtists {
+        edges {
+          node {
+            name
+            id
+            slug {
+              current
             }
+            thumbnail {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+            }
+          }
         }
+      }
     }
 `)
 
 
   return (
     <ArtistsContainer>
-      {dataArtists.allDatoCmsArtist.edges.map(({ node }) => {
+      {dataArtists.allSanityArtists.edges.map(({ node }) => {
         return (
           <PostArtistsPage data={node} key={node.id} />
         )

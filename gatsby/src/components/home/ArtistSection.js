@@ -10,9 +10,9 @@ const ArtistSection = ({ data }) => {
 
   return (
     <ArtsitContainer>
-      {data.datoCmsHome.artistHighlights.map(({ name, slug, metaInfo, id, from, abstract, thumbnailImage }) => {
+      {data.sanityHomePage.artistsHighlights.map(({ name, slug, metaData, id, from, abstract, thumbnail }) => {
         return (
-          <PostArtist name={name} thumbnailImage={thumbnailImage} slug={slug} from={from} metaInfo={metaInfo} key={id} abstract={abstract} />
+          <PostArtist name={name} thumbnail={thumbnail} slug={slug} from={from} metaData={metaData} key={id} abstract={abstract} />
         )
       })}
     </ArtsitContainer>

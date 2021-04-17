@@ -5,21 +5,21 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostArtist = ({ name, slug, metaInfo, from, abstract, thumbnailImage }) => {
-  const image = getImage(thumbnailImage);
+const PostArtist = ({ name, slug, metaData, from, abstract, thumbnail }) => {
+  const image = getImage(thumbnail.asset);
 
   return (
     <PostArtistWrapper
-      to={`/artists/${slug}`}
+      to={`/artists/${slug.current}`}
     >
       <GatsbyImage
         image={image}
       />
       <Text>
-        <p className="detail">{metaInfo}</p>
+        <p className="detail">{metaData.es}</p>
         <h3>{name}</h3>
-        <p>{from}</p>
-        <Abstract>{abstract}</Abstract>
+        <p>{from.es}</p>
+        <Abstract>{abstract.es}</Abstract>
       </Text>
     </PostArtistWrapper>
 

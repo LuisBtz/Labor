@@ -11,22 +11,22 @@ const Footer = () => {
 
   const data = useStaticQuery(graphql`
         query  {
-                datoCmsSetting {
-                    address
-                    mail
-                    tel
-                    socialMedia {
-                        socialMediaPlatform
-                        socialMediaLink
-                        id
-                    }
+          sanityMetadata {
+            address
+            mail
+            tel
+            socialMedia {
+              _key
+              platform
+              socialMediaLink
             }
+          }
         }
         `)
 
-  const adress = data.datoCmsSetting.address;
-  const tel = data.datoCmsSetting.tel;
-  const mail = data.datoCmsSetting.mail;
+  const adress = data.sanityMetadata.address;
+  const tel = data.sanityMetadata.tel;
+  const mail = data.sanityMetadata.mail;
 
   return (
     <FooterWrapper>
@@ -34,9 +34,9 @@ const Footer = () => {
         <p>{adress}</p>
       </Adress>
       <Social>
-        {data.datoCmsSetting.socialMedia.map(({ socialMediaPlatform, socialMediaLink, id }) => {
+        {data.sanityMetadata.socialMedia.map(({ platform, socialMediaLink, _key }) => {
           return (
-            <li><a key={id} href={socialMediaLink}>{socialMediaPlatform}</a></li>
+            <li><a key={_key} href={socialMediaLink}>{platform}</a></li>
           )
         })}
       </Social>

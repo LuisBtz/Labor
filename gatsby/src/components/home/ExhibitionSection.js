@@ -10,9 +10,9 @@ const ExhibitionSection = ({ data }) => {
 
   return (
     <ExhibitionContainer>
-      {data.datoCmsHome.exhibitionsHighlights.map(({ title, author, coverThumbnailImage, date, metaInfo, slug, id }) => {
+      {data.sanityHomePage.exhibitionsHighlights.map(({ title, author, slug, date, metaData, thumbnailCover, id }) => {
         return (
-          <PostExposition title={title} author={author} coverThumbnailImage={coverThumbnailImage} slug={slug} date={date} metaInfo={metaInfo} key={id} />
+          <PostExposition title={title} author={author} thumbnailCover={thumbnailCover} slug={slug} date={date} metaData={metaData} key={id} />
         )
       })}
     </ExhibitionContainer>

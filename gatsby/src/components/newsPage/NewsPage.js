@@ -10,27 +10,32 @@ const NewsPage = ( ) => {
 
   const dataNews = useStaticQuery(graphql`
     query  {
-        allDatoCmsNews(filter: {locale: {eq: "es"}}) {
-            edges {
-                node {
-                    coverThumbnailImage {
-                        gatsbyImageData(layout: FULL_WIDTH, width: 1200, forceBlurhash: true)
-                    }
-                    articleHeadline
-                    slug
-                    meta {
-                        createdAt(formatString: "DD/MM/YYYY")
-                    }
-                }
+      allSanityNews {
+        edges {
+          node {
+            _createdAt(formatString: "DD/MM/YYYY")
+            id
+            slug {
+              current
             }
+            thumbnailCover {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+            }
+            title {
+              es
+            }
+          }
         }
+      }
     }
 `)
 
 
     return (
       <NewsContainer>
-          {dataNews.allDatoCmsNews.edges.map(({ node }) => {
+          {dataNews.allSanityNews.edges.map(({ node }) => {
             return (
                 <PostNewsPage data={node} key={node.id} />
             )
