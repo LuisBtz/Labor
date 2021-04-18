@@ -11,7 +11,6 @@ const Header = () => {
   // var pgs = document.querySelector('ul.pages');
 
   // btn.addEventListener('click', () => {
-  //   alert('lksjdf');
   //   pgs.classList.toggle('show');
   // });
 
@@ -90,12 +89,16 @@ const NavStyle = styled.nav`
 
         transform: translateX(-50%);
         transition: all .75s ease-in-out;
+
+        @media screen and (max-width: 768px) {
+          width: 90vw;s
+        }
       }
 
       @media screen and (max-width: 768px) {
         img {
           filter: invert(1);
-          }
+        }
       }
   }
   a.logo #img.shrink {
@@ -154,6 +157,7 @@ const NavStyle = styled.nav`
     }
 
     ul.pages.show {
+      z-index: 1010;
       display: block;
       position: fixed;
       background: white;
@@ -161,7 +165,7 @@ const NavStyle = styled.nav`
       padding: 1rem;
       width: 100%;
       top: 3.5rem;
-      border-top: solid 1px black;
+      border-top: solid 1px #f2f2f2;
 
         li {
           padding: .5rem 0;
