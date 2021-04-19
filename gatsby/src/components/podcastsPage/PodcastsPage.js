@@ -53,6 +53,7 @@ const PodcastsContainer = styled.section`
 
     @media screen and (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      padding-top: 56px;
     }
   `
 

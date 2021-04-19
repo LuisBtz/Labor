@@ -32,6 +32,10 @@ const PostNewsWrapper = styled(Link)`
       width: 33.3333vw;
 
       /* Mobile */
+      @media screen and (max-width: 1024px) {
+        width: 50vw;
+      }
+
       @media screen and (max-width: 768px) {
         min-width: 100vw;
         padding-right: 0;
@@ -42,7 +46,7 @@ const PostNewsWrapper = styled(Link)`
 
 const Text = styled.div`
   box-sizing: border-box;
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 5rem;
   padding: .5rem 1rem;
 

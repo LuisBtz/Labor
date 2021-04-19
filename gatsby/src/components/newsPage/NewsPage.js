@@ -5,7 +5,7 @@ import PostNewsPage from './post/PostNewsPage';
 
 
 // markup
-const NewsPage = ( ) => {
+const NewsPage = () => {
 
 
   const dataNews = useStaticQuery(graphql`
@@ -33,23 +33,26 @@ const NewsPage = ( ) => {
 `)
 
 
-    return (
-      <NewsContainer>
-          {dataNews.allSanityNews.edges.map(({ node }) => {
-            return (
-                <PostNewsPage data={node} key={node.id} />
-            )
-          })}
-      </NewsContainer>
-      
-    )
-  }
+  return (
+    <NewsContainer>
+      {dataNews.allSanityNews.edges.map(({ node }) => {
+        return (
+          <PostNewsPage data={node} key={node.id} />
+        )
+      })}
+    </NewsContainer>
 
-  const NewsContainer = styled.section`
+  )
+}
+
+const NewsContainer = styled.section`
         padding-top: 90px;
         background: var(--white);
         display: flex;
         width: 100%;
+        flex-wrap: wrap;
+
+
         /* Mobile */
         @media screen and (max-width: 768px) {
           flex-direction: column;
@@ -60,4 +63,4 @@ const NewsPage = ( ) => {
 
 
 
-  export default NewsPage
+export default NewsPage

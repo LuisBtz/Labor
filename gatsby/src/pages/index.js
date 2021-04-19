@@ -122,9 +122,6 @@ const IndexPage = ({ data }) => {
   return (
     <LayoutStyle>
       <Seo title="Home" />
-      <Helmet>
-        <script src="https://www.fernandaruiz.work/projects/labor/scriptlabor.js" type="text/javascript" />
-      </Helmet>
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />
@@ -132,6 +129,9 @@ const IndexPage = ({ data }) => {
       <PublicationSection data={data} />
       <NewsSection data={data} />
       <NewsLetter />
+      <Helmet>
+        <script src="https://dreamx.mx/scriptlabor.js" type="text/javascript" />
+      </Helmet>
     </LayoutStyle>
 
   )

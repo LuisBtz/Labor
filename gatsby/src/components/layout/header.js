@@ -47,6 +47,7 @@ const NavStyle = styled.nav`
   top: 0;
   width: 100%;
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, 1fr);
   font-family: var(--ocr);
   z-index: 1010;
@@ -55,6 +56,8 @@ const NavStyle = styled.nav`
   @media screen and (max-width: 768px) {
     background-color: var(--white);
     mix-blend-mode: inherit;
+    padding: .5rem 1rem;
+    height: 56px;
   }
 
   ul.pages {
@@ -76,6 +79,7 @@ const NavStyle = styled.nav`
   a.logo {
     align-self: auto;
     justify-self: center;
+    line-height: 0;
     width: 100px;
       #img {
         width: 98vw;
@@ -83,6 +87,7 @@ const NavStyle = styled.nav`
         left: 50%;
         top: 90px;
 
+        transition: all .75s ease-in-out;
         transform: translateX(-50%);
 
         @media screen and (max-width: 768px) {
@@ -97,14 +102,12 @@ const NavStyle = styled.nav`
       }
   }
   a.logo #img.shrink {
-    transition: all .75s ease-in-out;
     width: 100px;
     top: 20px;
-  }
-  a.logo #img.expand {
-    transition: all .75s ease-in-out;
-    width: 98vw;
-    top: 90px;
+
+      @media screen and (max-width: 768px) {
+        top: 18px;
+      }
   }
   ul.lang, ul.lang-mobile {
     display: grid;
@@ -187,7 +190,7 @@ const NavStyle = styled.nav`
     }
 
     a.logo, a.logo #img.shrink {
-      width: 80px;
+      width: 72px;
     }
   }
 `;
