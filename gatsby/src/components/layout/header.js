@@ -1,22 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { Helmet } from "react-helmet";
 import logo from '../../assets/images/logo-labor.svg'
 
 
 // markup
 const Header = () => {
 
-  // var btn = document.getElementById('mobile-button');
-  // var pgs = document.querySelector('ul.pages');
-
-  // btn.addEventListener('click', () => {
-  //   pgs.classList.toggle('show');
-  // });
-
-
   return (
     <NavStyle>
+      <Helmet>
+        <script src="https://www.fernandaruiz.work/projects/labor/navigation.js" type="text/javascript" />
+      </Helmet>
       <button id="mobile-button">
         Menu
       </button>
@@ -29,7 +25,7 @@ const Header = () => {
         <li><Link to='/contact' >contacto</Link></li>
       </ul>
       <Link to='/' className="logo">
-        <img src={logo} alt="labor" id="img" />
+        <img src={logo} alt="labor" />
       </Link>
       <ul className="lang">
         <li><Link>Español</Link></li>
@@ -104,6 +100,11 @@ const NavStyle = styled.nav`
     transition: all .75s ease-in-out;
     width: 100px;
     top: 20px;
+  }
+  a.logo #img.expand {
+    transition: all .75s ease-in-out;
+    width: 98vw;
+    top: 90px;
   }
   ul.lang, ul.lang-mobile {
     display: grid;
