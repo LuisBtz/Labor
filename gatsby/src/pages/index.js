@@ -123,7 +123,7 @@ const IndexPage = ({ data }) => {
     <LayoutStyle>
       <Seo title="Home" />
       <Helmet>
-        <script src="https://www.fernandaruiz.work/projects/labor/scriptlabor.js" type="text/javascript" />
+        <script src="https://www.dreamx.mx/scriptlabor.js" type="text/javascript" />
       </Helmet>
       <FullImage data={data} />
       <ExhibitionSection data={data} />
