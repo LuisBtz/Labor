@@ -29,7 +29,7 @@ const Header = () => {
         <li><Link to='/contact' >contacto</Link></li>
       </ul>
       <Link to='/' className="logo">
-        <img src={logo} alt="labor" />
+        <img src={logo} alt="labor" id="img" />
       </Link>
       <ul className="lang">
         <li><Link>Español</Link></li>
