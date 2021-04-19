@@ -43,8 +43,18 @@ export default {
     },
     {
       name: 'editorialModule',
-      title: 'Bio',
+      title: 'Editorial Modules',
       type: 'editorialModule',
+    },
+    {
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date'
+    },
+    {
+      name: 'endDate',
+      title: 'End Date',
+      type: 'date'
     },
     {
       title: 'Past, Current or Future',

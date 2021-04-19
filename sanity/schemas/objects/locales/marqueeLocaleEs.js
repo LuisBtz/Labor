@@ -17,5 +17,10 @@ export default {
                 scheme: ['http', 'https'],
               }),
           },
+          {
+            name: 'newTab',
+            title: 'Open in new tab',
+            type: 'boolean'
+          }
         ]
       }

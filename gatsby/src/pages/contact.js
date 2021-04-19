@@ -39,7 +39,7 @@ const Contact = () => {
           return (
             <div key={_key}>
               <p className="caps">{position.es}</p>
-              <h5>{name.es}</h5>
+              <h5>{name}</h5>
               <a href={'mailto:' + email}>{email}</a>
             </div>
           )

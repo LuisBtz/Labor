@@ -45,7 +45,7 @@ export default {
     },
     {
       name: 'editorialModule',
-      title: 'Bio',
+      title: 'Editorial Modules',
       type: 'editorialModule',
     },
     {

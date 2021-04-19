@@ -1,7 +1,7 @@
 export default {
   //
   name: 'metadata',
-  title: 'Metadata',
+  title: 'General Settings',
   type: 'document',
   icon: () => `⚙️`,
   fields: [

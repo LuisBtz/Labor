@@ -36,7 +36,7 @@ const Footer = () => {
       <Social>
         {data.sanityMetadata.socialMedia.map(({ platform, socialMediaLink, _key }) => {
           return (
-            <li><a key={_key} href={socialMediaLink}>{platform}</a></li>
+            <li><a target='_blank' rel="noreferrer" key={_key} href={socialMediaLink}>{platform}</a></li>
           )
         })}
       </Social>

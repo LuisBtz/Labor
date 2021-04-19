@@ -116,11 +116,6 @@ export default {
       ],
     },
     {
-      name: 'editorialModule',
-      title: 'Editorial Module',
-      type: 'editorialModule',
-    },
-    {
       name: 'seo',
       title: 'SEO',
       type: 'seoModule',
