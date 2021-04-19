@@ -88,7 +88,10 @@ const NavStyle = styled.nav`
         top: 90px;
 
         transform: translateX(-50%);
-        transition: all .75s ease-in-out;
+
+          .trans {
+            transition: all .75s ease-in-out;
+          }
 
         @media screen and (max-width: 768px) {
           width: 90vw;s
