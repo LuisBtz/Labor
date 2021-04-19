@@ -123,7 +123,7 @@ const IndexPage = ({ data }) => {
     <LayoutStyle>
       <Seo title="Home" />
       <Helmet>
-        <script src="https://dreamx.mx/scriptlabor.js" type="text/javascript" />
+        <script src="https://www.fernandaruiz.work/projects/labor/scriptlabor.js" type="text/javascript" />
       </Helmet>
       <FullImage data={data} />
       <ExhibitionSection data={data} />
@@ -138,21 +138,6 @@ const IndexPage = ({ data }) => {
 }
 
 const LayoutStyle = styled(Layout)`
-  main {
-    padding-top: 35vw !important;
-  }
-
-  @media screen and (max-width: 1200px) {
-    main {
-    padding-top: 38vw !important;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    main {
-      padding-top: 47vw !important;
-    }
-  }
 `
 
 export default IndexPage

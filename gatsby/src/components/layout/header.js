@@ -1,23 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { Helmet } from "react-helmet";
 import logo from '../../assets/images/logo-labor.svg'
 
 
 // markup
 const Header = () => {
 
-  // var btn = document.getElementById('mobile-button');
-  // var pgs = document.querySelector('ul.pages');
-
-  // btn.addEventListener('click', () => {
-  //   alert('lksjdf');
-  //   pgs.classList.toggle('show');
-  // });
-
-
   return (
     <NavStyle>
+      <Helmet>
+        <script src="https://www.fernandaruiz.work/projects/labor/navigation.js" type="text/javascript" />
+      </Helmet>
       <button id="mobile-button">
         Menu
       </button>
@@ -89,18 +84,27 @@ const NavStyle = styled.nav`
         top: 90px;
 
         transform: translateX(-50%);
-        transition: all .75s ease-in-out;
+
+        @media screen and (max-width: 768px) {
+          width: 90vw;
+        }
       }
 
       @media screen and (max-width: 768px) {
         img {
           filter: invert(1);
-          }
+        }
       }
   }
   a.logo #img.shrink {
+    transition: all .75s ease-in-out;
     width: 100px;
     top: 20px;
+  }
+  a.logo #img.expand {
+    transition: all .75s ease-in-out;
+    width: 98vw;
+    top: 90px;
   }
   ul.lang, ul.lang-mobile {
     display: grid;
@@ -154,6 +158,7 @@ const NavStyle = styled.nav`
     }
 
     ul.pages.show {
+      z-index: 1010;
       display: block;
       position: fixed;
       background: white;
@@ -161,7 +166,7 @@ const NavStyle = styled.nav`
       padding: 1rem;
       width: 100%;
       top: 3.5rem;
-      border-top: solid 1px black;
+      border-top: solid 1px #f2f2f2;
 
         li {
           padding: .5rem 0;

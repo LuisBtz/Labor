@@ -47,8 +47,8 @@ const Contact = () => {
       </Team>
       <HorarioMap>
         <div className='horario'>
-          <BlockContent 
-            blocks={data.sanityContact._rawHorario} 
+          <BlockContent
+            blocks={data.sanityContact._rawHorario}
           />
         </div>
 

@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --black: #000000;
       --white: #FFFFFF;
+      overflow-wrap: break-word;
 
       --jumbo-xl: 86.29px;
       --jumbo: 4.768rem;
