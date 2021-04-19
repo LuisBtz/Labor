@@ -88,10 +88,7 @@ const NavStyle = styled.nav`
         top: 90px;
 
         transform: translateX(-50%);
-
-          .trans {
-            transition: all .75s ease-in-out;
-          }
+        
 
         @media screen and (max-width: 768px) {
           width: 90vw;s
@@ -105,6 +102,7 @@ const NavStyle = styled.nav`
       }
   }
   a.logo #img.shrink {
+    transition: all .75s ease-in-out;
     width: 100px;
     top: 20px;
   }
