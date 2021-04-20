@@ -28,13 +28,13 @@ const Header = () => {
         <img src={logo} alt="labor" />
       </Link>
       <ul className="lang">
-        <li><Link>Español</Link></li>
-        <li><Link>English</Link></li>
+        <li><a href='/'>Español</a></li>
+        <li><a href='/'>English</a></li>
       </ul>
       <ul className="lang-mobile">
-        <li><Link>En</Link></li>
+        <li><a href='/'>En</a></li>
         <li>/</li>
-        <li><Link>Es</Link></li>
+        <li><a href='/'>Es</a></li>
       </ul>
     </NavStyle>
   )

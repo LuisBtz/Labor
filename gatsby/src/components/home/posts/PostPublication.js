@@ -14,6 +14,7 @@ const PostPublication = ({ title, date, abstract, author, slug, thumbnailCover  
     >
       <ImageStyle
         image={image}
+        alt={title}
       />
       <Text>
         <p className='detail'>{date}</p>

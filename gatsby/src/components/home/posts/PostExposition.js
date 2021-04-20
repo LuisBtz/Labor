@@ -14,6 +14,7 @@ const PostExposition = ({ title, author, slug, date, metaData, thumbnailCover })
     >
       <GatsbyImage
         image={image}
+        alt={title}
       />
       <Text>
         <p className="detail regular">{metaData.es} - {date}</p>

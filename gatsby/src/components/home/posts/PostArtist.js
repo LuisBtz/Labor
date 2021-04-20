@@ -14,6 +14,7 @@ const PostArtist = ({ name, slug, metaData, from, abstract, thumbnail }) => {
     >
       <GatsbyImage
         image={image}
+        alt={name}
       />
       <Text>
         <p className="detail">{metaData.es}</p>

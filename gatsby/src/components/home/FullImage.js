@@ -19,6 +19,7 @@ const FullImage = ({ data }) => {
     >
       <GatsbyImage
         image={getDataImage}
+        alt={author}
       />
       <Text>
         <h1>{title}</h1>
