@@ -1,12 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import {
-    Magnifier,
     GlassMagnifier,
-    SideBySideMagnifier,
-    PictureInPictureMagnifier,
-    MOUSE_ACTIVATION,
-    TOUCH_ACTIVATION
   } from "react-image-magnifiers";
 
 const ZoomModule = () => {

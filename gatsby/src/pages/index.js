@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
 // import { Helmet } from "react-helmet"
 import { StaticImage } from "gatsby-plugin-image"
-// import logo from '../assets/images/Logo-Black.svg'
+import logo from '../assets/images/Logo-Black.svg'
 
 import FullImage from '../components/home/FullImage'
 import ExhibitionSection from '../components/home/ExhibitionSection'
@@ -124,7 +124,7 @@ const IndexPage = ({ data }) => {
   return (
     <LayoutStyle>
       <Seo title="Home" />
-      {/* <img src={logo} alt="" className="logoHome" /> */}
+      <LogoImage src={logo} alt="" className="logoHome" />
       <StaticImage src='../assets/images/Logo-Black.svg' alt="Labor-Logo" layout="fullWidth" className="logoHome" />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
@@ -138,9 +138,11 @@ const IndexPage = ({ data }) => {
 }
 
 const LayoutStyle = styled(Layout)`
-  img.logoHome {
-    padding: 6rem .5rem 2.5rem .5rem;
-  }
+`
+
+const LogoImage = styled.img`
+padding: 6rem .5rem 2.5rem .5rem;
+background-color: pink;
 `
 
 export default IndexPage
