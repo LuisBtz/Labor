@@ -20,9 +20,9 @@ const Header = () => {
         <li><Link to='/artists' >Artistas</Link></li>
         <li><Link to='/expositions' >Exposiciones</Link></li>
         <li><Link to='/publications' >Publicaciones</Link></li>
-        <li><Link to='/podcasts' >podcast</Link></li>
-        <li><Link to='/news' >noticias</Link></li>
-        <li><Link to='/contact' >contacto</Link></li>
+        <li><Link to='/podcasts' >Perfume</Link></li>
+        <li><Link to='/news' >Noticias</Link></li>
+        <li><Link to='/contact' >Contacto</Link></li>
       </ul>
       <Link to='/' className="logo">
         <img src={logo} alt="labor" />
