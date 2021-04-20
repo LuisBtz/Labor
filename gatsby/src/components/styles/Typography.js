@@ -93,7 +93,7 @@ export const Typography = createGlobalStyle`
     --regular: 'NT Bau Mono Regular', monospace;
     --medium: 'NT Bau Mono Medium', monospace;
     --bold: 'NT Bau Mono Bold', monospace;
-    --black: 'NT Bau Mono Black', monospace;
+    --xl-black: 'NT Bau Mono Black', monospace;
     --ocr: 'OCR A', monospace;
 }
 
@@ -103,7 +103,7 @@ a {
 
 h1 {
     font-size: var(--jumbo);
-    font-family: var(--black);
+    font-family: var(--xl-black);
 }
 
 h2 {
@@ -126,7 +126,7 @@ h6 {
     font-size: var(--headline-6);
 }
 
-p, a, li {
+p, a, li, .paragraph {
   font-size: var(--paragraph);
   line-height: 132%;
 }
@@ -140,9 +140,12 @@ p, a, li {
   letter-spacing: .8px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 100%;
+}
+
 h1, h2, h3, h4, h5, h6, p.detail, p.caps {
   text-transform: uppercase !important;
-  line-height: 100%;
   font-weight: normal;
 }
 

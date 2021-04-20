@@ -10,22 +10,22 @@ import TwoColumnsImageModule from './TwoColumnsImageModule';
 import VideoModule from './VideoModule';
 
 const Modules = () => {
-  
-    return (
-      <ModulesWrapper >
-            <FullImageModule />
-            <MainHeadlineModule />
-            <BodyTextModule />
-            <TwoColumnsImageModule/>
-            <QuoteModule />
-            <CarouselModule />
-            <VideoModule />
-            <ColophonModule />
-      </ModulesWrapper>
-  
-    )
-  }
+
+  return (
+    <ModulesWrapper >
+      <FullImageModule />
+      <MainHeadlineModule />
+      <BodyTextModule />
+      <TwoColumnsImageModule />
+      <QuoteModule />
+      <CarouselModule />
+      <VideoModule />
+      <ColophonModule />
+    </ModulesWrapper>
+
+  )
+}
 
 const ModulesWrapper = styled.div``
 
-  export default Modules
+export default Modules
