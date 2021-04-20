@@ -10,9 +10,10 @@ import TwoColumnsImageModule from './TwoColumnsImageModule';
 import VideoModule from './VideoModule';
 import ZoomModule from './ZoomModule';
 
-const Modules = ( {editorialModule} ) => {
+const Modules = ({editorialModules}) => {
 
-  console.log(editorialModule)
+  console.log(editorialModules)
+
   return (
     <ModulesWrapper >
       <FullImageModule />
