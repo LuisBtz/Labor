@@ -47,6 +47,7 @@ import relatedExhibitions from './objects/editorialModules/relatedExhibitions'
 import video from './objects/editorialModules/video'
 import colophon from './objects/editorialModules/colophon'
 import newsArticleHeader from './objects/editorialModules/newsArticleHeader'
+import zoom from './objects/editorialModules/zoom'
 
 import metadata from './documents/settings/metadata'
 import editorialModule from './objects/editorialModules'
@@ -99,6 +100,7 @@ export default createSchema({
     metaLocale,
     fromLocale,
     abstractLocale,
+    zoom,
 
     fullImage,
     mainHeadline,
