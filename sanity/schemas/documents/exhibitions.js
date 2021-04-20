@@ -77,7 +77,7 @@ export default {
   preview: {
     select: {
       title: 'title.en',
-      subtitle: 'author',
+      subtitle: 'current',
       media: 'thumbnailCover'
     }
   }

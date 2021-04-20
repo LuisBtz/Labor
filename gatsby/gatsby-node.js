@@ -62,12 +62,50 @@ async function turnPublicationsIntoPages({graphql, actions}) {
     });
 }
 
+
+async function turnExhibitionsIntoPages({graphql, actions}) {
+
+
+    // 1. Get a template for this page
+    const exhibitionTemplate = path.resolve('./src/templates/Exhibition.js')
+    // 2. Query all artists
+    const {data} = await graphql(`
+        query {
+            exhibitions: allSanityExhibitions {
+                nodes {
+                  slug {
+                    current
+                  }
+                  title {
+                    es
+                  }
+                }
+              }
+            }
+    `);
+    // 3. Loop over each artist and create a page for each artist
+    data.exhibitions.nodes.forEach((exhibition) => {
+        actions.createPage({
+            // url forths new page
+            path: `/expositions/${exhibition.slug.current}`,
+            component: exhibitionTemplate,
+            context: {
+                language: 'es',
+                slug: exhibition.slug.current
+            }
+        })
+    });
+}
+
+
+
 exports.createPages = async (params) => {
 // Create Pages dynamically
     await Promise.all([
         // 1. Artists
         turnArtistsIntoPages(params),
         // 2. Expositions
+        turnExhibitionsIntoPages(params),
         // 3. News
         // 4. Podcasts
         // 5. Publications

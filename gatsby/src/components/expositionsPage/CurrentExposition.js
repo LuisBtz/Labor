@@ -6,6 +6,8 @@ import PostCurrentExposition from './post/PostCurrentExposition';
 
 // markup
 const CurrentExposition = () => {
+
+  
   const dataCurrent = useStaticQuery(graphql`
   query  {
       allSanityExhibitions(filter: {current: {eq: "current"}}) {
