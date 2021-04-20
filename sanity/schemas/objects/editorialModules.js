@@ -23,20 +23,14 @@ export default {
       type: 'carousel',
     },
 {
-      type: 'relatedNews',
-    },
-{
-      type: 'relatedExhibitions',
-    },
-{
       type: 'video',
     },
 {
       type: 'colophon',
     },
     {
-      type: 'newsArticleHeader',
-    },
+      type: 'zoom'
+    }
   ],
 }
 
