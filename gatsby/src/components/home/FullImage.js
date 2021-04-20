@@ -33,7 +33,7 @@ const FullImageContainer = styled(Link)`
     width: 100%;
     background: var(--white);
     display: block;
-    /* padding-top: 35vw;
+    padding-top: 35vw;
 
     @media screen and (max-width: 1230px) {
       padding-top: 38vw;
@@ -41,7 +41,7 @@ const FullImageContainer = styled(Link)`
 
     @media screen and (max-width: 768px) {
       padding-top: 50vw;
-    } */
+    }
   `
 
 const Text = styled.div`

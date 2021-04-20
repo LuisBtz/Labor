@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
 // import { Helmet } from "react-helmet"
-import { StaticImage } from "gatsby-plugin-image"
 import logo from '../assets/images/Logo-Black.svg'
 
 import FullImage from '../components/home/FullImage'
@@ -121,11 +120,22 @@ export const data = graphql`
 // markup
 const IndexPage = ({ data }) => {
 
+  document.addEventListener('scroll', function () {
+    if (window.pageYOffset > 0) {
+      document.querySelector('.logoHome').style = "width: 100px; top: 30px;";
+
+    } else {
+      document.querySelector('.logoHome').style = "width: 98vw; top: 6rem;";
+    }
+  });
+
   return (
     <LayoutStyle>
       <Seo title="Home" />
+      {/* <Helmet>
+        <script src="dreamx.mx/scriptlabor.js" type="text/javascript" />
+      </Helmet> */}
       <LogoImage src={logo} alt="" className="logoHome" />
-      <StaticImage src='../assets/images/Logo-Black.svg' alt="Labor-Logo" layout="fullWidth" className="logoHome" />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />
@@ -138,11 +148,19 @@ const IndexPage = ({ data }) => {
 }
 
 const LayoutStyle = styled(Layout)`
+  
 `
 
 const LogoImage = styled.img`
-padding: 6rem .5rem 2.5rem .5rem;
-background-color: pink;
+  /* padding: 6rem .5rem 2.5rem .5rem; */
+  position: fixed;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 98vw;
+
+  transition: all .75s ease-in-out;
 `
 
 export default IndexPage
