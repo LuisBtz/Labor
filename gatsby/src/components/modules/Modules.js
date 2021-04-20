@@ -8,6 +8,7 @@ import MainHeadlineModule from './MainHeadlineModule';
 import QuoteModule from './QuoteModule';
 import TwoColumnsImageModule from './TwoColumnsImageModule';
 import VideoModule from './VideoModule';
+import ZoomModule from './ZoomModule';
 
 const Modules = () => {
 
@@ -21,6 +22,7 @@ const Modules = () => {
       <CarouselModule />
       <VideoModule />
       <ColophonModule />
+      <ZoomModule />
     </ModulesWrapper>
 
   )
