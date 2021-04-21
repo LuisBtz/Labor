@@ -14,13 +14,13 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-styled-components`,
-        // {
-        //     resolve: `gatsby-source-filesystem`,
-        //     options: {
-        //       name: `images`,
-        //       path: path.join(__dirname, `src`, `assets`, `images`) ,
-        //     },
-        //   },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              name: `images`,
+              path: path.join(__dirname, `src`, `assets`, `images`) ,
+            },
+          },
         //   {
         //     resolve: "gatsby-plugin-mailchimp",
         //     options: {
@@ -63,6 +63,16 @@ module.exports = {
               dataset: `production`,
               token: process.env.SANITY_TOKEN,
               watchMode: true,
+            },
+          },
+          {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              name: `Labor`,
+              short_name: `Labor`,
+              start_url: `/`,
+              display: `standalone`,
+              icon: `src/assets/images/gatsby-icon.png`
             },
           },
     ],
