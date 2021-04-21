@@ -3,6 +3,8 @@ import React from 'react'
 import Layout from '../components/layout/layout'
 import Seo from '../components/layout/seo'
 import styled from 'styled-components'
+import BlockContent from '@sanity/block-content-to-react';
+
 
 
 // markup
@@ -11,7 +13,7 @@ export default function SinglePodcastPage( { data : { podcast } } ) {
 
     const title = podcast.title.es
     const headline = podcast.bodyText.es.headline
-    const paragraph = podcast.bodyText.es.paragraph
+    const paragraph = podcast.bodyText.es._rawParagraph
 
     return (
         <Layout>
@@ -25,7 +27,9 @@ export default function SinglePodcastPage( { data : { podcast } } ) {
 
             <BodyTextWrapper>
             <h5 className="bold">{headline}</h5>
-            <p>{paragraph}</p>
+            <BlockContent
+            blocks={paragraph}
+          />
             </BodyTextWrapper>
 
         </ContainerTitle>
@@ -78,8 +82,8 @@ export const query = graphql`
             episodePlayer
             bodyText {
                 es {
+                    _rawParagraph
                     headline
-                    paragraph
                 }
             }
         }

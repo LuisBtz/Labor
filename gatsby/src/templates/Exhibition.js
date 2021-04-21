@@ -60,8 +60,8 @@ export const query = graphql`
                 _key
                 _type
                 es {
+                _rawParagraph
                 headline
-                paragraph
                 }
             }
             ... on SanityCarousel {
