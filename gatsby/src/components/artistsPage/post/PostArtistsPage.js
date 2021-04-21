@@ -36,7 +36,7 @@ const PostArtistsWrapper = styled.section`
   }
 
   .gatsby-image-wrapper {
-    width: 3.75rem;
+    width: 5rem;
     margin-right: .5rem;
   }
 
@@ -54,11 +54,17 @@ const PostArtistsWrapper = styled.section`
     overflow-x: scroll;
     overflow-y: hidden;
     margin-right: 0;
+    display: flex;
 
 
     a {
       white-space: nowrap;
       margin-right: 2rem;
+    }
+
+    .gatsby-image-wrapper {
+      width: 3.75rem;
+      margin-right: .5rem;
     }
   }
 `

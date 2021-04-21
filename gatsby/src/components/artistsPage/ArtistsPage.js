@@ -43,18 +43,18 @@ const ArtistsPage = () => {
 }
 
 const ArtistsContainer = styled.section`
-        padding-top: 90px;
-        background: var(--white);
-        display: flex;
-        flex-wrap: wrap;
+  padding-top: 90px;
+  background: var(--white);
+  display: flex;
+  flex-wrap: wrap;
 
-        /* Mobile */
-        @media screen and (max-width: 768px) {
-          /* flex-direction: column; */
-          margin-bottom: 3rem;
-          padding-top: 65px;
-          /* overflow: hidden; */
-        }
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    /* flex-direction: column; */
+    margin-bottom: 3rem;
+    padding-top: 60px;
+    /* overflow: hidden; */
+  }
 
   `
 

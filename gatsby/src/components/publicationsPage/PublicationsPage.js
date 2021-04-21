@@ -58,6 +58,11 @@ const PublicationContainer = styled.section`
   overflow: scroll;
   margin-bottom: 5rem;
 
+  .gatsby-image-wrapper img {
+    height: inherit !important;
+    width: 100% !important;
+  }
+
 
   /* Mobile */
   @media screen and (max-width: 768px) {
