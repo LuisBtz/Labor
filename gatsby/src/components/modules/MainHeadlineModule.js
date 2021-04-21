@@ -21,9 +21,17 @@ const MainHeadlineModule = ({data}) => {
 
         
         
+        {data.buttons && 
+          (data.buttons.es.dossier ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.dossier}>Dossier</a></li> : '')
+        }
+
+
+        {data.buttons && 
+          (data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>Resume</a></li> : '')
+        }
+
+      
         
-        {data.buttons.es.dossier ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.dossier}>Dossier</a></li> : ''}
-        {data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>Resume</a></li> : ''}
         
 
 
