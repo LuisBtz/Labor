@@ -5,11 +5,6 @@ import BlockContent from '@sanity/block-content-to-react';
 
 const BodyTextModule = ( { data } ) => {
 
-  const serializer = {
-    types: {
-    }
-  };
-
   return (
     <BodyTextWrapper>
       <h5 className="bold">
@@ -20,14 +15,9 @@ const BodyTextModule = ( { data } ) => {
 
       </h5>
       <p>
-      {data.es && data.es._rawParagraph && 
-          (data.es._rawParagraph ? 
             <BlockContent
-            serializers={serializer}
             blocks={data.es._rawParagraph}
         />
-         : '')
-        }
       </p>
     </BodyTextWrapper>
   );
