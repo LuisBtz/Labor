@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 import logo from '../../assets/images/logo-labor.svg'
 
 
 // markup
 const Header = () => {
 
+  const [nav, showNav] = useState(false);
+
+
   return (
     <NavStyle>
-      <Helmet>
+      {/* <Helmet>
         <script src="https://www.fernandaruiz.work/projects/labor/navigation.js" type="text/javascript" />
-      </Helmet>
-      <button id="mobile-button">
+      </Helmet> */}
+      <button id="mobile-button" onClick={() => showNav(!nav)} >
         Menu
       </button>
-      <ul className="pages">
+      <ul className="pages" nav={nav}>
         <li><Link to='/artists' >Artistas</Link></li>
         <li><Link to='/expositions' >Exposiciones</Link></li>
         <li><Link to='/publications' >Publicaciones</Link></li>
@@ -24,6 +27,16 @@ const Header = () => {
         <li><Link to='/news' >Noticias</Link></li>
         <li><Link to='/contact' >Contacto</Link></li>
       </ul>
+      { 
+        nav && ( <ul className="pagesResp" nav={nav}>
+        <li><Link to='/artists' >Artistas</Link></li>
+        <li><Link to='/expositions' >Exposiciones</Link></li>
+        <li><Link to='/publications' >Publicaciones</Link></li>
+        <li><Link to='/podcasts' >Perfume</Link></li>
+        <li><Link to='/news' >Noticias</Link></li>
+        <li><Link to='/contact' >Contacto</Link></li>
+      </ul> ) 
+      }
       <Link to='/' className="logo">
         <img src={logo} alt="labor" />
       </Link>
@@ -153,14 +166,11 @@ const NavStyle = styled.nav`
       align-self: center;
     }
 
-    ul.pages, ul.lang {
+    ul.pages {
       display: none;
-        a {
-          color: var(--black);
-        }
     }
 
-    ul.pages.show {
+    ul.pagesResp {
       z-index: 1010;
       display: block;
       position: fixed;
@@ -174,7 +184,34 @@ const NavStyle = styled.nav`
         li {
           padding: .5rem 0;
         }
+
+        a {
+          color: var(--black);
+        }
     }
+
+    ul.lang {
+      display: none;
+      a {
+          color: var(--black);
+        }
+    }
+
+    /* ul.pages.show {
+      z-index: 1010;
+      display: block;
+      position: fixed;
+      background: white;
+      left: 0;
+      padding: 1rem;
+      width: 100%;
+      top: 3.5rem;
+      border-top: solid 1px #f2f2f2;
+
+        li {
+          padding: .5rem 0;
+        }
+    } */
 
     ul.lang-mobile {
       display: flex;

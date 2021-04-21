@@ -27,7 +27,9 @@ export default function SingleArtistPage({data : {artist}}) {
     )
 }
 
-const Hero = styled.div``
+const Hero = styled.div`
+display: block;
+`
 
 
 export const query = graphql`

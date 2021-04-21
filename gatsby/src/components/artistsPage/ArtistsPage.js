@@ -10,7 +10,7 @@ const ArtistsPage = () => {
 
   const dataArtists = useStaticQuery(graphql`
     query  {
-      allSanityArtists {
+      allSanityArtists(sort: {fields: name, order: ASC}) {
         edges {
           node {
             name
