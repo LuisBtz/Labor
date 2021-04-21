@@ -8,7 +8,8 @@ import { Link } from 'gatsby';
 const PostCurrentExposition = ({ data }) => {
 
   const image = getImage(data.thumbnailCover.asset);
-  const date = data.date;
+  const dateStart = data.startDate;
+  const dateEnd = data.endDate;
   const title = data.title.es;
   const author = data.author;
   const pastCurrentOrFuture = data.current;
@@ -22,7 +23,7 @@ const PostCurrentExposition = ({ data }) => {
         image={image}
       />
       <Text>
-        <Date className="caps">{date} - {pastCurrentOrFuture}</Date>
+        <Date className="caps">{dateStart} - {dateEnd} - {pastCurrentOrFuture}</Date>
         <h2>{title}</h2>
         <Author className="medium caps"><span className="arrow">↑</span> {author}</Author>
       </Text>

@@ -8,13 +8,13 @@ import { Link } from 'gatsby';
 const PostNewsPage = ({ data }) => {
 
   const image = getImage(data.thumbnailCover.asset);
-  const date = data._createdAt;
+  const date = data.dateField;
   const title = data.title.es;
   const slug = data.slug.current;
 
   return (
     <PostNewsWrapper
-      to={`/publications/${slug}`}
+      to={`/news/${slug}`}
     >
       <GatsbyImage
         image={image}

@@ -17,7 +17,8 @@ const PastExposition = () => {
               es
             }
             current
-            date
+            startDate(formatString: "MMM DD YYYY")
+            endDate(formatString: "MMM DD YYYY")
             author
             slug {
               current
