@@ -29,7 +29,7 @@ const Modules = ({ editorialModule }) => {
   editorialModule.forEach((edMod) => {
     modulesArr.forEach((mMod) => {
       if (edMod["_type"] === mMod.name) {
-        final_arr.push(mMod);
+        final_arr.push({ ...edMod, ...mMod });
       }
     });
   });
@@ -39,7 +39,7 @@ const Modules = ({ editorialModule }) => {
   return (
     <ModulesWrapper>
       {final_arr.map((Module, i) => (
-        <Module.comp key={i} />
+        <Module.comp key={i} data={{ ...Module }} />
       ))}
     </ModulesWrapper>
   );
