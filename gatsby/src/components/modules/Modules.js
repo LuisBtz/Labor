@@ -22,7 +22,7 @@ const modulesArr = [
   { name: "zoom", comp: Zoom },
 ];
 
-const Modules = ({ editorialModule }) => {
+const Modules = ({ editorialModule, props }) => {
   console.log(editorialModule);
   let final_arr = [];
 
@@ -39,7 +39,7 @@ const Modules = ({ editorialModule }) => {
   return (
     <ModulesWrapper>
       {final_arr.map((Module, i) => (
-        <Module.comp key={i} data={{ ...Module }} />
+        <Module.comp key={i} data={{ ...Module }} props={props} />
       ))}
     </ModulesWrapper>
   );
