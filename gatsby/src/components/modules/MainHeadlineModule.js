@@ -15,7 +15,7 @@ const MainHeadlineModule = ({data}) => {
       <h1>{text}</h1>
       <Buttons>
 
-        {data.buttons.es && 
+        {data.buttons && 
           (data.buttons.es.agenda === true ? <li><Link to='/contact' className="cta small caps">Agenda tu cita</Link></li> : '')
         }
 
@@ -27,7 +27,7 @@ const MainHeadlineModule = ({data}) => {
         
 
 
-        {data.buttons.es && 
+        {data.buttons && 
           (data.buttons.es.social === true ? 
             <Social>
                     <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE'+url} className="small caps">FB</a></li>
