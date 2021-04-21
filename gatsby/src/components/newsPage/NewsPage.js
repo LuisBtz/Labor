@@ -10,10 +10,10 @@ const NewsPage = () => {
 
   const dataNews = useStaticQuery(graphql`
     query  {
-      allSanityNews {
+      allSanityNews(sort: {fields: dateField, order: DESC}) {
         edges {
           node {
-            _createdAt(formatString: "DD/MM/YYYY")
+            dateField(formatString: "DD/MM/YYYY")
             id
             slug {
               current

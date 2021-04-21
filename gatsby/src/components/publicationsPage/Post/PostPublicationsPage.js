@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 const PostPublicationsPage = ({ data }) => {
 
   const image = getImage(data.thumbnailCover.asset);
-  const date = data.date;
+  const date = data.dateField;
   const title = data.title.es;
   const author = data.author;
   const abstract = data.abstract.es;

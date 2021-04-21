@@ -10,7 +10,7 @@ const PodcastsPage = () => {
 
   const dataPodcasts = useStaticQuery(graphql`
     query  {
-        allSanityPodcast(sort: { fields: [episodeNumber], order: ASC }) {
+        allSanityPodcast(sort: { fields: [episodeNumber], order: DESC }) {
             edges {
               node {
                 id

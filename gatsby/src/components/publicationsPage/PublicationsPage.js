@@ -10,10 +10,10 @@ const PublicationsPage = () => {
 
   const dataPublication = useStaticQuery(graphql`
   query  {
-      allSanityPublications {
+      allSanityPublications(sort: {fields: dateField, order: DESC}) {
         edges {
           node {
-            date
+            dateField(formatString: "YYYY")
             title {
               es
             }

@@ -19,6 +19,11 @@ export default {
       },
     },
     {
+      name: 'dateField',
+      title: 'Date Field',
+      type: 'date'
+    },
+    {
       name: 'metaData',
       title: 'Label',
       type: 'metaLocale',

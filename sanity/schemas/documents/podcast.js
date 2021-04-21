@@ -39,6 +39,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'dateField',
+      title: 'Date Field',
+      type: 'date'
+    },
+    {
       name: 'episodePlayer',
       title: 'Episode Player Code',
       type: 'string',

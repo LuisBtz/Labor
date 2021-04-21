@@ -44,6 +44,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'dateField',
+      title: 'Date Field',
+      type: 'date'
+    },
+    {
       name: 'editorialModule',
       title: 'Editorial Modules',
       type: 'editorialModule',

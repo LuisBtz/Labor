@@ -8,20 +8,20 @@ import Modules from '../components/modules/Modules'
 
 
 // markup
-export default function SinglePublicationPage({data : {publication}}) {
-    const heroImage = getImage(publication.thumbnailCover.asset);  
+export default function SingleNewPage( { data : { newNode } } ) {
+    const heroImage = getImage(newNode.thumbnailCover.asset);  
     
 
     return (
         <Layout>
-        <Seo title="Publication" />
+        <Seo title="New" />
         <Hero>
         <GatsbyImage
             image={heroImage}
-            alt={publication.title.es}
+            alt={newNode.title.es}
         />
         </Hero>
-        <Modules editorialModule={publication.editorialModule} />
+        <Modules editorialModule={newNode.editorialModule} />
         </Layout>
 
     )
@@ -32,7 +32,7 @@ const Hero = styled.div``
 
 export const query = graphql`
     query($slug: String!){
-        publication: sanityPublications(slug: {
+        newNode: sanityNews(slug: {
 		current: {eq: $slug} }){
             title {
                 es
