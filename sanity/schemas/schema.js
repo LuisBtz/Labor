@@ -62,6 +62,7 @@ import publications from './documents/publications'
 import podcast from './documents/podcast'
 import news from './documents/news'
 import contact from './documents/contact'
+import privacy from './documents/privacy'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -127,5 +128,6 @@ export default createSchema({
     podcast,
     news,
     contact,
+    privacy,
   ]),
 })

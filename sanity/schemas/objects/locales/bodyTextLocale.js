@@ -11,7 +11,7 @@ export default {
       {
         name: 'paragraph',
         title: 'Paragraph',
-        type: 'text',
+        type: 'blockModule',
       },
       {
         name: 'headline',
