@@ -23,7 +23,14 @@ export default function SingleArtistPage({ data: { artist } }) {
   );
 }
 
+<<<<<<< HEAD
 const Hero = styled.div``;
+=======
+const Hero = styled.div`
+display: block;
+`
+
+>>>>>>> c8834657bf439ccf868cf2d1b51f9403fdd18482
 
 export const query = graphql`
   query($slug: String!) {

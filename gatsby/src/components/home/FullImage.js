@@ -15,7 +15,7 @@ const FullImage = ({ data }) => {
 
   return (
     <FullImageContainer
-      to={`/exposition/${slug}`}
+      to={`/expositions/${slug}`}
     >
       <GatsbyImage
         image={getDataImage}

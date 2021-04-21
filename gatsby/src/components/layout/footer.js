@@ -45,7 +45,7 @@ const Footer = () => {
         <a href={'mailto:' + mail}>{mail}</a>
       </Info>
       <Politicas>
-        <Link to='/index'>Políticas de privacidad</Link>
+        <Link to='/privacy'>Políticas de privacidad</Link>
       </Politicas>
     </FooterWrapper>
   )

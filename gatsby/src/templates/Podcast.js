@@ -38,9 +38,13 @@ export default function SinglePodcastPage( { data : { podcast } } ) {
     )
 }
 
-const ContainerTitle = styled.div``
+const ContainerTitle = styled.div`
+display: block;
+`
 
-const Player = styled.div``
+const Player = styled.div`
+display: block;
+`
 
 const BodyTextWrapper = styled.section`
     display: flex;
