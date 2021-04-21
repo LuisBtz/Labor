@@ -15,18 +15,18 @@ const MainHeadlineModule = ({data}) => {
       <h1>{text}</h1>
       <Buttons>
 
-        {data.buttons && 
+        {data.buttons && data.buttons.es && data.buttons.es.agenda &&
           (data.buttons.es.agenda === true ? <li><Link to='/contact' className="cta small caps">Agenda tu cita</Link></li> : '')
         }
 
         
         
-        {data.buttons && 
+        {data.buttons && data.buttons.es && data.buttons.es.dossier &&
           (data.buttons.es.dossier ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.dossier}>Dossier</a></li> : '')
         }
 
 
-        {data.buttons && 
+        {data.buttons && data.buttons.es && data.buttons.es.resume &&
           (data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>Resume</a></li> : '')
         }
 
@@ -35,7 +35,7 @@ const MainHeadlineModule = ({data}) => {
         
 
 
-        {data.buttons && 
+        {data.buttons && data.buttons.es && data.buttons.es.social &&
           (data.buttons.es.social === true ? 
             <Social>
                     <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE'+url} className="small caps">FB</a></li>
