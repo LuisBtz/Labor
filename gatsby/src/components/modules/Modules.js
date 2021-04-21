@@ -23,7 +23,6 @@ const modulesArr = [
 ];
 
 const Modules = ({ editorialModule, props }) => {
-  console.log(editorialModule);
   let final_arr = [];
 
   editorialModule.forEach((edMod) => {
@@ -33,8 +32,6 @@ const Modules = ({ editorialModule, props }) => {
       }
     });
   });
-
-  console.log("Final = ", final_arr);
 
   return (
     <ModulesWrapper>
