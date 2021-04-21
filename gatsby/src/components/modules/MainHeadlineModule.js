@@ -16,17 +16,30 @@ const MainHeadlineModule = ({data}) => {
 
       <h1>{text}</h1>
       <Buttons>
-        {data.buttons.es.agenda === true ? <li><Link to='/contact' className="cta small caps">Agenda tu cita</Link></li> : ''}
+
+        {data.buttons.es && 
+          (data.buttons.es.agenda === true ? <li><Link to='/contact' className="cta small caps">Agenda tu cita</Link></li> : '')
+        }
+
+        
+        
+        
         {data.buttons.es.dossier ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.dossier}>Dossier</a></li> : ''}
         {data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>Resume</a></li> : ''}
         
-        {data.buttons.es.social === true ? 
-        <Social>
-                <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE'+url} className="small caps">FB</a></li>
-                <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet/?text='+text+'&url='+url} target="_blank" className="small caps">TW</a></li>
-        </Social>
-        : ''}
+
+
+        {data.buttons.es && 
+          (data.buttons.es.social === true ? 
+            <Social>
+                    <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE'+url} className="small caps">FB</a></li>
+                    <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet/?text='+text+'&url='+url} target="_blank" className="small caps">TW</a></li>
+            </Social>
+            : '')
+        }
+
         
+
       </Buttons>
       
 
