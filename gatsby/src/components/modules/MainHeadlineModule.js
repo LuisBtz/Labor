@@ -8,8 +8,6 @@ const MainHeadlineModule = ({data}) => {
 
   const text = data.textField.es
 
-  console.log(data.buttons.es.agenda)
-
   return (
 
     <MainHeadlineWrapper>
