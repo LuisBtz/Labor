@@ -1,17 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import BlockContent from '@sanity/block-content-to-react';
+// import BlockContent from '@sanity/block-content-to-react';
 
 
 const BodyTextModule = ( { data } ) => {
 
-  const serializer = {
-    types: {
-      bodyText: props => (
-        props.es._rawParagraph
-      )
-    }
-  };
 
   return (
     <BodyTextWrapper>
@@ -25,10 +18,10 @@ const BodyTextModule = ( { data } ) => {
       <p>
       {data.es && data.es._rawParagraph && 
           (data.es._rawParagraph ? 
-            <BlockContent
-            serializers={serializer}
-            blocks={data.es._rawParagraph}
-        />
+        //     <BlockContent
+        //     blocks={data.es._rawParagraph}
+        // />
+        <p>eliminar los backslash</p>
          : '')
         }
       </p>

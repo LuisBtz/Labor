@@ -1,101 +1,42 @@
 import React from 'react'
 import styled from 'styled-components';
-import { StaticImage } from "gatsby-plugin-image"
 
-const CarouselModule = () => {
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+
+const CarouselModule = ( {data} ) => {
 
   return (
 
     <CarouselWrapper>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item><Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
-      <Item>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="small caps">Título de Foto, 2021. Óleo sobre canvas. Fotografía por Kristell Henry</p>
-      </Item>
+      {data.addImage.map(({ alternativeText, caption, asset }) => {
+        
+            const imageCarousel = getImage(asset);  
+
+          return (
+            <Item >
+              {imageCarousel &&
+                (alternativeText ? 
+                  <GatsbyImage
+                    image={imageCarousel}
+                    alt={alternativeText}
+                /> 
+                : <GatsbyImage
+                image={imageCarousel}
+                alt='Labor Image'
+            /> )
+              }
+
+              {caption && caption.es &&
+                (caption.es ? 
+                  <p>{caption.es}</p>
+                : '')
+              } 
+              
+              
+            </Item>
+          )
+        })}
     </CarouselWrapper>
 
   )
