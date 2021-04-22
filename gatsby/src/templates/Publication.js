@@ -8,27 +8,27 @@ import Modules from '../components/modules/Modules'
 
 
 // markup
-export default function SinglePublicationPage({data : {publication}}) {
-    const heroImage = getImage(publication.thumbnailCover.asset);  
-    
+export default function SinglePublicationPage({ data: { publication } }) {
+  const heroImage = getImage(publication.thumbnailCover.asset);
 
-    return (
-        <Layout>
-        <Seo title="Publication" />
-        <Hero>
-        <GatsbyImage
+
+  return (
+    <Layout>
+      <Seo title="Publication" />
+      <Hero>
+        {/* <GatsbyImage
             image={heroImage}
             alt={publication.title.es}
-        />
-        </Hero>
-        <Modules editorialModule={publication.editorialModule} />
-        </Layout>
+        /> */}
+      </Hero>
+      <Modules editorialModule={publication.editorialModule} />
+    </Layout>
 
-    )
+  )
 }
 
 const Hero = styled.div`
-display: block;
+  display: block;
 `
 
 

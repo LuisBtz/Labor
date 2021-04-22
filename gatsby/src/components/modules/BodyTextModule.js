@@ -46,7 +46,7 @@ const BodyTextWrapper = styled.section`
 
   h5 {
     width: 25%;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 0 1rem;
 
     @media screen and (max-width: 980px) {
       width: 35%;
