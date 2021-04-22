@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
 import { Helmet } from "react-helmet"
-import logo from '../assets/images/Logo-Black.svg'
+// import logo from '../assets/images/Logo-Black.svg'
 
 import FullImage from '../components/home/FullImage'
 import ExhibitionSection from '../components/home/ExhibitionSection'
@@ -141,16 +141,16 @@ const LayoutStyle = styled(Layout)`
   
 `
 
-const LogoImage = styled.img`
-  /* padding: 6rem .5rem 2.5rem .5rem; */
-  position: fixed;
-  top: 6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  width: 98vw;
+// const LogoImage = styled.img`
+//   /* padding: 6rem .5rem 2.5rem .5rem; */
+//   position: fixed;
+//   top: 6rem;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   z-index: 999;
+//   width: 98vw;
 
-  transition: all .75s ease-in-out;
-`
+//   transition: all .75s ease-in-out;
+// `
 
 export default IndexPage
