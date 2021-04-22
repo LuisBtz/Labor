@@ -10,7 +10,7 @@ const FutureExposition = () => {
 
   const dataFuture = useStaticQuery(graphql`
   query  {
-    allSanityExhibitions(filter: {current: {eq: "upcoming"}}) {
+    allSanityExhibitions(filter: {current: {eq: "upcoming"}}, sort: {fields: endDate, order: DESC} ) {
         edges {
           node {
             title {
@@ -35,12 +35,18 @@ const FutureExposition = () => {
     }
   `)
 
+console.log(dataFuture.allSanityExhibitions.edges)
 
   return (
+
+
+    
     <FutureExpositionContainer>
+      {dataFuture.allSanityExhibitions ?
       <section id="FuturasTop">
         <p className="caps medium head">Exposiciones futuras <span className="arrow">↓</span></p>
       </section>
+      : ''}
 
       <FuturePosts>
         {dataFuture.allSanityExhibitions.edges.map(({ node }) => {

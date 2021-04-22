@@ -10,7 +10,7 @@ const PastExposition = () => {
 
   const dataPast = useStaticQuery(graphql`
   query  {
-    allSanityExhibitions(filter: {current: {eq: "past"}}) {
+    allSanityExhibitions(filter: {current: {eq: "past"}}, sort: {fields: endDate, order: DESC} ) {
         edges {
           node {
             title {
