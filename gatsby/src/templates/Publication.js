@@ -49,13 +49,13 @@ export const query = graphql`
                 _key
                 _type
                 inlineFullImage {
-                caption {
-                    es
-                }
-                alternativeText
-                asset {
-                    gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
-                }
+                    caption {
+                        es
+                    }
+                    alternativeText
+                    asset {
+                        gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                    }
                 }
             }
             ... on SanityBodyText {
@@ -70,13 +70,13 @@ export const query = graphql`
                 _key
                 _type
                 addImage {
-                alternativeText
-                caption {
-                    es
-                }
-                asset {
-                    gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
-                }
+                    alternativeText
+                    caption {
+                        es
+                    }
+                    asset {
+                        gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                    }
                 }
             }
             ... on SanityColophon {
@@ -93,13 +93,13 @@ export const query = graphql`
                 _key
                 _type
                 imageOne {
-                alternativeText
-                caption {
-                    es
-                }
-                asset {
-                    gatsbyImageData(layout: FULL_WIDTH)
-                }
+                    alternativeText
+                    caption {
+                        es
+                    }
+                    asset {
+                        gatsbyImageData(layout: FULL_WIDTH)
+                    }
                 }
                 imageTwo {
                 alternativeText
@@ -142,13 +142,13 @@ export const query = graphql`
                 _key
                 _type
                 imageZoom {
-                caption {
-                    es
-                }
-                alternativeText
-                asset {
-                    gatsbyImageData(layout: FULL_WIDTH)
-                }
+                    caption {
+                        es
+                    }
+                    alternativeText
+                    asset {
+                        url
+                    }
                 }
             }
             }

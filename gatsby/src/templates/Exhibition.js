@@ -147,7 +147,7 @@ export const query = graphql`
                 }
                 alternativeText
                 asset {
-                    gatsbyImageData(layout: FULL_WIDTH)
+                    url
                 }
                 }
             }

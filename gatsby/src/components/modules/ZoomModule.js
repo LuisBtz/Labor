@@ -4,19 +4,33 @@ import {
   GlassMagnifier,
 } from "react-image-magnifiers";
 
-const ZoomModule = () => {
+const ZoomModule = ( { data } ) => {
+
+  const imageZoomData = data.imageZoom.asset.url
 
   return (
 
     <ZoomWrapper>
-      <GlassMagnifier
-        imageSrc="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-        imageAlt="Example"
-        largeImageSrc="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" // Optional
-        magnifierBorderSize='0'
-        square='true'
-        magnifierSize="35%"
-      />
+      {data.imageZoom &&
+              (data.imageZoom.alternativeText ? 
+                <GlassMagnifier
+                  imageSrc={imageZoomData}
+                  imageAlt={data.imageZoom.alternativeText}
+                  largeImageSrc={imageZoomData}
+                  magnifierBorderSize='0'
+                  square='true'
+                  magnifierSize="35%"
+                />
+                  : <GlassMagnifier
+                  imageSrc={imageZoomData}
+                  imageAlt='Labor Image'
+                  largeImageSrc={imageZoomData}
+                  magnifierBorderSize='0'
+                  square='true'
+                  magnifierSize="35%"
+                />  )
+            }
+
     </ZoomWrapper>
 
   )
