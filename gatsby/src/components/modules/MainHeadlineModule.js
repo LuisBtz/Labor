@@ -33,7 +33,7 @@ const MainHeadlineModule = ({ data }) => {
         {data.buttons && data.buttons.es && data.buttons.es.social &&
           (data.buttons.es.social === true ?
             <Social>
-              <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE' + url} className="small caps">FB</a></li>
+              <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=' + url} className="small caps">FB</a></li>
               <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet/?text=' + text + '&url=' + url} target="_blank" className="small caps">TW</a></li>
             </Social>
             : '')
