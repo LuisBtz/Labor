@@ -29,6 +29,17 @@ const PostExposition = ({ title, author, slug, date, metaData, thumbnailCover })
 const PostExpositionWrapper = styled(Link)`
 width: 50vw;
 
+  :hover  p .arrow {
+    animation: blink .5s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+
 /* Mobile */
 @media screen and (max-width: 768px) {
   width: 100vw;

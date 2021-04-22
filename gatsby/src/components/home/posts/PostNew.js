@@ -25,6 +25,16 @@ const PostNewsWrapper = styled(Link)`
     max-width: 95%;
   }
 
+  h2:hover .arrow {
+    animation: blink .5s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
   /* Mobile */ 
   @media screen and (max-width: 768px) {
     width: 100vw;

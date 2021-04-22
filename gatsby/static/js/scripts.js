@@ -8,32 +8,29 @@
 //   }
 // });
 
-document.querySelector(".logo img").setAttribute('id', 'img');
+// document.querySelector(".logo img").setAttribute('id', 'img');
 
-// On Page Refresh
-if (window.pageYOffset > 0) {
-  document.getElementById('img').classList.add('shrink');
-}
+// // On Page Refresh
+// if (window.pageYOffset > 0) {
+//   document.getElementById('img').classList.add('shrink');
+// }
 
-window.addEventListener('scroll', function () {
+// window.addEventListener('scroll', function () {
 
-  if (window.pageYOffset > 0) {
-    document.getElementById('img').classList.add('shrink');
-  } else {
-    document.getElementById('img').classList.remove('shrink');
-  }
+//   if (window.pageYOffset > 0) {
+//     document.getElementById('img').classList.add('shrink');
+//   } else {
+//     document.getElementById('img').classList.remove('shrink');
+//   }
 
-});
+// });
 
 // Scroll indicator
+var moveDiv = document.getElementById('scroll-ind');
+
 window.addEventListener('mousemove', function (e) {
-  var moveDiv = document.getElementById('scroll-ind');
-
-  window.onmousemove = function (e) {
-    var x = e.pageX,
-      y = e.pageY;
-    moveDiv.style.top = (y + 20) + 'px';
-    moveDiv.style.left = (x + 20) + 'px';
-  };
-
+  var x = e.pageX,
+    y = e.pageY;
+  moveDiv.style.top = (y + 20) + 'px';
+  moveDiv.style.left = (x + 20) + 'px';
 });

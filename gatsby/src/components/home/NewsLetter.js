@@ -60,7 +60,7 @@ class Newsletter extends React.Component {
             name="EMAIL"
             id="mce-EMAIL"
             className="subscribe-email"
-            placeholder="Mail"
+            placeholder="Escribe tu Correo"
             required
           />
           <button className="btn_sent" type="submit">

@@ -1,48 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PostPublication from './posts/PostPublication';
 
 // markup
 const PublicationSection = ({ data }) => {
-  // (function () {
-  //   var follower, init, mouseX, mouseY, positionElement, timer;
 
-  //   follower = document.getElementById('follower');
+  const [move, setMove] = useState(0);
 
-  //   mouseX = (event) => {
-  //     return event.clientX;
-  //   };
+  useEffect(() => {
+    var moveDiv = document.getElementById('scroll-ind');
 
-  //   mouseY = (event) => {
-  //     return event.clientY;
-  //   };
-
-  //   positionElement = (event) => {
-  //     var mouse;
-  //     mouse = {
-  //       x: mouseX(event),
-  //       y: mouseY(event)
-  //     };
-
-  //     follower.style.top = mouse.y + 'px';
-  //     return follower.style.left = mouse.x + 'px';
-  //   };
-
-  //   timer = false;
-
-  //   window.onmousemove = init = (event) => {
-  //     var _event;
-  //     _event = event;
-  //     return timer = setTimeout(() => {
-  //       return positionElement(_event);
-  //     }, 1);
-  //   };
-
-  // }).call(this);
+    window.addEventListener('mousemove', function (e) {
+      var x = e.clientX,
+        y = e.clientY;
+      moveDiv.style.top = (y + 20) + 'px';
+      moveDiv.style.left = (x + 20) + 'px';
+    });
+  });
 
 
   return (
-    <PublicationContainer>
+    <PublicationContainer onMouseMove={() => setMove(move)}>
       <svg id="scroll-ind" width="81" height="20" viewBox="0 0 81 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.25" y="0.25" width="80.5" height="19.5" rx="3.75" fill="white" />
         <path d="M13.9904 10.7539L13.9802 10.0781H9.47456L11.3485 8.19392L10.8774 7.72288L8.18432 10.416L10.8774 13.1091L11.3485 12.6381L9.47456 10.7539H13.9904Z" fill="black" />
@@ -62,11 +40,16 @@ const PublicationSection = ({ data }) => {
 
 const PublicationContainer = styled.section`
     position: relative;
-    cursor: ew-resize !important;
+    cursor: none;
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 5rem;
+
+    .gatsby-image-wrapper img {
+      height: inherit !important;
+      width: 100% !important;
+    }
 
     svg {
       position: absolute;
@@ -75,10 +58,19 @@ const PublicationContainer = styled.section`
       z-index: 1001;
     }
 
+    @media screen and (max-width: 1280px) {
+      a{min-width: 60vw;}
+    }
+
+    @media screen and (max-width: 1040px) {
+      a{min-width: 75vw;}
+    }
+
     /* Mobile */
     @media screen and (max-width: 768px) {
       flex-direction: column;
       margin-bottom: 3rem;
+      a{min-width: 100vw;}
     }
   `
 

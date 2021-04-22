@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostPublication = ({ title, date, abstract, author, slug, thumbnailCover  }) => {
+const PostPublication = ({ title, date, abstract, author, slug, thumbnailCover }) => {
   const image = getImage(thumbnailCover.asset);
 
   return (
@@ -31,6 +31,16 @@ const PostPublicationWrapper = styled(Link)`
   min-width: 46vw;
   padding-right: 2vw;
   display: flex;
+
+  :hover  h5 .arrow {
+    animation: blink .5s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
 
   /* Mobile */
   @media screen and (max-width: 768px) {

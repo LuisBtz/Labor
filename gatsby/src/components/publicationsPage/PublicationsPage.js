@@ -63,11 +63,12 @@ const PublicationContainer = styled.section`
     width: 100% !important;
   }
 
-
   /* Mobile */
   @media screen and (max-width: 768px) {
+    padding-top: 60px;
     flex-direction: column;
     margin-bottom: 3rem;
+    grid-template-columns: repeat(1, 1fr);
   }
   `
 
