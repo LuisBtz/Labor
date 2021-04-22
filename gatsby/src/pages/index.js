@@ -17,6 +17,7 @@ export const data = graphql`
     exhibitionsHF {
       thumbnailCover {
         asset {
+          url
           gatsbyImageData(layout: FULL_WIDTH, width: 10, outputPixelDensities: 1.5)
         }
       }
@@ -129,7 +130,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout scroll={scroll} indexTrue={indexTrue}>
-      <Seo title="Home" />
+      <Seo title="Home" image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />

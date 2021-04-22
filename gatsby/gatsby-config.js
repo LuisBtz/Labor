@@ -1,12 +1,17 @@
-
-
 const path = require('path');
+
+const siteUrl = `https://objective-colden-a83041.netlify.app/`
+
 
 module.exports = {
     siteMetadata: {
         title: `Labor`,
         description: `Description Labor`,
-        author: `Luis`
+        author: `Labor`,
+        siteUrl,
+        social: {
+          twitter: `schaudustin`,
+        },
       },
     plugins: [
         `gatsby-plugin-react-helmet`,
