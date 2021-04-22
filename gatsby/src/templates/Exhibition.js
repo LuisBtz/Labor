@@ -21,7 +21,7 @@ export default function SingleExhibitionPage({data : {exhibition}}) {
             alt={exhibition.title.es}
         />
         </Hero>
-        <Modules editorialModule={exhibition.editorialModule} />
+        {/* <Modules editorialModule={exhibition.editorialModule} /> */}
         </Layout>
 
     )

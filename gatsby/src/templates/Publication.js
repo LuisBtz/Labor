@@ -21,7 +21,7 @@ export default function SinglePublicationPage({data : {publication}}) {
             alt={publication.title.es}
         />
         </Hero>
-        <Modules editorialModule={publication.editorialModule} />
+        {/* <Modules editorialModule={publication.editorialModule} /> */}
         </Layout>
 
     )

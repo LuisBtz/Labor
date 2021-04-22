@@ -21,7 +21,7 @@ export default function SingleNewPage( { data : { newNode } } ) {
             alt={newNode.title.es}
         />
         </Hero>
-        <Modules editorialModule={newNode.editorialModule} />
+        {/* <Modules editorialModule={newNode.editorialModule} /> */}
         </Layout>
 
     )

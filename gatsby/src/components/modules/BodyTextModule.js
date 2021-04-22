@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import BlockContent from '@sanity/block-content-to-react';
+import BlockContent from '@sanity/block-content-to-react';
 
 
 const BodyTextModule = ( { data } ) => {
@@ -18,10 +18,9 @@ const BodyTextModule = ( { data } ) => {
       <p>
       {data.es && data.es._rawParagraph && 
           (data.es._rawParagraph ? 
-        //     <BlockContent
-        //     blocks={data.es._rawParagraph}
-        // />
-        <p>eliminar los backslash</p>
+            <BlockContent
+            blocks={data.es._rawParagraph}
+        />
          : '')
         }
       </p>
