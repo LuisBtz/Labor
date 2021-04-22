@@ -110,6 +110,12 @@ export const data = graphql`
       }
       id
     }
+    seo {
+      es {
+        pageDescription
+        titleSeo
+      }
+    }
   }
     }
   `
@@ -130,7 +136,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout scroll={scroll} indexTrue={indexTrue}>
-      <Seo title="Home" image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
+      <Seo title={data.sanityHomePage.seo.es.titleSeo} description={data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />
