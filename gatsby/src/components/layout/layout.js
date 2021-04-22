@@ -7,7 +7,7 @@ import Footer from "./footer"
 
 
 
-function Layout({ children }) {
+function Layout({ children, scroll, indexTrue }) {
 
   
   return (
@@ -15,7 +15,7 @@ function Layout({ children }) {
       <Normalizer />
       <Typography />
       <GlobalStyle />
-      <Header />
+      <Header scroll={scroll} indexTrue={indexTrue} />
       <main>{children}</main>
       <Footer />
     </>

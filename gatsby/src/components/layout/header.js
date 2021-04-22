@@ -6,10 +6,12 @@ import logo from '../../assets/images/logo-labor.svg'
 
 
 // markup
-const Header = () => {
+const Header = ( {scroll , indexTrue} ) => {
 
   const [nav, showNav] = useState(false);
 
+
+  console.log(scroll, 'Scrollllll')
 
   return (
     <NavStyle>
@@ -37,9 +39,16 @@ const Header = () => {
           <li><Link to='/contact' >Contacto</Link></li>
         </ul>)
       }
+      {indexTrue ? 
+      <Link to='/' className="logo">
+        <img id='img' src={logo} alt="labor" className={scroll ? 'shrink' : ''} />
+      </Link> 
+      : 
       <Link to='/' className="logo">
         <img src={logo} alt="labor" />
-      </Link>
+      </Link> 
+      }
+      
       <ul className="lang">
         <li><a href='/'>Español</a></li>
         <li><a href='/'>English</a></li>

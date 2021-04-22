@@ -1,10 +1,7 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
-import { Helmet } from "react-helmet"
-// import logo from '../assets/images/Logo-Black.svg'
 
 import FullImage from '../components/home/FullImage'
 import ExhibitionSection from '../components/home/ExhibitionSection'
@@ -120,12 +117,19 @@ export const data = graphql`
 // markup
 const IndexPage = ({ data }) => {
 
+  const indexTrue = true;
+
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 0);
+    });
+  }, []); 
+
   return (
-    <LayoutStyle>
+    <Layout scroll={scroll} indexTrue={indexTrue}>
       <Seo title="Home" />
-      <Helmet>
-        <script src="/js/scripts.js" type="text/javascript" />
-      </Helmet>
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />
@@ -133,13 +137,10 @@ const IndexPage = ({ data }) => {
       <PublicationSection data={data} />
       <NewsSection data={data} />
       <NewsLetter />
-    </LayoutStyle>
+    </Layout>
   )
 }
 
-const LayoutStyle = styled(Layout)`
-  
-`
 
 // const LogoImage = styled.img`
 //   /* padding: 6rem .5rem 2.5rem .5rem; */
