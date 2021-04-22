@@ -22,7 +22,7 @@ export default function SingleNewPage({ data: { newNode } }) {
         />
 <<<<<<< Updated upstream
         </Hero>
-        {/* <Modules editorialModule={newNode.editorialModule} /> */}
+        <Modules editorialModule={newNode.editorialModule} />
         </Layout>
 =======
       </Hero>

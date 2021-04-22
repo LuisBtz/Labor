@@ -22,7 +22,7 @@ export default function SinglePublicationPage({ data: { publication } }) {
         />
 <<<<<<< Updated upstream
         </Hero>
-        {/* <Modules editorialModule={publication.editorialModule} /> */}
+        <Modules editorialModule={publication.editorialModule} />
         </Layout>
 =======
       </Hero>

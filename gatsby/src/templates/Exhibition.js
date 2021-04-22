@@ -22,7 +22,7 @@ export default function SingleExhibitionPage({ data: { exhibition } }) {
         />
 <<<<<<< Updated upstream
         </Hero>
-        {/* <Modules editorialModule={exhibition.editorialModule} /> */}
+        <Modules editorialModule={exhibition.editorialModule} />
         </Layout>
 =======
       </Hero>
