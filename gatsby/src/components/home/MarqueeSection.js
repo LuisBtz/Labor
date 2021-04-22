@@ -8,7 +8,7 @@ const MarqueeSection = ({ data }) => {
   return (
     <MarqueeContainer>
       {data.sanityHomePage.marquee.es.url ?
-        <a target='_blank' rel="noreferrer"  href={data.sanityHomePage.marquee.es.url}>
+        <a target='_blank' rel="noreferrer" href={data.sanityHomePage.marquee.es.url}>
           <p>{data.sanityHomePage.marquee.es.marqueeText}</p>
         </a>
         :
@@ -52,6 +52,7 @@ const MarqueeContainer = styled.section`
     @media screen and (max-width: 768px) {
       p {
         font-size: var(--headline-3);
+        animation-duration: 20s;
       }
 
       margin-bottom: 3rem;

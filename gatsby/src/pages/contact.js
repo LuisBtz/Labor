@@ -79,7 +79,7 @@ const Team = styled.section`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
-    padding-top: 6rem;
+    padding-top: 4rem;
 
     div {
       margin-bottom: 2rem;

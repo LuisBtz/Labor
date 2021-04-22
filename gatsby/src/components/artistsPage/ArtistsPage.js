@@ -51,7 +51,7 @@ const ArtistsContainer = styled.section`
   /* Mobile */
   @media screen and (max-width: 768px) {
     /* flex-direction: column; */
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     padding-top: 60px;
     /* overflow: hidden; */
   }

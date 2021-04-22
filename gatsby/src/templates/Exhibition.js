@@ -8,27 +8,37 @@ import Modules from '../components/modules/Modules'
 
 
 // markup
-export default function SingleExhibitionPage({data : {exhibition}}) {
-    const heroImage = getImage(exhibition.thumbnailCover.asset);  
-    
+export default function SingleExhibitionPage({ data: { exhibition } }) {
+  const heroImage = getImage(exhibition.thumbnailCover.asset);
 
-    return (
-        <Layout>
-        <Seo title="Exhibition" />
-        <Hero>
+
+  return (
+    <Layout>
+      <Seo title="Exhibition" />
+      <Hero>
         <GatsbyImage
-            image={heroImage}
-            alt={exhibition.title.es}
+          image={heroImage}
+          alt={exhibition.title.es}
         />
+<<<<<<< Updated upstream
         </Hero>
         {/* <Modules editorialModule={exhibition.editorialModule} /> */}
         </Layout>
+=======
+      </Hero>
+      <Modules editorialModule={exhibition.editorialModule} />
+    </Layout>
+>>>>>>> Stashed changes
 
-    )
+  )
 }
 
 const Hero = styled.div`
 display: block;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
 `
 
 

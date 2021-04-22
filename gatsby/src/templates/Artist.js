@@ -25,6 +25,10 @@ export default function SingleArtistPage({ data: { artist } }) {
 
 const Hero = styled.div`
   display: block;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
 `;
 
 export const query = graphql`

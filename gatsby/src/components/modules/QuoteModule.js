@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const QuoteModule = ({data}) => {
+const QuoteModule = ({ data }) => {
 
   return (
 
     <QuoteWrapper>
       {data.quoteText && data.quoteText.es &&
-          (data.quoteText.es ? <h2 className="bold">{data.quoteText.es}</h2> : '')
-        }
+        (data.quoteText.es ? <h2 className="bold">{data.quoteText.es}</h2> : '')
+      }
     </QuoteWrapper>
 
   )
@@ -23,8 +23,12 @@ const QuoteWrapper = styled.section`
 
       @media screen and (max-width: 768px) {
         max-width: 100%;
-        font-size: var(--headline-4);
+        font-size: var(--headline-5);
       }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 2rem auto;
   }
 `
 

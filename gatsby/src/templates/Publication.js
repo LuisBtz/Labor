@@ -8,27 +8,37 @@ import Modules from '../components/modules/Modules'
 
 
 // markup
-export default function SinglePublicationPage({data : {publication}}) {
-    const heroImage = getImage(publication.thumbnailCover.asset);  
-    
+export default function SinglePublicationPage({ data: { publication } }) {
+  const heroImage = getImage(publication.thumbnailCover.asset);
 
-    return (
-        <Layout>
-        <Seo title="Publication" />
-        <Hero>
+
+  return (
+    <Layout>
+      <Seo title="Publication" />
+      <Hero>
         <GatsbyImage
-            image={heroImage}
-            alt={publication.title.es}
+          image={heroImage}
+          alt={publication.title.es}
         />
+<<<<<<< Updated upstream
         </Hero>
         {/* <Modules editorialModule={publication.editorialModule} /> */}
         </Layout>
+=======
+      </Hero>
+      <Modules editorialModule={publication.editorialModule} />
+    </Layout>
+>>>>>>> Stashed changes
 
-    )
+  )
 }
 
 const Hero = styled.div`
 display: block;
+
+@media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
 `
 
 

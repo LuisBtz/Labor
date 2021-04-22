@@ -48,6 +48,10 @@ const Text = styled.div`
   /* Mobile */
   @media screen and (max-width: 768px) {
     margin-bottom: 3rem;
+
+    h3 {
+      margin: 0.75rem 0 .5rem 0;
+    }
   }
 `
 

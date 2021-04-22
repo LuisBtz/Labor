@@ -46,17 +46,18 @@ const NewsPage = () => {
 }
 
 const NewsContainer = styled.section`
-        padding-top: 90px;
-        background: var(--white);
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
+    padding-top: 90px;
+    background: var(--white);
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 
 
-        /* Mobile */
-        @media screen and (max-width: 768px) {
-          flex-direction: column;
-        }
+    /* Mobile */
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding-top: 60px;
+    }
   `
 
 

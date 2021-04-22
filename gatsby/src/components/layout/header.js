@@ -27,15 +27,15 @@ const Header = () => {
         <li><Link to='/news' >Noticias</Link></li>
         <li><Link to='/contact' >Contacto</Link></li>
       </ul>
-      { 
-        nav && ( <ul className="pagesResp" nav={nav}>
-        <li><Link to='/artists' >Artistas</Link></li>
-        <li><Link to='/expositions' >Exposiciones</Link></li>
-        <li><Link to='/publications' >Publicaciones</Link></li>
-        <li><Link to='/podcasts' >Perfume</Link></li>
-        <li><Link to='/news' >Noticias</Link></li>
-        <li><Link to='/contact' >Contacto</Link></li>
-      </ul> ) 
+      {
+        nav && (<ul className="pagesResp" nav={nav}>
+          <li><Link to='/artists' >Artistas</Link></li>
+          <li><Link to='/expositions' >Exposiciones</Link></li>
+          <li><Link to='/publications' >Publicaciones</Link></li>
+          <li><Link to='/podcasts' >Perfume</Link></li>
+          <li><Link to='/news' >Noticias</Link></li>
+          <li><Link to='/contact' >Contacto</Link></li>
+        </ul>)
       }
       <Link to='/' className="logo">
         <img src={logo} alt="labor" />
@@ -161,9 +161,10 @@ const NavStyle = styled.nav`
 
   @media screen and (max-width: 768px) {
     #mobile-button {
-      display: grid;
-      justify-content: left;
-      align-self: center;
+      height: 100%;
+      display: block;
+      text-align:left;
+      padding-top: .25rem;
     }
 
     ul.pages {
@@ -176,17 +177,17 @@ const NavStyle = styled.nav`
       position: fixed;
       background: white;
       left: 0;
-      padding: 1rem;
       width: 100%;
       top: 3.5rem;
       border-top: solid 1px #f2f2f2;
 
-        li {
-          padding: .5rem 0;
-        }
-
         a {
+          display: block;
+          padding: 1rem;
           color: var(--black);
+          text-transform: uppercase;
+          line-height: 100%;
+          border-bottom: solid 1px #f2f2f2;
         }
     }
 

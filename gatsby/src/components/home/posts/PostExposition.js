@@ -41,7 +41,7 @@ const Text = styled.div`
   padding: .5rem 1rem;
 
   h2 {
-    margin: 16px 0;
+    margin: 1rem 0;
   }
 
   /* Mobile */
@@ -50,6 +50,7 @@ const Text = styled.div`
 
     h2 {
       font-size: var(--headline-3);
+      margin: 0.75rem 0 .5rem 0;
     }
   }
 `

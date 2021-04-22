@@ -126,7 +126,6 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <script src="/js/scripts.js" type="text/javascript" />
       </Helmet>
-      <LogoImage src={logo} alt="" className="logoHome" />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />

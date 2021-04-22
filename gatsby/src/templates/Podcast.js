@@ -8,42 +8,64 @@ import BlockContent from '@sanity/block-content-to-react';
 
 
 // markup
-export default function SinglePodcastPage( { data : { podcast } } ) {
-    
+export default function SinglePodcastPage({ data: { podcast } }) {
 
-    const title = podcast.title.es
-    const headline = podcast.bodyText.es.headline
-    const paragraph = podcast.bodyText.es._rawParagraph
 
-    return (
-        <Layout>
-        <Seo title="New" />
-        <ContainerTitle>
-            <h1>{title}</h1>
+  const title = podcast.title.es
+  const headline = podcast.bodyText.es.headline
+  const paragraph = podcast.bodyText.es._rawParagraph
 
-            <Player dangerouslySetInnerHTML={{
-                __html: podcast.episodePlayer
-            }}/>
+  return (
+    <Layout>
+      <Seo title="New" />
+      <ContainerTitle>
+        <h1 className="regular">▶ {title}</h1>
 
-            <BodyTextWrapper>
-            <h5 className="bold">{headline}</h5>
-            <BlockContent
+        <Player dangerouslySetInnerHTML={{
+          __html: podcast.episodePlayer
+        }} />
+
+        <BodyTextWrapper>
+          <h5 className="bold">{headline}</h5>
+          <BlockContent
             blocks={paragraph}
           />
-            </BodyTextWrapper>
+        </BodyTextWrapper>
 
-        </ContainerTitle>
-        </Layout>
+      </ContainerTitle>
+    </Layout>
 
-    )
+  )
 }
 
 const ContainerTitle = styled.div`
-display: block;
+  display: block;
+  padding: 7rem 1rem;
+  
+  h1 {
+    margin-bottom: 5rem;
+    max-width: 75%;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 5rem 1rem;
+
+    h1 {
+      max-width: 100%;
+      font-size: var(--headline-3);
+      margin-bottom: 2rem;
+    }
+  }
 `
 
 const Player = styled.div`
-display: block;
+  display: block;
+  margin: 0 auto;
+  max-width: 75%;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 const BodyTextWrapper = styled.section`
@@ -53,7 +75,7 @@ const BodyTextWrapper = styled.section`
 
     p {
       width: 50%;
-      padding: 0 .5rem;
+      padding: 0 1.5rem 0 .5rem;
       line-height: 140%;
     }
 
@@ -67,10 +89,13 @@ const BodyTextWrapper = styled.section`
     }
 
     @media screen and (max-width: 768px) {
+      margin: 2rem auto;
       flex-direction: column;
+
       p, h5 {
         width: 100%;
         margin: .5rem 0;
+        padding: 0;
       }
     }
 `

@@ -48,7 +48,7 @@ const Text = styled.div`
   box-sizing: border-box;
   margin-top: 0;
   margin-bottom: 5rem;
-  padding: .5rem 1rem;
+  padding: 0 1rem;
 
   h5 {
     margin: 1rem 0;
@@ -58,6 +58,15 @@ const Text = styled.div`
   @media screen and (max-width: 768px) {
     margin-bottom: 3rem;
     width: 100%;
+
+    h5 {
+      font-size: var(--headline-6);
+      margin-bottom: .5rem;
+    }
+
+    p {
+      font-size: var(--small);
+    }
   }
 `
 

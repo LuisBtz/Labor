@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react'
 import styled from 'styled-components';
 
-const MainHeadlineModule = ({data}) => {
+const MainHeadlineModule = ({ data }) => {
 
   const url = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -19,8 +19,8 @@ const MainHeadlineModule = ({data}) => {
           (data.buttons.es.agenda === true ? <li><Link to='/contact' className="cta small caps">Agenda tu cita</Link></li> : '')
         }
 
-        
-        
+
+
         {data.buttons && data.buttons.es && data.buttons.es.dossier &&
           (data.buttons.es.dossier ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.dossier}>Dossier</a></li> : '')
         }
@@ -30,24 +30,16 @@ const MainHeadlineModule = ({data}) => {
           (data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>Resume</a></li> : '')
         }
 
-      
-        
-        
-
-
         {data.buttons && data.buttons.es && data.buttons.es.social &&
-          (data.buttons.es.social === true ? 
+          (data.buttons.es.social === true ?
             <Social>
-                    <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE'+url} className="small caps">FB</a></li>
-                    <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet/?text='+text+'&url='+url} target="_blank" className="small caps">TW</a></li>
+              <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE' + url} className="small caps">FB</a></li>
+              <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet/?text=' + text + '&url=' + url} target="_blank" className="small caps">TW</a></li>
             </Social>
             : '')
         }
-
-        
-
       </Buttons>
-      
+
 
 
     </MainHeadlineWrapper>
@@ -65,12 +57,16 @@ const MainHeadlineWrapper = styled.section`
     flex-direction: column;
   }
 
+  @media screen and (max-width: 768px) {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
   h1 {
     max-width: 75%;
 
       @media screen and (max-width: 1024px) {
         max-width: 100%;
-        margin-bottom: 2.5rem;
       }
 
       @media screen and (max-width: 768px) {
@@ -81,6 +77,10 @@ const MainHeadlineWrapper = styled.section`
 
 const Social = styled.div`
 display: flex;
+
+@media screen and (max-width: 768px) {
+  margin-top: 1.5rem;
+}
 `
 
 const Buttons = styled.ul`
