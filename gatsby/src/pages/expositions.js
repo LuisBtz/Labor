@@ -11,7 +11,7 @@ import PastExposition from "../components/expositionsPage/PastExposition"
 const Publications = () => {
   return (
     <Layout>
-      <Seo title="Expositions" />
+      <Seo title="Expositions / Labor" />
       <CurrentExposition />
       <FutureExposition />
       <PastExposition />

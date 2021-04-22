@@ -14,7 +14,7 @@ export default function SingleArtistPage({ data: { artist } }) {
 
   return (
     <Layout>
-      <Seo title="Artist" />
+      <Seo title={artist.seo.es.titleSeo} description={artist.seo.es.pageDescription} image={artist.thumbnail.asset.url} />
       <Hero>
         <GatsbyImage image={heroImage} alt={artist.name} />
       </Hero>
@@ -37,7 +37,14 @@ export const query = graphql`
       name
       thumbnail {
         asset {
+          url
           gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+        }
+      }
+      seo {
+        es {
+          pageDescription
+          titleSeo
         }
       }
       editorialModule {

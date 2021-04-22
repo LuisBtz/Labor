@@ -7,7 +7,7 @@ import PublicationsPage from '../components/publicationsPage/PublicationsPage'
 const ExpositionsPage = () => {
   return (
     <Layout>
-      <Seo title="Expositions" />
+      <Seo title="Publications" />
       <PublicationsPage />
     </Layout>
     

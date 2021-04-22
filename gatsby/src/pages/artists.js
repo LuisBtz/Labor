@@ -7,7 +7,7 @@ import Seo from "../components/layout/seo"
 const Artists = () => {
   return (
     <Layout>
-      <Seo title="Artists" />
+      <Seo title="Artistas / Labor Galería" />
       <ArtistsPage />
     </Layout>
     

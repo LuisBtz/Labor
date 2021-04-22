@@ -17,7 +17,7 @@ export default function SinglePodcastPage({ data: { podcast } }) {
 
   return (
     <Layout>
-      <Seo title="New" />
+      <Seo title={podcast.seo.es.titleSeo} description={podcast.seo.es.pageDescription} image={podcast.thumbnailCover.asset.url} />
       <ContainerTitle>
         <h1 className="regular">▶ {title}</h1>
 
@@ -110,6 +110,17 @@ export const query = graphql`
 		current: {eq: $slug} }){
             title {
                 es
+            }
+            seo {
+                es {
+                    pageDescription
+                    titleSeo
+                }
+            }
+            thumbnailCover {
+              asset {
+                url
+              }
             }
             episodePlayer
             bodyText {

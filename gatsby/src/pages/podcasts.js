@@ -7,7 +7,7 @@ import Seo from "../components/layout/seo"
 const Podcasts = () => {
   return (
     <Layout>
-      <Seo title="Podcasts" />
+      <Seo title="Podcast" />
       <PodcastsPage />
     </Layout>
     

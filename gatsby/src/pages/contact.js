@@ -22,6 +22,12 @@ const Contact = () => {
         }
         _rawHorario
         mapCode
+        seo {
+          es {
+            pageDescription
+            titleSeo
+          }
+        }
       }
     }
     `)
@@ -33,7 +39,7 @@ const Contact = () => {
 
   return (
     <Layout>
-      <Seo title="Contact" />
+      <Seo title={data.sanityContact.seo.es.titleSeo} description={data.sanityContact.seo.es.pageDescription } />
       <Team>
         {data.sanityContact.team.map(({ name, position, email, _key }) => {
           return (

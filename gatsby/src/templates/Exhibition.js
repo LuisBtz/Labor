@@ -14,7 +14,7 @@ export default function SingleExhibitionPage({data : {exhibition}}) {
 
     return (
         <Layout>
-        <Seo title="Exhibition" />
+        <Seo title={exhibition.seo.es.titleSeo} description={exhibition.seo.es.pageDescription} image={exhibition.thumbnailCover.asset.url} />
         <Hero>
         <GatsbyImage
             image={heroImage}
@@ -41,7 +41,14 @@ export const query = graphql`
             }
             thumbnailCover {
                 asset {
+                    url
                     gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                }
+            }
+            seo {
+                es {
+                    pageDescription
+                    titleSeo
                 }
             }
             editorialModule {

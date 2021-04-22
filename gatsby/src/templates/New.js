@@ -14,7 +14,7 @@ export default function SingleNewPage( { data : { newNode } } ) {
 
     return (
         <Layout>
-        <Seo title="New" />
+        <Seo title={newNode.seo.es.titleSeo} description={newNode.seo.es.pageDescription} image={newNode.thumbnailCover.asset.url} />
         <Hero>
         <GatsbyImage
             image={heroImage}
@@ -41,7 +41,14 @@ export const query = graphql`
             }
             thumbnailCover {
                 asset {
+                    url
                     gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                }
+            }
+            seo {
+                es {
+                    pageDescription
+                    titleSeo
                 }
             }
             editorialModule {

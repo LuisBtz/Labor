@@ -13,7 +13,7 @@ export default function SinglePublicationPage({ data: { publication } }) {
 
   return (
     <Layout>
-      <Seo title="Publication" />
+      <Seo title={publication.seo.es.titleSeo} description={publication.seo.es.pageDescription} image={publication.thumbnailCover.asset.url} />
       <Hero>
         {/* <GatsbyImage
             image={heroImage}
@@ -40,7 +40,14 @@ export const query = graphql`
             }
             thumbnailCover {
                 asset {
+                    url
                     gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                }
+            }
+            seo {
+                es {
+                    pageDescription
+                    titleSeo
                 }
             }
             editorialModule {
