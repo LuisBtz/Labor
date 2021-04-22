@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const QuoteModule = () => {
+const QuoteModule = ({data}) => {
 
   return (
 
     <QuoteWrapper>
-      <h2 className="bold">«The European languages are members of the same family. Their existence is a myth».</h2>
+      {data.quoteText && data.quoteText.es &&
+          (data.quoteText.es ? <h2 className="bold">{data.quoteText.es}</h2> : '')
+        }
     </QuoteWrapper>
 
   )
