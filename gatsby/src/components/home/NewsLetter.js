@@ -46,13 +46,13 @@ class Newsletter extends React.Component {
 
   render() {
 
-  return (
-    <NewsletterWrapper>
+    return (
+      <NewsletterWrapper>
 
-        <p>{this.state.message}</p>
+        <p className="detail">{this.state.message}</p>
 
-        
-        <form className="subscribe" onSubmit={this.handleSubmit}> 
+
+        <form className="subscribe" onSubmit={this.handleSubmit}>
           <input
             type="email"
             value={this.state.email}
@@ -68,15 +68,59 @@ class Newsletter extends React.Component {
           </button>
         </form>
 
-    </NewsletterWrapper>
+      </NewsletterWrapper>
 
-  )
-} 
+    )
+  }
 }
 
 const NewsletterWrapper = styled.div`
   width: 100%;
   background-color: #F1F2F2;
+  padding: 2rem 1rem;
+
+  .subscribe {
+    display: flex;
+    justify-content: space-between;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+  }
+
+  input {
+    flex: 1;
+    margin-right: 2rem;
+    @media screen and (max-width: 768px) {
+        margin-top: 1rem;
+      }
+  }
+
+  input, button {
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    font-size: var(--headline-4);
+    font-family: var(--bold);
+    text-transform: uppercase;
+  }
+
+  input:focus, button:focus {
+    outline: 0;
+  }
+
+  button {
+    text-align: center;
+      @media screen and (max-width: 768px) {
+        text-align: left;
+      }
+  }
+
+  button:focus {
+    background: black;
+    color: white;
+  }
+  
 
 `
 

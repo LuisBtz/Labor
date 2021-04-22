@@ -58,6 +58,10 @@ const Text = styled.div`
     line-height: 120%;
   }
 
+  h1 {
+    word-break: break-all;
+  }
+
   /* Mobile */
   @media screen and (max-width: 768px) {
     grid: none;

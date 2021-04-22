@@ -2,15 +2,14 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout/layout'
 import Seo from '../components/layout/seo'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import Modules from '../components/modules/Modules'
 
 
 // markup
 export default function SinglePublicationPage({ data: { publication } }) {
-  const heroImage = getImage(publication.thumbnailCover.asset);
-
+  // const heroImage = getImage(publication.thumbnailCover.asset);
 
   return (
     <Layout>
