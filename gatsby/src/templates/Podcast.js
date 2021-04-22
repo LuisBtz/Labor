@@ -70,29 +70,32 @@ const Player = styled.div`
 
 const BodyTextWrapper = styled.section`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin: 5rem auto;
 
-    p {
+    > div {
       width: 50%;
       padding: 0 1.5rem 0 .5rem;
+    }
+
+    p {
       line-height: 140%;
     }
 
     h5 {
-      width: 25%;
-      padding: 0 .5rem;
-
-        @media screen and (max-width: 980px) {
-          width: 35%;
-        }
+      visibility: hidden;
     }
 
     @media screen and (max-width: 768px) {
       margin: 2rem auto;
       flex-direction: column;
 
-      p, h5 {
+      > div {
+        width: 100%;
+        padding: 0 .5rem;
+      }
+
+      p {
         width: 100%;
         margin: .5rem 0;
         padding: 0;

@@ -3,27 +3,27 @@ import styled from "styled-components";
 import BlockContent from '@sanity/block-content-to-react';
 
 
-const BodyTextModule = ( { data } ) => {
+const BodyTextModule = ({ data }) => {
 
 
   return (
     <BodyTextWrapper>
       <h5 className="bold">
 
-      {data.es && data.es.headline && 
+        {data.es && data.es.headline &&
           (data.es.headline ? data.es.headline : '')
         }
 
       </h5>
-      <p>
-      {data.es && data.es._rawParagraph && 
-          (data.es._rawParagraph ? 
+      <div className="body-text">
+        {data.es && data.es._rawParagraph &&
+          (data.es._rawParagraph ?
             <BlockContent
-            blocks={data.es._rawParagraph}
-        />
-         : '')
+              blocks={data.es._rawParagraph}
+            />
+            : '')
         }
-      </p>
+      </div>
     </BodyTextWrapper>
   );
 };
@@ -33,8 +33,13 @@ const BodyTextWrapper = styled.section`
   justify-content: space-between;
   margin: 5rem auto;
 
-  p {
+  .body-text {
     width: 50%;
+    padding-right: 1.5rem;
+  }
+
+  p {
+    width: 100%;
     padding: 0 0.5rem;
     line-height: 140%;
   }
@@ -50,6 +55,12 @@ const BodyTextWrapper = styled.section`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    margin: 2rem auto;
+
+    .body-text {
+      width: 100%;
+      padding: 0 .5rem;
+    }
     p,
     h5 {
       width: 100%;

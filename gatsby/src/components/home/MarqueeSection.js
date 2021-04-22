@@ -27,11 +27,13 @@ const MarqueeContainer = styled.section`
     a {
       color: var(--white);
       white-space: nowrap;
+      text-transform: uppercase;
     }
     p {
       color: var(--white);
       font-size: var(--jumbo);
       white-space: nowrap;
+      text-transform: uppercase;
 
       animation-name: trnslt;
       animation-iteration-count: infinite;
