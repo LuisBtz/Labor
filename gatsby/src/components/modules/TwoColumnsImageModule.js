@@ -1,31 +1,56 @@
 import React from 'react'
 import styled from 'styled-components';
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const TwoColumnsImageModule = () => {
+const TwoColumnsImageModule = ( { data } ) => {
+
+  const imageOneGatsby = getImage(data.imageOne.asset);  
+  const imageTwoGatsby = getImage(data.imageTwo.asset);  
 
   return (
 
     <TwoColumnsWrapper>
 
       <ColumnOne>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1497369542358-287e35b2ce4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="detail">caption 1</p>
+          {data.imageOne &&
+              (data.imageOne.alternativeText ? 
+                <GatsbyImage
+                  image={imageOneGatsby}
+                  alt={data.imageOne.alternativeText}
+                />
+                  : <GatsbyImage
+                  image={imageOneGatsby}
+                  alt='Labor Image'
+                />  )
+            }
+
+            {data.imageOne && data.imageOne.caption && data.imageOne.caption.es &&
+              (data.imageOne.caption.es ? 
+                <p className="detail">{data.imageOne.caption.es}</p>
+                  : ''  )
+            }
+        
+        
       </ColumnOne>
 
       <ColumnTwo>
-        <StaticImage
-          src="https://images.unsplash.com/photo-1618769089518-e2e94ef970c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-          alt="A dinosaur"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
-        <p className="detail">caption 2</p>
+      {data.imageTwo &&
+              (data.imageTwo.alternativeText ? 
+                <GatsbyImage
+                  image={imageTwoGatsby}
+                  alt={data.imageTwo.alternativeText}
+                />
+                  : <GatsbyImage
+                  image={imageTwoGatsby}
+                  alt='Labor Image'
+                />  )
+            }
+
+            {data.imageTwo && data.imageTwo.caption && data.imageTwo.caption.es &&
+              (data.imageTwo.caption.es ? 
+                <p className="detail">{data.imageTwo.caption.es}</p>
+                  : ''  )
+            }
       </ColumnTwo>
 
     </TwoColumnsWrapper>
