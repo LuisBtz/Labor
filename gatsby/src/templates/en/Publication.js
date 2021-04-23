@@ -4,7 +4,7 @@ import LayoutEn from '../../components/layout/en/layoutEn'
 import Seo from '../../components/layout/seo'
 // import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
-// import Modules from '../components/modules/Modules'
+import ModulesEn from '../../components/modules/en/ModulesEn'
 
 
 // markup
@@ -20,7 +20,7 @@ export default function SinglePublicationPage({ data: { publication } }) {
             alt={publication.title.es}
         /> */}
       </Hero>
-      {/* <Modules editorialModule={publication.editorialModule} /> */}
+      <ModulesEn editorialModule={publication.editorialModule} />
     </LayoutEn>
 
   )

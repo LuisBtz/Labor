@@ -4,7 +4,7 @@ import LayoutEn from '../../components/layout/en/layoutEn'
 import Seo from '../../components/layout/seo'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
-// import Modules from '../components/modules/Modules'
+import ModulesEn from '../../components/modules/en/ModulesEn'
 
 
 // markup
@@ -21,7 +21,7 @@ export default function SingleNewPage( { data : { newNode } } ) {
             alt={newNode.title.en}
         />
         </Hero>
-        {/* <Modules editorialModule={newNode.editorialModule} /> */}
+        <ModulesEn editorialModule={newNode.editorialModule} />
         </LayoutEn>
 
     )
