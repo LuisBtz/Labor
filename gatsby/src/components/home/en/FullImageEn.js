@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 const FullImage = ({ data }) => {
 
   const getDataImage = getImage(data.sanityHomePage.exhibitionsHF.thumbnailCover.asset);
-  const title = data.sanityHomePage.exhibitionsHF.title.es;
+  const title = data.sanityHomePage.exhibitionsHF.title.en;
   const author = data.sanityHomePage.exhibitionsHF.author;
   const dateStart = data.sanityHomePage.exhibitionsHF.startDate;
   const dateEND = data.sanityHomePage.exhibitionsHF.endDate;
@@ -17,7 +17,7 @@ const FullImage = ({ data }) => {
 
   return (
     <FullImageContainer
-      to={`/expositions/${slug}`}
+      to={`/en/expositions/${slug}`}
     >
       <GatsbyImage
         image={getDataImage}

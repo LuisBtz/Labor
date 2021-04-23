@@ -5,24 +5,23 @@ import { Link } from 'gatsby';
 
 
 // markup
-const PostExposition = ({ title, author, slug, startDate, endDate, current, thumbnailCover }) => {
+const PostExposition = ({ title, author, slug, current, endDate, startDate, thumbnailCover }) => {
   const image = getImage(thumbnailCover.asset);
-
   const dateStart = startDate;
   const dateEND = endDate;
   const pastCurrentOrFuture = current;
 
   return (
     <PostExpositionWrapper
-      to={`/expositions/${slug.current}`}
+      to={`/en/expositions/${slug.current}`}
     >
       <GatsbyImage
         image={image}
-        alt={title.es}
+        alt={title.en}
       />
       <Text>
         <p className="detail regular">{dateStart} - {dateEND} - {pastCurrentOrFuture}</p>
-        <h2 className="black">{title.es}</h2>
+        <h2 className="black">{title.en}</h2>
         <p className="medium caps"><span className="arrow">↑</span> {author}</p>
       </Text>
     </PostExpositionWrapper>

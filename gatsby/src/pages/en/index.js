@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
-import LayoutEn from "../components/layout/en/layoutEn"
-import Seo from "../components/layout/seo"
+import LayoutEn from "../../components/layout/en/layoutEn"
+import Seo from "../../components/layout/seo"
 
-import FullImage from '../components/home/FullImage'
-import ExhibitionSection from '../components/home/ExhibitionSection'
-import ArtistSection from '../components/home/ArtistSection'
-import MarqueeSection from "../components/home/MarqueeSection"
-import PublicationSection from "../components/home/PublicationSection"
-import NewsSection from "../components/home/NewsSection"
-import NewsLetter from "../components/home/NewsLetter"
+import FullImageEn from '../../components/home/en/FullImageEn'
+import ExhibitionSectionEn from '../../components/home/en/ExhibitionSectionEn'
+import ArtistSectionEn from '../../components/home/en/ArtistSectionEn'
+import MarqueeSectionEn from "../../components/home/en/MarqueeSectionEn"
+import PublicationSectionEn from "../../components/home/en/PublicationSectionEn"
+import NewsSectionEn from "../../components/home/en/NewsSectionEn"
+import NewsLetterEn from "../../components/home/en/NewsLetterEn"
 
 export const data = graphql`
   query  {
@@ -27,7 +27,7 @@ export const data = graphql`
       author
       date
       title {
-        es
+        en
       }
       slug {
         current
@@ -35,7 +35,7 @@ export const data = graphql`
     }
     exhibitionsHighlights {
       title {
-        es
+        en
       }
       startDate(formatString: "MMM DD YYYY")
       endDate(formatString: "MMM DD YYYY")
@@ -46,7 +46,7 @@ export const data = graphql`
       }
       date
       metaData {
-        es
+        en
       }
       id
       thumbnailCover {
@@ -61,14 +61,14 @@ export const data = graphql`
         current
       }
       metaData {
-        es
+        en
       }
       id
       from {
-        es
+        en
       }
       abstract {
-        es
+        en
       }
       thumbnail {
         asset {
@@ -77,25 +77,25 @@ export const data = graphql`
       }
     }
     marquee {
-      es {
+      en {
         url
         marqueeText
       }
     }
     publicationHighlights {
       title {
-        es
+        en
       }
       date
       abstract {
-        es
+        en
       }
       author
       slug {
         current
       }
       metaData {
-        es
+        en
       }
       id
       thumbnailCover {
@@ -106,10 +106,10 @@ export const data = graphql`
     }
     recentNews {
       title {
-        es
+        en
       }
       metaData {
-        es
+        en
       }
       slug {
         current
@@ -117,7 +117,7 @@ export const data = graphql`
       id
     }
     seo {
-      es {
+      en {
         pageDescription
         titleSeo
       }
@@ -142,14 +142,14 @@ const IndexPage = ({ data }) => {
 
   return (
     <LayoutEn scroll={scroll} indexTrue={indexTrue}>
-      <Seo title={data.sanityHomePage.seo.es.titleSeo} description={data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
-      <FullImage data={data} />
-      <ExhibitionSection data={data} />
-      <ArtistSection data={data} />
-      <MarqueeSection data={data} />
-      <PublicationSection data={data} />
-      <NewsSection data={data} />
-      <NewsLetter />
+      <Seo title={data.sanityHomePage.seo.en.titleSeo} description={data.sanityHomePage.seo.en.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
+      <FullImageEn data={data} />
+      <ExhibitionSectionEn data={data} />
+      <ArtistSectionEn data={data} />
+      <MarqueeSectionEn data={data} />
+      <PublicationSectionEn data={data} />
+      <NewsSectionEn data={data} />
+      <NewsLetterEn />
     </LayoutEn>
   )
 }

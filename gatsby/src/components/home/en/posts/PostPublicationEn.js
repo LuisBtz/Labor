@@ -10,17 +10,17 @@ const PostPublication = ({ title, date, abstract, author, slug, thumbnailCover }
 
   return (
     <PostPublicationWrapper
-      to={`/publications/${slug.current}`}
+      to={`/en/publications/${slug.current}`}
     >
       <ImageStyle
         image={image}
-        alt={title.es}
+        alt={title.en}
       />
       <Text>
         <p className='detail'>{date}</p>
-        <h5><span className="arrow">↖</span> {title.es}</h5>
+        <h5><span className="arrow">↖</span> {title.en}</h5>
         <p className="caps">{author}</p>
-        <Abstract>{abstract.es}</Abstract>
+        <Abstract>{abstract.en}</Abstract>
       </Text>
     </PostPublicationWrapper>
 
