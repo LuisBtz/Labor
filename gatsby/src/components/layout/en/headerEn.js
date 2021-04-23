@@ -8,6 +8,10 @@ import logo from '../../../assets/images/logo-labor.svg'
 // markup
 const HeaderEn = ( {scroll , indexTrue} ) => {
 
+  var pathLink = window.location.pathname
+
+  const languages = ['es', 'en']
+
   const [nav, showNav] = useState(false);
 
 
@@ -50,13 +54,22 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
       }
       
       <ul className="lang">
-        <li><a href='/'>Español</a></li>
-        <li><a href='/'>English</a></li>
+      {languages.map((lng,) => (
+          <li key={lng}>
+            <Link to={lng === 'es' ? pathLink : '/en'+pathLink} language={lng}>
+            {lng === 'es' ? 'Español' : 'English'}
+            </Link>
+          </li>
+        ))}
       </ul>
       <ul className="lang-mobile">
-        <li><a href='/'>En</a></li>
-        <li>/</li>
-        <li><a href='/'>Es</a></li>
+        {languages.map((lng,) => (
+          <li key={lng}>
+            <Link to={lng === 'es' ? pathLink : '/en'+pathLink} language={lng}>
+            {lng === 'es' ? 'Es/' : 'En'}
+            </Link>
+          </li>
+        ))}
       </ul>
     </NavStyle>
   )

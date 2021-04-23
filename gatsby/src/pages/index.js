@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
-import LayoutEn from "../components/layout/en/layoutEn"
+import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
 
 import FullImage from '../components/home/FullImage'
@@ -141,7 +141,7 @@ const IndexPage = ({ data }) => {
   }, []); 
 
   return (
-    <LayoutEn scroll={scroll} indexTrue={indexTrue}>
+    <Layout scroll={scroll} indexTrue={indexTrue}>
       <Seo title={data.sanityHomePage.seo.es.titleSeo} description={data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
@@ -150,7 +150,7 @@ const IndexPage = ({ data }) => {
       <PublicationSection data={data} />
       <NewsSection data={data} />
       <NewsLetter />
-    </LayoutEn>
+    </Layout>
   )
 }
 

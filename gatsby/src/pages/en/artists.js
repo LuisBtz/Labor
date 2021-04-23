@@ -1,15 +1,15 @@
 import React from "react"
-import ArtistsPage from "../../components/artistsPage/ArtistsPage"
-import Layout from "../../components/layout/layout"
+import ArtistsPageEn from "../../components/artistsPage/en/ArtistsPageEn"
+import LayoutEn from "../../components/layout/en/layoutEn"
 import Seo from "../../components/layout/seo"
 
 // markup
 const Artists = () => {
   return (
-    <Layout>
-      <Seo title="Artistas / Labor Galería" />
-      <ArtistsPage />
-    </Layout>
+    <LayoutEn>
+      <Seo title="Artists / Labor " />
+      <ArtistsPageEn />
+    </LayoutEn>
     
   )
 }
