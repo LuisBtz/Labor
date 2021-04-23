@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../../components/layout/layout"
 import Seo from "../../components/layout/seo"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import BlockContent from '@sanity/block-content-to-react';
+import LayoutEn from "../../components/layout/en/layoutEn"
 
 
 // markup
@@ -16,14 +16,14 @@ const Contact = () => {
           name
           email
           position {
-            es
+            en
           }
           _key
         }
         _rawHorario
         mapCode
         seo {
-          es {
+          en {
             pageDescription
             titleSeo
           }
@@ -38,13 +38,13 @@ const Contact = () => {
   const mapa = data.sanityContact.mapCode;
 
   return (
-    <Layout>
-      <Seo title={data.sanityContact.seo.es.titleSeo} description={data.sanityContact.seo.es.pageDescription } />
+    <LayoutEn>
+      <Seo title={data.sanityContact.seo.en.titleSeo} description={data.sanityContact.seo.en.pageDescription } />
       <Team>
         {data.sanityContact.team.map(({ name, position, email, _key }) => {
           return (
             <div key={_key}>
-              <p className="caps">{position.es}</p>
+              <p className="caps">{position.en}</p>
               <h5>{name}</h5>
               <a href={'mailto:' + email}>{email}</a>
             </div>
@@ -60,7 +60,7 @@ const Contact = () => {
 
         <div className='mapa' dangerouslySetInnerHTML={{ __html: mapa }} />
       </HorarioMap>
-    </Layout>
+    </LayoutEn>
 
   )
 }
