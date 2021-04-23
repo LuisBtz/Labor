@@ -13,7 +13,7 @@ export default function SinglePublicationPage({ data: { publication } }) {
 
   return (
     <LayoutEn>
-      <Seo title={publication.seo.en && publication.seo.en.titleSeo} description={publication.seo.en && publication.seo.en.pageDescription} image={publication.thumbnailCover.asset.url} />
+      <Seo title={publication.seo && publication.seo.en.titleSeo} description={publication.seo && publication.seo.en.pageDescription} image={publication.thumbnailCover.asset.url} />
       <Hero>
         {/* <GatsbyImage
             image={heroImage}

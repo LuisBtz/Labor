@@ -142,7 +142,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout scroll={scroll} indexTrue={indexTrue}>
-      <Seo title={data.sanityHomePage.seo.es && data.sanityHomePage.seo.es.titleSeo} description={data.sanityHomePage.seo.es && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
+      <Seo title={data.sanityHomePage.seo && data.sanityHomePage.seo.es.titleSeo} description={data.sanityHomePage.seo && data.sanityHomePage.seo.es.pageDescription} image={data.sanityHomePage.exhibitionsHF.thumbnailCover.asset.url} />
       <FullImage data={data} />
       <ExhibitionSection data={data} />
       <ArtistSection data={data} />

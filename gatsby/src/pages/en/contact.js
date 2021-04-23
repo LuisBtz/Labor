@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <LayoutEn>
-      <Seo title={data.sanityContact.seo.en && data.sanityContact.seo.en.titleSeo} description={data.sanityContact.seo.en && data.sanityContact.seo.en.pageDescription } />
+      <Seo title={data.sanityContact.seo && data.sanityContact.seo.en.titleSeo} description={data.sanityContact.seo && data.sanityContact.seo.en.pageDescription } />
       <Team>
         {data.sanityContact.team.map(({ name, position, email, _key }) => {
           return (
