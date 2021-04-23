@@ -8,7 +8,9 @@ import logo from '../../../assets/images/logo-labor.svg'
 // markup
 const HeaderEn = ( {scroll , indexTrue} ) => {
 
-  var pathLink = window.location.pathname
+  const pathLink = window.location.pathname
+
+  const pathEs = pathLink.replace('/en','')
 
   const languages = ['es', 'en']
 
@@ -56,7 +58,7 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
       <ul className="lang">
       {languages.map((lng,) => (
           <li key={lng}>
-            <Link to={lng === 'es' ? pathLink : '/en'+pathLink} language={lng}>
+            <Link to={lng === 'es' ? pathEs : pathLink} language={lng}>
             {lng === 'es' ? 'Español' : 'English'}
             </Link>
           </li>
