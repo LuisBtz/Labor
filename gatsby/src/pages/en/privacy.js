@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/layout/layout"
+import LayoutEn from "../../components/layout/en/layoutEn"
 import Seo from "../../components/layout/seo"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
@@ -13,9 +13,9 @@ const Privacy = () => {
     query  {
         sanityPrivacy {
             title {
-                es
+                en
             }
-            _rawPrivacyTextEs
+            _rawPrivacyTextEn
         }
     }
     `)
@@ -23,11 +23,11 @@ const Privacy = () => {
   // const adress = data.datoCmsSetting.address;
   // const tel = data.datoCmsSetting.tel;
   // const mail = data.datoCmsSetting.mail;
-  const title = data.sanityPrivacy.title.es;
-  const body = data.sanityPrivacy._rawPrivacyTextEs;
+  const title = data.sanityPrivacy.title.en;
+  const body = data.sanityPrivacy._rawPrivacyTextEn;
 
   return (
-    <Layout>
+    <LayoutEn>
       <Seo title={title} />
       <BodyTextWrapper>
       <h5 className="bold">{title}</h5>
@@ -37,7 +37,7 @@ const Privacy = () => {
           />
         </p>
     </BodyTextWrapper>
-    </Layout>
+    </LayoutEn>
   )
 }
 

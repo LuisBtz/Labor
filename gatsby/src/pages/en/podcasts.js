@@ -1,15 +1,15 @@
 import React from "react"
-import PodcastsPage from "../../components/podcastsPage/PodcastsPage"
-import Layout from "../../components/layout/layout"
+import LayoutEn from "../../components/layout/en/layoutEn"
 import Seo from "../../components/layout/seo"
+import PodcastsPageEn from "../../components/podcastsPage/en/PodcastsPageEn"
 
 // markup
 const Podcasts = () => {
   return (
-    <Layout>
+    <LayoutEn>
       <Seo title="Podcast" />
-      <PodcastsPage />
-    </Layout>
+      <PodcastsPageEn />
+    </LayoutEn>
     
   )
 }

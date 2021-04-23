@@ -1,15 +1,15 @@
 import React from "react"
-import NewsPage from "../../components/newsPage/NewsPage"
-import Layout from "../../components/layout/layout"
+import NewsPageEn from "../../components/newsPage/en/NewsPageEn"
+import LayoutEn from "../../components/layout/en/layoutEn"
 import Seo from "../../components/layout/seo"
 
 // markup
 const News = () => {
   return (
-    <Layout>
+    <LayoutEn>
       <Seo title="News" />
-      <NewsPage />
-    </Layout>
+      <NewsPageEn />
+    </LayoutEn>
     
   )
 }
