@@ -14,7 +14,7 @@ export default function SingleArtistPage({ data: { artist } }) {
 
   return (
     <LayoutEn>
-      <Seo title={artist.seo.en.titleSeo} description={artist.seo.en.pageDescription} image={artist.thumbnail.asset.url} />
+      <Seo title={artist.seo.en && artist.seo.en.titleSeo} description={artist.seo.en && artist.seo.en.pageDescription} image={artist.thumbnail.asset.url} />
       <Hero>
         <GatsbyImage image={heroImage} alt={artist.name} />
       </Hero>

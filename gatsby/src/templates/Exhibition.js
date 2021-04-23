@@ -14,7 +14,7 @@ export default function SingleExhibitionPage({data : {exhibition}}) {
 
     return (
         <Layout>
-        <Seo title={exhibition.seo.es.titleSeo} description={exhibition.seo.es.pageDescription} image={exhibition.thumbnailCover.asset.url} />
+        <Seo title={exhibition.seo.es && exhibition.seo.es.titleSeo} description={exhibition.seo.es && exhibition.seo.es.pageDescription} image={exhibition.thumbnailCover.asset.url} />
         <Hero>
         <GatsbyImage
             image={heroImage}

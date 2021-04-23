@@ -28,7 +28,7 @@ const Privacy = () => {
 
   return (
     <Layout>
-      <Seo title={title} />
+      <Seo title={ data.sanityPrivacy.title && title} />
       <BodyTextWrapper>
       <h5 className="bold">{title}</h5>
         <p>

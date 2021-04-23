@@ -17,7 +17,7 @@ export default function SinglePodcastPage({ data: { podcast } }) {
 
   return (
     <LayoutEn>
-      <Seo title={podcast.seo.en.titleSeo} description={podcast.seo.en.pageDescription} image={podcast.thumbnailCover.asset.url} />
+      <Seo title={podcast.seo.en && podcast.seo.en.titleSeo} description={podcast.seo.en && podcast.seo.en.pageDescription} image={podcast.thumbnailCover.asset.url} />
       <ContainerTitle>
         <h1 className="regular">▶ {title}</h1>
 

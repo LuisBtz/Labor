@@ -14,7 +14,7 @@ export default function SingleNewPage( { data : { newNode } } ) {
 
     return (
         <Layout>
-        <Seo title={newNode.seo.es.titleSeo} description={newNode.seo.es.pageDescription} image={newNode.thumbnailCover.asset.url} />
+        <Seo title={newNode.seo.es && newNode.seo.es.titleSeo } description={newNode.seo.es && newNode.seo.es.pageDescription} image={newNode.thumbnailCover.asset.url} />
         <Hero>
         <GatsbyImage
             image={heroImage}
