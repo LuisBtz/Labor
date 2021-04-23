@@ -19,7 +19,6 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
   const [nav, showNav] = useState(false);
 
 
-  console.log(scroll, 'Scrollllll')
 
   return (
     
@@ -67,7 +66,7 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
       <ul className="lang-mobile">
         {languages.map((lng,) => (
           <li key={lng}>
-            <Link to={lng === 'es' ? pathLink : '/en'+pathLink} language={lng}>
+            <Link to={lng === 'es' ? pathEs : pathLink} language={lng}>
             {lng === 'es' ? 'Es/' : 'En'}
             </Link>
           </li>
