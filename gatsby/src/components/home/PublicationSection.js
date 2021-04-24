@@ -11,10 +11,11 @@ const PublicationSection = ({ data }) => {
     var moveDiv = document.getElementById('scroll-ind');
 
     window.addEventListener('mousemove', function (e) {
+
       var x = e.clientX,
         y = e.clientY;
-      moveDiv.style.top = (y + 20) + 'px';
-      moveDiv.style.left = (x + 20) + 'px';
+      moveDiv.style.top = y + 'px';
+      moveDiv.style.left = x + 'px';
     });
   });
 
@@ -45,6 +46,7 @@ const PublicationContainer = styled.section`
     overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 5rem;
+    cursor: none;
 
     .gatsby-image-wrapper img {
       height: inherit !important;
@@ -56,6 +58,7 @@ const PublicationContainer = styled.section`
       left: 50%;
       top: 50%;
       z-index: 1001;
+      transform: translate(-50%,-50%);
     }
 
     @media screen and (max-width: 1280px) {

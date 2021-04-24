@@ -7,7 +7,7 @@ import PostCurrentExpositionEn from './post/PostCurrentExposition';
 // markup
 const CurrentExpositionEn = () => {
 
-  
+
   const dataCurrent = useStaticQuery(graphql`
   query  {
       allSanityExhibitions(filter: {current: {eq: "current"}}) {
@@ -49,9 +49,9 @@ const CurrentExpositionEn = () => {
       })}
 
       <section id="anchors">
-        <a href="#ActualTop" id="actual"><span className="arrow">→</span> Exposición Actual</a>
-        <a href="#FuturasTop" id="futuras"><span className="arrow">→</span> Futuras</a>
-        <a href="#PasadasTop" id="pasadas"><span className="arrow">→</span> Pasadas</a>
+        <a href="#ActualTop" id="actual"><span className="arrow">→</span>Current</a>
+        <a href="#FuturasTop" id="futuras"><span className="arrow">→</span>Upcoming</a>
+        <a href="#PasadasTop" id="pasadas"><span className="arrow">→</span>Past</a>
       </section>
     </CurrentExpositionContainer>
   )
@@ -71,17 +71,27 @@ const CurrentExpositionContainer = styled.section`
     border-top: solid 1px black;
     padding: 1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
     @media screen and (max-width: 768px) {
-      justify-content: center;
+      justify-content: space-between;
+      padding: 0;
     }
 
       a {
         padding: 0 .75rem;
+        margin: 0 1rem;
         text-transform: uppercase;
         font-size: var(--small);
+
+         @media screen and (max-width: 768px) {
+          margin: 0;
+          width: 33.33%;
+          padding: 1rem 0;
+          text-align: center;
+        }
+
 
         .arrow {
           display: none;
@@ -89,6 +99,10 @@ const CurrentExpositionContainer = styled.section`
 
         :hover {
           font-family: var(--bold);
+        }
+
+        :hover .arrow {
+          display: inline-block;
         }
       }
 

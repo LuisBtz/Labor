@@ -39,7 +39,7 @@ const PastExpositionEn = () => {
   return (
     <PastExpositionContainer>
       <section id="PasadasTop">
-        <p className="caps medium head">Exposiciones pasadas <span className="arrow">↓</span></p>
+        <p className="caps medium head">Past Exhibitions <span className="arrow">↓</span></p>
       </section>
 
       <PastPosts>

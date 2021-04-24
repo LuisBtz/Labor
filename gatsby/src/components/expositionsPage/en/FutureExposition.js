@@ -35,18 +35,18 @@ const FutureExpositionEn = () => {
     }
   `)
 
-console.log(dataFuture.allSanityExhibitions.edges)
+  console.log(dataFuture.allSanityExhibitions.edges)
 
   return (
 
 
-    
+
     <FutureExpositionContainer>
       {dataFuture.allSanityExhibitions ?
-      <section id="FuturasTop">
-        <p className="caps medium head">Exposiciones futuras <span className="arrow">↓</span></p>
-      </section>
-      : ''}
+        <section id="FuturasTop">
+          <p className="caps medium head">Upcoming Exhibitions <span className="arrow">↓</span></p>
+        </section>
+        : ''}
 
       <FuturePosts>
         {dataFuture.allSanityExhibitions.edges.map(({ node }) => {

@@ -11,12 +11,12 @@ import PastExposition from "../components/expositionsPage/PastExposition"
 const Publications = () => {
   return (
     <Layout>
-      <Seo title="Expositions / Labor" />
+      <Seo title="Exposiciones" />
       <CurrentExposition />
       <FutureExposition />
       <PastExposition />
     </Layout>
-    
+
   )
 }
 
