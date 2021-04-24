@@ -5,14 +5,14 @@ import logo from '../../../assets/images/logo-labor.svg'
 
 
 // markup
-const HeaderEn = ( {scroll , indexTrue} ) => {
+const HeaderEn = ({ scroll, indexTrue }) => {
 
   // const url = typeof window !== 'undefined' ? window.location.href : '';
 
 
   const pathLink = typeof window !== 'undefined' ? window.location.pathname : ''
 
-  const pathEs = pathLink.replace('/en','')
+  const pathEs = pathLink.replace('/en', '')
 
   const languages = ['es', 'en']
 
@@ -21,14 +21,14 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
 
 
   return (
-    
+
     <NavStyle>
       <button id="mobile-button" onClick={() => showNav(!nav)} >
         Menu
       </button>
       <ul className="pages" nav={nav}>
         <li><Link to='/en/artists' >Artists</Link></li>
-        <li><Link to='/en/expositions' >Expositions</Link></li>
+        <li><Link to='/en/expositions' >Exhibitions</Link></li>
         <li><Link to='/en/publications' >Publications</Link></li>
         <li><Link to='/en/podcasts' >Perfume</Link></li>
         <li><Link to='/en/news' >News</Link></li>
@@ -37,28 +37,28 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
       {
         nav && (<ul className="pagesResp" nav={nav}>
           <li><Link to='/en/artists' >Artists</Link></li>
-          <li><Link to='/en/expositions' >Expositions</Link></li>
+          <li><Link to='/en/expositions' >Exhibitions</Link></li>
           <li><Link to='/en/publications' >Publications</Link></li>
           <li><Link to='/en/podcasts' >Perfume</Link></li>
           <li><Link to='/en/news' >News</Link></li>
           <li><Link to='/en/contact' >Contact</Link></li>
         </ul>)
       }
-      {indexTrue ? 
-      <Link to='/en/' className="logo">
-        <img id='img' src={logo} alt="labor" className={scroll ? 'shrink' : ''} />
-      </Link> 
-      : 
-      <Link to='/en/' className="logo">
-        <img src={logo} alt="labor" />
-      </Link> 
+      {indexTrue ?
+        <Link to='/en/' className="logo">
+          <img id='img' src={logo} alt="labor" className={scroll ? 'shrink' : ''} />
+        </Link>
+        :
+        <Link to='/en/' className="logo">
+          <img src={logo} alt="labor" />
+        </Link>
       }
-      
+
       <ul className="lang">
-      {languages.map((lng,) => (
+        {languages.map((lng,) => (
           <li key={lng}>
             <Link to={lng === 'es' ? pathEs : pathLink} language={lng}>
-            {lng === 'es' ? 'Español' : 'English'}
+              {lng === 'es' ? 'Español' : 'English'}
             </Link>
           </li>
         ))}
@@ -67,7 +67,7 @@ const HeaderEn = ( {scroll , indexTrue} ) => {
         {languages.map((lng,) => (
           <li key={lng}>
             <Link to={lng === 'es' ? pathEs : pathLink} language={lng}>
-            {lng === 'es' ? 'Es/' : 'En'}
+              {lng === 'es' ? 'Es/' : 'En'}
             </Link>
           </li>
         ))}
@@ -158,6 +158,9 @@ const NavStyle = styled.nav`
         color: var(--white);
         line-height: 100%;
         font-size: 0.85rem;
+          :hover {
+            text-decoration: line-through;
+          }
       }
   }
   #mobile-button {
@@ -188,6 +191,7 @@ const NavStyle = styled.nav`
       display: block;
       text-align:left;
       padding-top: .25rem;
+      font-size: 0.8rem;
     }
 
     ul.pages {
@@ -211,6 +215,7 @@ const NavStyle = styled.nav`
           text-transform: uppercase;
           line-height: 100%;
           border-bottom: solid 1px #f2f2f2;
+          font-size: 0.8rem;
         }
     }
 
@@ -243,6 +248,7 @@ const NavStyle = styled.nav`
       
         li, a {
           color: var(--black);
+          font-size: 0.8rem;
         }
     }
 

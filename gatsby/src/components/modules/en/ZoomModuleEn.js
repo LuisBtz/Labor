@@ -4,7 +4,7 @@ import {
   GlassMagnifier,
 } from "react-image-magnifiers";
 
-const ZoomModule = ( { data } ) => {
+const ZoomModule = ({ data }) => {
 
   const imageZoomData = data.imageZoom.asset.url
 
@@ -12,30 +12,32 @@ const ZoomModule = ( { data } ) => {
 
     <ZoomWrapper>
       {data.imageZoom &&
-              (data.imageZoom.alternativeText ? 
-                <GlassMagnifier
-                  imageSrc={imageZoomData}
-                  imageAlt={data.imageZoom.alternativeText}
-                  largeImageSrc={imageZoomData}
-                  magnifierBorderSize='0'
-                  square='true'
-                  magnifierSize="35%"
-                />
-                  : <GlassMagnifier
-                  imageSrc={imageZoomData}
-                  imageAlt='Labor Image'
-                  largeImageSrc={imageZoomData}
-                  magnifierBorderSize='0'
-                  square='true'
-                  magnifierSize="35%"
-                />  )
-            }
+        (data.imageZoom.alternativeText ?
+          <GlassMagnifier
+            imageSrc={imageZoomData}
+            imageAlt={data.imageZoom.alternativeText}
+            largeImageSrc={imageZoomData}
+            square='true'
+            magnifierSize="30%"
+          />
+          : <GlassMagnifier
+            imageSrc={imageZoomData}
+            imageAlt='Labor Image'
+            largeImageSrc={imageZoomData}
+            square='true'
+            magnifierSize="30%"
+          />)
+      }
 
     </ZoomWrapper>
 
   )
 }
 
-const ZoomWrapper = styled.section``
+const ZoomWrapper = styled.section`
+  > div div img {
+    width: 4000px !important;
+  }
+`
 
 export default ZoomModule

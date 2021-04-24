@@ -9,7 +9,7 @@ class NewsletterEn extends React.Component {
   constructor() {
     super()
     this.state = {
-      message: "subscribe to our newsletter",
+      message: "Subscribe to our Newsletter",
       name: "",
       email: "",
       result: null,
@@ -60,7 +60,7 @@ class NewsletterEn extends React.Component {
             name="EMAIL"
             id="mce-EMAIL"
             className="subscribe-email"
-            placeholder="Write your email"
+            placeholder="Type your email"
             required
           />
           <button className="btn_sent" type="submit">

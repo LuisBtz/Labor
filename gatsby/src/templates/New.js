@@ -8,27 +8,31 @@ import Modules from '../components/modules/Modules'
 
 
 // markup
-export default function SingleNewPage( { data : { newNode } } ) {
-    const heroImage = getImage(newNode.thumbnailCover.asset);  
-    
+export default function SingleNewPage({ data: { newNode } }) {
+  const heroImage = getImage(newNode.thumbnailCover.asset);
 
-    return (
-        <Layout>
-        <Seo title={newNode.seo && newNode.seo.es.titleSeo } description={newNode.seo && newNode.seo.es.pageDescription} image={newNode.thumbnailCover.asset.url} />
-        <Hero>
+
+  return (
+    <Layout>
+      <Seo title={newNode.seo && newNode.seo.es.titleSeo} description={newNode.seo && newNode.seo.es.pageDescription} image={newNode.thumbnailCover.asset.url} />
+      <Hero>
         <GatsbyImage
-            image={heroImage}
-            alt={newNode.title.es}
+          image={heroImage}
+          alt={newNode.title.es}
         />
-        </Hero>
-        <Modules editorialModule={newNode.editorialModule} />
-        </Layout>
+      </Hero>
+      <Modules editorialModule={newNode.editorialModule} />
+    </Layout>
 
-    )
+  )
 }
 
 const Hero = styled.div`
 display: block;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
 `
 
 

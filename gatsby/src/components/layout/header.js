@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 // import { Helmet } from "react-helmet";
 import logo from '../../assets/images/logo-labor.svg'
 
 
 // markup
-const Header = ( {scroll , indexTrue} ) => {
+const Header = ({ scroll, indexTrue }) => {
 
   // const url = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -44,30 +44,30 @@ const Header = ( {scroll , indexTrue} ) => {
           <li><Link to='/contact' >Contacto</Link></li>
         </ul>)
       }
-      {indexTrue ? 
-      <Link to='/' className="logo">
-        <img id='img' src={logo} alt="labor" className={scroll ? 'shrink' : ''} />
-      </Link> 
-      : 
-      <Link to='/' className="logo">
-        <img src={logo} alt="labor" />
-      </Link> 
+      {indexTrue ?
+        <Link to='/' className="logo">
+          <img id='img' src={logo} alt="labor" className={scroll ? 'shrink' : ''} />
+        </Link>
+        :
+        <Link to='/' className="logo">
+          <img src={logo} alt="labor" />
+        </Link>
       }
-      
+
       <ul className="lang">
-      {languages.map((lng,) => (
+        {languages.map((lng,) => (
           <li key={lng}>
-            <Link to={lng === 'es' ? pathLink : '/en'+pathLink} language={lng}>
-            {lng === 'es' ? 'Español' : 'English'}
+            <Link to={lng === 'es' ? pathLink : '/en' + pathLink} language={lng}>
+              {lng === 'es' ? 'Español' : 'English'}
             </Link>
           </li>
         ))}
       </ul>
       <ul className="lang-mobile">
-      {languages.map((lng) => (
+        {languages.map((lng) => (
           <li key={lng}>
-            <Link to={lng === 'es' ? pathLink : '/en'+pathLink} language={lng}>
-              {lng === 'es' ? 'Es /' : 'En'}
+            <Link to={lng === 'es' ? pathLink : '/en' + pathLink} language={lng}>
+              {lng === 'es' ? 'Es/' : 'En'}
             </Link>
           </li>
         ))}
@@ -158,6 +158,9 @@ const NavStyle = styled.nav`
         color: var(--white);
         line-height: 100%;
         font-size: 0.85rem;
+          :hover {
+              text-decoration: line-through;
+            }
       }
   }
   #mobile-button {
@@ -188,6 +191,7 @@ const NavStyle = styled.nav`
       display: block;
       text-align:left;
       padding-top: .25rem;
+      font-size: 0.8rem;
     }
 
     ul.pages {
@@ -211,6 +215,7 @@ const NavStyle = styled.nav`
           text-transform: uppercase;
           line-height: 100%;
           border-bottom: solid 1px #f2f2f2;
+          font-size: 0.8rem;
         }
     }
 
@@ -243,6 +248,7 @@ const NavStyle = styled.nav`
       
         li, a {
           color: var(--black);
+          font-size: 0.8rem;
         }
     }
 

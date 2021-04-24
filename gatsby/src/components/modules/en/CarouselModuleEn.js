@@ -75,7 +75,7 @@ const CarouselWrapper = styled.section`
   svg {
     width: 12rem;
     position: absolute;
-    z-index: 2020;
+    z-index: 1000;
     top: 35%;
     left: 50%;
     transform: translate(-50%,-50%);

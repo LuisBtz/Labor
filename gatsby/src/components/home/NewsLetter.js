@@ -9,7 +9,7 @@ class Newsletter extends React.Component {
   constructor() {
     super()
     this.state = {
-      message: "suscríbete a nuestro newsletter",
+      message: "Suscríbete a Nuestro Newsletter",
       name: "",
       email: "",
       result: null,

@@ -80,6 +80,7 @@ const BodyTextWrapper = styled.section`
 
     p {
       line-height: 140%;
+      padding: 0.5rem 0;
     }
 
     h5 {

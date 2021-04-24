@@ -8,27 +8,31 @@ import ModulesEn from '../../components/modules/en/ModulesEn'
 
 
 // markup
-export default function SingleExhibitionPage({data : {exhibition}}) {
-    const heroImage = getImage(exhibition.thumbnailCover.asset);  
-    
+export default function SingleExhibitionPage({ data: { exhibition } }) {
+  const heroImage = getImage(exhibition.thumbnailCover.asset);
 
-    return (
-        <LayoutEn>
-        <Seo title={exhibition.seo && exhibition.seo.en.titleSeo } description={exhibition.seo && exhibition.seo.en.pageDescription} image={exhibition.thumbnailCover.asset.url} />
-        <Hero>
+
+  return (
+    <LayoutEn>
+      <Seo title={exhibition.seo && exhibition.seo.en.titleSeo} description={exhibition.seo && exhibition.seo.en.pageDescription} image={exhibition.thumbnailCover.asset.url} />
+      <Hero>
         <GatsbyImage
-            image={heroImage}
-            alt={exhibition.title.en}
+          image={heroImage}
+          alt={exhibition.title.en}
         />
-        </Hero>
-        <ModulesEn editorialModule={exhibition.editorialModule} />
-        </LayoutEn>
+      </Hero>
+      <ModulesEn editorialModule={exhibition.editorialModule} />
+    </LayoutEn>
 
-    )
+  )
 }
 
 const Hero = styled.div`
 display: block;
+
+@media screen and (max-width: 768px) {
+    padding-top: 60px ;
+  }
 `
 
 
