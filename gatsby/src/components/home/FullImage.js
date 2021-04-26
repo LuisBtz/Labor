@@ -61,7 +61,7 @@ const Text = styled.div`
   }
 
   h1 {
-    word-break: break-all;
+    word-break: break-word;
   }
 
   /* Mobile */
