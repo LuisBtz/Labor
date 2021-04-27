@@ -68,7 +68,7 @@ const Text = styled.div`
   @media screen and (max-width: 768px) {
     grid: none;
     grid-gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     
     h1 {
       font-size: var(--headline-3);
