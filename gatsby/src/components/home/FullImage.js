@@ -52,7 +52,7 @@ const Text = styled.div`
   grid-gap: 5rem;
   grid-template-columns: 2fr 1fr;
   margin-top: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
   padding: 0 1rem;
 
   h6 {
