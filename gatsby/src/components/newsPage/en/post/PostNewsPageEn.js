@@ -51,7 +51,7 @@ const Text = styled.div`
   padding: 0 1rem;
 
   h5 {
-    margin: 1rem 0;
+    margin: 1rem 2rem .5rem 0;
   }
 
   /* Mobile */

@@ -22,7 +22,7 @@ const PostExposition = ({ title, author, slug, startDate, endDate, current, thum
       />
       <Text>
         <p className="detail regular">{dateStart} - {dateEND} - {pastCurrentOrFuture}</p>
-        <h2 className="black">{title.es}</h2>
+        <h4 className="black">{title.es}</h4>
         <p className="medium caps"><span className="arrow">↑</span> {author}</p>
       </Text>
     </PostExpositionWrapper>
@@ -56,7 +56,7 @@ const Text = styled.div`
   padding: .5rem 1rem;
 
   h2 {
-    margin: 1rem 0;
+    margin: .5rem 0;
   }
 
   /* Mobile */
@@ -64,7 +64,7 @@ const Text = styled.div`
     margin-bottom: 3rem;
 
     h2 {
-      font-size: var(--headline-3);
+      /* font-size: var(--headline-3); */
       margin: 0.75rem 0 .5rem 0;
     }
   }

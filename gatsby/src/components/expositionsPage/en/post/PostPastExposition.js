@@ -24,7 +24,7 @@ const PostPastExpositionEn = ({ data }) => {
       />
       <Text>
         <Date className="caps">{dateStart} - {dateEND} - {pastCurrentOrFuture}</Date>
-        <h3>{title}</h3>
+        <h5>{title}</h5>
         <Author className="caps"><span className="arrow">↑</span> {author}</Author>
       </Text>
     </PostExpositionWrapper>
@@ -49,10 +49,10 @@ const Text = styled.div`
   margin-top: 0;
   margin-bottom: 3rem;
   padding: 1rem;
-  h3 {
-    font-size: var(--headline-4);
+  h5 {
+    /* font-size: var(--headline-4); */
     font-family: var(--bold);
-    margin: 1rem 0;
+    margin: .5rem 0;
   }
 
   @media screen and (max-width: 768px) {
