@@ -70,7 +70,6 @@ const CarouselWrapper = styled.section`
   overflow-y: hidden;
   padding: 5rem 0;
   position: relative;
-  cursor: none;
 
   svg {
     width: 12rem;
