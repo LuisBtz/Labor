@@ -34,11 +34,14 @@ const MarqueeContainer = styled.section`
       font-size: var(--jumbo);
       white-space: nowrap;
       text-transform: uppercase;
+      width: 1000%;
+      overflow: hidden;
 
       animation-name: trnslt;
       animation-iteration-count: infinite;
-      animation-duration: 20s;
-      animation-timing-function: linear
+      animation-duration: 28s;
+      animation-timing-function: linear;
+      /* animation-direction: alternate; */
     }
 
     @keyframes trnslt {
@@ -46,7 +49,7 @@ const MarqueeContainer = styled.section`
         transform: translateX(0);
       }
       100% {
-        transform: translateX(-100%);
+        transform: translateX(-25%);
       }
     }
 

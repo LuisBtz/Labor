@@ -34,6 +34,7 @@ const MarqueeContainer = styled.section`
       font-size: var(--jumbo);
       white-space: nowrap;
       text-transform: uppercase;
+      width: 1000%;
 
       animation-name: trnslt;
       animation-iteration-count: infinite;
@@ -46,7 +47,7 @@ const MarqueeContainer = styled.section`
         transform: translateX(0);
       }
       100% {
-        transform: translateX(-100%);
+        transform: translateX(-25%);
       }
     }
 
