@@ -37,7 +37,7 @@ const MarqueeContainer = styled.section`
 
       animation-name: trnslt;
       animation-iteration-count: infinite;
-      animation-duration: 60s;
+      animation-duration: 20s;
       animation-timing-function: linear
     }
 
