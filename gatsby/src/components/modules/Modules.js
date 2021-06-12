@@ -9,6 +9,10 @@ import Quote from "./QuoteModule";
 import TwoColumnsImage from "./TwoColumnsImageModule";
 import Video from "./VideoModule";
 import Zoom from "./ZoomModule";
+import RelatedExhibitionsModule from './RelatedExhibitionsModule'
+import RelatedArtistsModule from './RelatedArtistsModule'
+import RelatedNewsModule from './RelatedNewsModule'
+import RelatedPublicationsModule from './RelatedPublicationsModule'
 
 const modulesArr = [
   { name: "bodyText", comp: BodyText },
@@ -20,6 +24,10 @@ const modulesArr = [
   { name: "imageTwoColumns", comp: TwoColumnsImage },
   { name: "video", comp: Video },
   { name: "zoom", comp: Zoom },
+  { name: "relatedExhibitions", comp: RelatedExhibitionsModule},
+  { name: "relatedArtists", comp: RelatedArtistsModule},
+  { name: "relatedNews", comp: RelatedNewsModule},
+  { name: "relatedPublications", comp: RelatedPublicationsModule},
 ];
 
 const Modules = ({ editorialModule, props }) => {

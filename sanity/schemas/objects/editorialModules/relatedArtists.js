@@ -1,28 +1,27 @@
 export default {
-    name: 'relatedNews',
-    title: 'Related News',
+    name: 'relatedArtists',
+    title: 'Related Artists',
     type: 'object',
     fields: [
 {
-      title: 'Related News',
+      title: 'Related Artists',
       name: 'title',
       type: 'string',
       description: 'This text is only displayed in Sanity'
     },
     {
-      name: 'relatedNews',
-      title: 'Related News',
+      name: 'relatedArtists',
+      title: 'Related Artists',
       type: 'array',
       of: [
         {
-          name: 'relatedNews',
-          title: 'Related News',
+          name: 'relatedArtists',
+          title: 'Related Artists',
           type: 'reference',
-          to: [  {type: 'news'} ]
+          to: [ { type: 'artists' } ]
         },
       ],
     },
-
     ],
   preview: {
     select: {

@@ -30,7 +30,18 @@ export default {
     },
     {
       type: 'zoom'
-    }
+    },
+    { 
+      type: 'relatedExhibitions' 
+    },
+    { 
+      type: 'relatedArtists' 
+    },
+    { 
+      type: 'relatedPublications' 
+    },
+    { 
+      type: 'relatedNews' 
+    },
   ],
 }
-

@@ -42,8 +42,10 @@ import bodyText from './objects/editorialModules/bodyText'
 import imageTwoColumns from './objects/editorialModules/imageTwoColumns'
 import quote from './objects/editorialModules/quote'
 import carousel from './objects/editorialModules/carousel'
-import relatedNews from './objects/editorialModules/relatedNews'
 import relatedExhibitions from './objects/editorialModules/relatedExhibitions'
+import relatedArtists from './objects/editorialModules/relatedArtists'
+import relatedPublications from './objects/editorialModules/relatedPublications'
+import relatedNews from './objects/editorialModules/relatedNews'
 import video from './objects/editorialModules/video'
 import colophon from './objects/editorialModules/colophon'
 import newsArticleHeader from './objects/editorialModules/newsArticleHeader'
@@ -111,6 +113,8 @@ export default createSchema({
     carousel,
     relatedNews,
     relatedExhibitions,
+    relatedArtists,
+    relatedPublications,
     video,
     colophon,
     newsArticleHeader,

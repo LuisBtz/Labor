@@ -157,6 +157,83 @@ export const query = graphql`
                     }
                 }
             }
+            ... on SanityRelatedExhibitions {
+          _key
+          _type
+          relatedExhibitions {
+            slug {
+              current
+            }
+            title {
+              en
+            }
+            author
+            startDate(formatString: "MMM DD YYYY")
+            endDate(formatString: "MMM DD YYYY")
+            current
+            thumbnailCover {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+            }
+            id
+          }
+        }
+        ... on SanityRelatedArtists {
+          _key
+          _type
+          relatedArtists {
+            id
+            name
+            thumbnail {
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+            }
+            slug {
+              current
+            }
+            metaData {
+              en
+            }
+            from {
+              en
+            }
+            abstract {
+              en
+            }
+          }
+        }
+        ... on SanityRelatedNews {
+          _key
+          _type
+          relatedNews {
+            title {
+              en
+            }
+            slug {
+              current
+            }
+            metaData {
+              en
+            }
+          }
+        }
+        ... on SanityRelatedPublications {
+          _key
+          _type
+          relatedPublications {
+            title {
+              en
+            }
+            slug {
+              current
+            }
+            metaData {
+              en
+            }
+          }
+        }
             }
         }
     }
