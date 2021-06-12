@@ -33,9 +33,9 @@ const RelatedExhibitionsModuleEn = ({ data }) => {
             alt={title.en}
           />
           <Text>
-            <p className="detail regular">{dateStart} - {dateEND}</p>
-            <h4 className="black">{title.en}</h4>
-            <p className="medium caps"><span className="arrow">↑</span> {author}</p>
+            <Date className="caps">{dateStart} - {dateEND}</Date>
+            <h5>{title.en}</h5>
+            <Author className="caps"><span className="arrow">↑</span> {author}</Author>
           </Text>
         </PostExpositionWrapper>
       )
@@ -98,24 +98,30 @@ width: 50vw;
 `
 
 const Text = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 5rem;
-  padding: .5rem 1rem;
-
-  h2 {
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  h5 {
+    /* font-size: var(--headline-4); */
+    font-family: var(--bold);
     margin: .5rem 0;
   }
 
-  /* Mobile */
   @media screen and (max-width: 768px) {
-    margin-bottom: 3rem;
-
-    h2 {
-      /* font-size: var(--headline-3); */
-      margin: 0.75rem 0 .5rem 0;
-    }
+    width: 100%;
   }
+
 `
+
+const Date = styled.p`
+  font-size: var(--detail);
+`
+
+const Author = styled.p`
+  font-size: var(--paragraph);
+`
+
 
 
 export default RelatedExhibitionsModuleEn

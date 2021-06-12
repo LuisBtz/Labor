@@ -16,7 +16,7 @@ const RelatedArtistsModuleEn = ({ data }) => {
           <p className="caps medium head">Related Artists <span className="arrow">↓</span></p>
       </section>
       <Flex>
-    {data.relatedArtists.map(({ name, slug, metaData, id, from, abstract, thumbnail }) => {
+    {data.relatedArtists.map(({ name, slug, metaData, id, from, thumbnail }) => {
         const image = getImage(thumbnail.asset);
       return (
         <PostArtistsWrapper
@@ -28,10 +28,9 @@ const RelatedArtistsModuleEn = ({ data }) => {
             alt={name}
           />
           <Text>
-            <p className="detail">{metaData.en}</p>
-            <h3>{name}</h3>
-            <p>{from.en}</p>
-            <Abstract>{abstract.en}</Abstract>
+            <Date className="caps">{metaData.en}</Date>
+            <h5>{name}</h5>
+            <Author className="caps"><span className="arrow">↑</span> {from.en}</Author>
           </Text>
         </PostArtistsWrapper>
       )
@@ -93,29 +92,33 @@ width: 50vw;
 }
 `
 
+
 const Text = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 5rem;
-  padding: .5rem 1rem;
-
-  h3 {
-    margin: .75rem 0;
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  h5 {
+    /* font-size: var(--headline-4); */
+    font-family: var(--bold);
+    margin: .5rem 0;
   }
 
-  /* Mobile */
   @media screen and (max-width: 768px) {
-    margin-bottom: 3rem;
-
-    h3 {
-      margin: 0.75rem 0 .5rem 0;
-    }
+    width: 100%;
   }
+
 `
 
-const Abstract = styled.p`
-  margin-top: 2rem;
-  text-indent: 2rem;
+const Date = styled.p`
+  font-size: var(--detail);
 `
+
+const Author = styled.p`
+  font-size: var(--paragraph);
+`
+
+
 
 
 export default RelatedArtistsModuleEn
