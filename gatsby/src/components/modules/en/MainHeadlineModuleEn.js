@@ -14,25 +14,26 @@ const MainHeadlineModuleEn = ({ data }) => {
 
       <h1>{text}</h1>
       <Buttons>
+        <p className="label small caps">Documents:</p>
 
         {data.buttons && data.buttons.en && data.buttons.en.agenda &&
           (data.buttons.en.agenda === true ? <li><Link to='/en/contact' className="cta small caps">Schedule an appointment</Link></li> : '')
         }
 
 
-
         {data.buttons && data.buttons.en && data.buttons.en.dossier &&
-          (data.buttons.en.dossier ? <li><a rel="noreferrer" target='_blank' href={data.buttons.en.dossier}>Dossier</a></li> : '')
+          (data.buttons.en.dossier ? <li><a rel="noreferrer" target='_blank' className="small caps" href={data.buttons.en.dossier}>Dossier</a></li> : '')
         }
 
 
         {data.buttons && data.buttons.en && data.buttons.en.resume &&
-          (data.buttons.en.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.en.resume}>CV</a></li> : '')
+          (data.buttons.en.resume ? <li><a rel="noreferrer" target='_blank' className="small caps" href={data.buttons.en.resume}>CV</a></li> : '')
         }
 
         {data.buttons && data.buttons.en && data.buttons.en.social &&
           (data.buttons.en.social === true ?
             <Social>
+              <li className="label small caps">Share:</li>
               <li><a rel="noreferrer" target='_blank' href={'https://www.facebook.com/sharer/sharer.php?u=' + url} className="small caps">FB</a></li>
               <li><a rel="noreferrer" href={'https://twitter.com/intent/tweet/?text=' + text + '&url=' + url} target="_blank" className="small caps">TW</a></li>
             </Social>
@@ -53,6 +54,12 @@ const MainHeadlineWrapper = styled.section`
   padding: 1rem;
   margin: 5rem auto;
 
+  .label {
+    text-transform: uppercase;
+    padding-top: 3px;
+    margin: 0 1rem;
+  }
+
   @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
@@ -60,6 +67,14 @@ const MainHeadlineWrapper = styled.section`
   @media screen and (max-width: 768px) {
     margin: 1rem auto;
     padding: 0 1rem;
+
+    .label {
+      margin-right: .5rem;
+    }
+
+    p.label {
+      margin-left: 0;
+    }
   }
 
   h1 {
@@ -67,6 +82,7 @@ const MainHeadlineWrapper = styled.section`
 
       @media screen and (max-width: 1024px) {
         max-width: 100%;
+        margin-bottom: 2rem;
       }
 
       @media screen and (max-width: 768px) {
@@ -77,10 +93,6 @@ const MainHeadlineWrapper = styled.section`
 
 const Social = styled.div`
 display: flex;
-
-@media screen and (max-width: 768px) {
-  margin-top: 1.5rem;
-}
 `
 
 const Buttons = styled.ul`
