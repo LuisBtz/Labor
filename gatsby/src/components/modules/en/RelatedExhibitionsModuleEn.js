@@ -11,37 +11,37 @@ const RelatedExhibitionsModuleEn = ({ data }) => {
 
   return (
 
-    
+
 
     <ExhibitionContainer>
       <section id="FuturasTop">
-          <p className="caps medium head">Related Exhibitions <span className="arrow">↓</span></p>
+        <p className="caps head">Related Exhibitions <span className="arrow">↓</span></p>
       </section>
       <Flex>
-    {data.relatedExhibitions.map(({ title, author, slug, startDate, endDate, thumbnailCover, id }) => {
-        const image = getImage(thumbnailCover.asset);
+        {data.relatedExhibitions.map(({ title, author, slug, startDate, endDate, thumbnailCover, id }) => {
+          const image = getImage(thumbnailCover.asset);
 
-        const dateStart = startDate;
-        const dateEND = endDate;
-      return (
-        <PostExpositionWrapper
-        key={id}
-        to={`/en/expositions/${slug.current}`}
-        >
-          <GatsbyImage
-            image={image}
-            alt={title.en}
-          />
-          <Text>
-            <Date className="caps">{dateStart} - {dateEND}</Date>
-            <h5>{title.en}</h5>
-            <Author className="caps"><span className="arrow">↑</span> {author}</Author>
-          </Text>
-        </PostExpositionWrapper>
-      )
-    })}
-    </Flex>
-  </ExhibitionContainer>
+          const dateStart = startDate;
+          const dateEND = endDate;
+          return (
+            <PostExpositionWrapper
+              key={id}
+              to={`/en/expositions/${slug.current}`}
+            >
+              <GatsbyImage
+                image={image}
+                alt={title.en}
+              />
+              <Text>
+                <Date className="caps">{dateStart} - {dateEND}</Date>
+                <h5>{title.en}</h5>
+                <Author className="caps"><span className="arrow">↑</span> {author}</Author>
+              </Text>
+            </PostExpositionWrapper>
+          )
+        })}
+      </Flex>
+    </ExhibitionContainer>
 
   )
 }
@@ -66,7 +66,7 @@ const ExhibitionContainer = styled.section`
 }
   `
 
-  const Flex = styled.div`
+const Flex = styled.div`
   
   display: flex;
 
@@ -98,7 +98,7 @@ width: 50vw;
 `
 
 const Text = styled.div`
-  width: 80%;
+  width: 90%;
   margin-top: 0;
   margin-bottom: 3rem;
   padding: 1rem;

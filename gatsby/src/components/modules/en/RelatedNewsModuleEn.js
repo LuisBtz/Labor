@@ -9,7 +9,7 @@ const RelatedNewsModuleEn = ({ data }) => {
   return (
     <NewsContainer>
       <section id="FuturasTop">
-        <p className="caps medium head">Related News <span className="arrow">↓</span></p>
+        <p className="caps head">Related News <span className="arrow">↓</span></p>
       </section>
       <Flex>
         {data.relatedNews.map(({ title, metaData, slug, id }) => {
@@ -43,7 +43,6 @@ const NewsContainer = styled.section`
 
 .head {
   padding: 1.25rem;
-  border-top: solid 1px #f2f2f2;
 }
   `
 

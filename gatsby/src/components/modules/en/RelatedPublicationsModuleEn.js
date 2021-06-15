@@ -9,7 +9,7 @@ const RelatedPublicationsModuleEn = ({ data }) => {
   return (
     <PublicationsContainer>
       <section id="FuturasTop">
-        <p className="caps medium head">Related Publications <span className="arrow">↓</span></p>
+        <p className="caps head">Related Publications <span className="arrow">↓</span></p>
       </section>
       <Flex>
         {data.relatedPublications.map(({ title, metaData, slug, id }) => {
@@ -43,7 +43,6 @@ const PublicationsContainer = styled.section`
 
 .head {
   padding: 1.25rem;
-  border-top: solid 1px #f2f2f2;
 }
   `
 
