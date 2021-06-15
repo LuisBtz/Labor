@@ -8,22 +8,21 @@ const RelatedNewsModuleEn = ({ data }) => {
 
   return (
     <NewsContainer>
-        <section id="FuturasTop">
-          <p className="caps medium head">Related News <span className="arrow">↓</span></p>
-        </section>
-        <Flex>
-            {data.relatedNews.map(({ title, metaData, slug, id }) => {
-                return (
-                    <PostNewsWrapper
-                    to={`/en/news/${slug.current}`}
-                    key={id}
-                >
-                    <p class="detail">{metaData.en}</p>
-                    <h2><span className="arrow">→</span> {title.en}</h2>
-                </PostNewsWrapper>
-                )
-            })}
-        </Flex>
+      <section id="FuturasTop">
+        <p className="caps medium head">Related News <span className="arrow">↓</span></p>
+      </section>
+      <Flex>
+        {data.relatedNews.map(({ title, metaData, slug, id }) => {
+          return (
+            <PostNewsWrapper
+              to={`/en/news/${slug.current}`}
+              key={id}
+            >
+              <h2><span className="arrow">→</span> {title.en}</h2>
+            </PostNewsWrapper>
+          )
+        })}
+      </Flex>
     </NewsContainer>
 
   )

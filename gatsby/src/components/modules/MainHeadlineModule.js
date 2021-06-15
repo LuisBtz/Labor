@@ -27,7 +27,7 @@ const MainHeadlineModule = ({ data }) => {
 
 
         {data.buttons && data.buttons.es && data.buttons.es.resume &&
-          (data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>Resume</a></li> : '')
+          (data.buttons.es.resume ? <li><a rel="noreferrer" target='_blank' href={data.buttons.es.resume}>CV</a></li> : '')
         }
 
         {data.buttons && data.buttons.es && data.buttons.es.social &&

@@ -8,22 +8,21 @@ const RelatedPublicationsModule = ({ data }) => {
 
   return (
     <PublicationsContainer>
-        <section id="FuturasTop">
-          <p className="caps medium head">Publicaciones Relacionadas <span className="arrow">↓</span></p>
-        </section>
-        <Flex>
-            {data.relatedPublications.map(({ title, metaData, slug, id }) => {
-                return (
-                    <PostPublicationWrapper
-                    to={`/publications/${slug.current}`}
-                    key={id}
-                >
-                    <p class="detail">{metaData.es}</p>
-                    <h2><span className="arrow">→</span> {title.es}</h2>
-                </PostPublicationWrapper>
-                )
-            })}
-        </Flex>
+      <section id="FuturasTop">
+        <p className="caps medium head">Publicaciones Relacionadas <span className="arrow">↓</span></p>
+      </section>
+      <Flex>
+        {data.relatedPublications.map(({ title, metaData, slug, id }) => {
+          return (
+            <PostPublicationWrapper
+              to={`/publications/${slug.current}`}
+              key={id}
+            >
+              <h2><span className="arrow">→</span> {title.es}</h2>
+            </PostPublicationWrapper>
+          )
+        })}
+      </Flex>
     </PublicationsContainer>
 
   )
