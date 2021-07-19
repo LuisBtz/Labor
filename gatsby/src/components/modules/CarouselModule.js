@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -64,13 +64,12 @@ const CarouselModule = ({ data }) => {
   )
 }
 
-const CarouselWrapper = styled.section`
+const CarouselWrapper = styled(ScrollContainer)`
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
   padding: 5rem 0;
   position: relative;
-
   svg {
     width: 12rem;
     position: absolute;
@@ -87,17 +86,14 @@ const CarouselWrapper = styled.section`
 
 const Item = styled.div`
   min-width: 40vw;
-
   p {
     font-size: var(--small);
     text-transform: uppercase;
     padding: .5rem;
     max-width: 85%;
   }
-
   @media screen and (max-width: 768px) {
     min-width: 90vw;
-
     p {
       font-size: var(--detail);
       max-width: 100%;

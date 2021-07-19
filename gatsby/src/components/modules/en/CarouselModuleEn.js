@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -64,7 +65,7 @@ const CarouselModuleEn = ({ data }) => {
   )
 }
 
-const CarouselWrapper = styled.section`
+const CarouselWrapper = styled(ScrollContainer)`
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
