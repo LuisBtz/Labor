@@ -16,8 +16,8 @@ const CarouselModuleEn = ({ data }) => {
     window.addEventListener('mousemove', function (e) {
       var x = e.clientX,
         y = e.clientY;
-      moveDiv.style.top = (y + 20) + 'px';
-      moveDiv.style.left = (x + 20) + 'px';
+      moveDiv.style.top = y + 'px';
+      moveDiv.style.left = x + 'px';
     });
   });
 
@@ -69,16 +69,18 @@ const CarouselWrapper = styled(ScrollContainer)`
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding: 5rem 0;
+  padding: 5rem 0 2.5rem 0;
+  cursor: grab;
   position: relative;
 
   svg {
+    display: none;
     width: 12rem;
     position: absolute;
     z-index: 1000;
     top: 35%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    // transform: translate(-50%,-50%);
   }
   
   @media screen and (max-width: 768px) {

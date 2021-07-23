@@ -77,6 +77,7 @@ const MainHeadlineWrapper = styled.section`
 
   h1 {
     max-width: 75%;
+    hyphens: auto;
 
       @media screen and (max-width: 1024px) {
         max-width: 100%;
