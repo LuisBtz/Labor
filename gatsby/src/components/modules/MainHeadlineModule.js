@@ -14,7 +14,7 @@ const MainHeadlineModule = ({ data }) => {
 
       <h1>{text}</h1>
       <Buttons>
-        <p className="label small caps">Documentos:</p>
+        {/* <p className="label small caps">Documentos:</p> */}
 
         {data.buttons && data.buttons.es && data.buttons.es.agenda &&
           (data.buttons.es.agenda === true ? <li><Link to='/contact' className="cta small caps">Agenda tu cita</Link></li> : '')
@@ -76,7 +76,7 @@ const MainHeadlineWrapper = styled.section`
   }
 
   h1 {
-    max-width: 75%;
+    max-width: 70%;
     hyphens: auto;
 
       @media screen and (max-width: 1024px) {
@@ -96,6 +96,23 @@ display: flex;
 
 const Buttons = styled.ul`
   display: flex;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+      li:first-child {
+        margin-bottom: 1.5rem;
+      }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: flex-end;
+
+      li:first-child {
+        margin-bottom: 1.5rem;
+      }
+  }
 
   li {
     margin: 0 .25rem;
