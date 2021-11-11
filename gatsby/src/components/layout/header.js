@@ -28,7 +28,7 @@ const Header = ({ scroll, indexTrue }) => {
       </button>
       <ul className="pages" nav={nav}>
         <li><Link to='/artists' >Artistas</Link></li>
-        <li><Link to='/expositions' >Exposiciones</Link></li>
+        <li><Link to='/exhibitions' >Exposiciones</Link></li>
         <li><Link to='/publications' >Publicaciones</Link></li>
         <li><Link to='/podcasts' >Perfume</Link></li>
         <li><Link to='/news' >Noticias</Link></li>
@@ -37,7 +37,7 @@ const Header = ({ scroll, indexTrue }) => {
       {
         nav && (<ul className="pagesResp" nav={nav}>
           <li><Link to='/artists' >Artistas</Link></li>
-          <li><Link to='/expositions' >Exposiciones</Link></li>
+          <li><Link to='/exhibitions' >Exposiciones</Link></li>
           <li><Link to='/publications' >Publicaciones</Link></li>
           <li><Link to='/podcasts' >Perfume</Link></li>
           <li><Link to='/news' >Noticias</Link></li>

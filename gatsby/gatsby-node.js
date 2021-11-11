@@ -87,7 +87,7 @@ const {data} = await graphql(`
 data.exhibitions.nodes.forEach((exhibition) => {
     actions.createPage({
         // url forths new page
-        path: `/expositions/${exhibition.slug.current}`,
+        path: `/exhibitions/${exhibition.slug.current}`,
         component: exhibitionTemplate,
         context: {
             language: 'es',
@@ -280,7 +280,7 @@ const {data} = await graphql(`
 data.exhibitions.nodes.forEach((exhibition) => {
     actions.createPage({
         // url forths new page
-        path: `/en/expositions/${exhibition.slug.current}`,
+        path: `/en/exhibitions/${exhibition.slug.current}`,
         component: exhibitionTemplate,
         context: {
             language: 'en',

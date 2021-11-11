@@ -17,7 +17,7 @@ const PostPastExpositionEn = ({ data }) => {
 
   return (
     <PostExpositionWrapper
-      to={`/en/expositions/${slug}`}
+      to={`/en/exhibitions/${slug}`}
     >
       <GatsbyImage
         image={image}

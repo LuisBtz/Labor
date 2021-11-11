@@ -14,7 +14,7 @@ const PostExposition = ({ title, author, slug, startDate, endDate, current, thum
 
   return (
     <PostExpositionWrapper
-      to={`/expositions/${slug.current}`}
+      to={`/exhibitions/${slug.current}`}
     >
       <GatsbyImage
         image={image}
