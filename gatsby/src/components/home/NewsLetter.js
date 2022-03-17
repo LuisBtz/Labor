@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import Parser from 'html-react-parser';
 
 
 // markup
@@ -48,10 +49,7 @@ class Newsletter extends React.Component {
 
     return (
       <NewsletterWrapper>
-
-        <p className="detail">{this.state.message}</p>
-
-
+        <p className="detail">{Parser(this.state.message)}</p>
         <form className="subscribe" onSubmit={this.handleSubmit}>
           <input
             type="email"
