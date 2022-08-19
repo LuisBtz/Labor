@@ -36,8 +36,5 @@
     "react-image-magnifiers": "^1.4.0",
     "react-indiana-drag-scroll": "^2.0.1",
     "styled-components": "^5.2.1"
-  },
-  "cli": {
-    "packageManager": "yarn"
   }
 }
