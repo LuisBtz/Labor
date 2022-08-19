@@ -26,7 +26,7 @@ const RelatedExhibitionsModuleEn = ({ data }) => {
           return (
             <PostExpositionWrapper
               key={id}
-              to={`/en/expositions/${slug.current}`}
+              to={`/en/exhibitions/${slug.current}`}
             >
               <GatsbyImage
                 image={image}
