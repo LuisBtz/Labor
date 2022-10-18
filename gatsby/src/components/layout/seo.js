@@ -2,8 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { useLocation } from '@reach/router';
 
-function Seo({ description, lang, image, meta, keywords, title, pathname }) {
+
+function Seo({ description, lang, image, meta, keywords, title }) {
+  const location = useLocation();
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -11,7 +15,7 @@ function Seo({ description, lang, image, meta, keywords, title, pathname }) {
         const metaDescription =
           description || data.site.siteMetadata.description
         const metaImage = image ? image : null
-        const metaUrl = `${data.site.siteMetadata.siteUrl}${pathname}`
+        const metaUrl = `${data.site.siteMetadata.siteUrl}${location.pathname}`
         return (
           <Helmet
             htmlAttributes={{
@@ -87,9 +91,9 @@ function Seo({ description, lang, image, meta, keywords, title, pathname }) {
               .concat(
                 keywords.length > 0
                   ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
+                    name: `keywords`,
+                    content: keywords.join(`, `),
+                  }
                   : []
               )
               .concat(meta)}
