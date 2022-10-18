@@ -8,9 +8,10 @@ import PostArtist from './posts/PostArtist'
 // markup
 const ArtistSection = ({ data }) => {
 
+
   return (
     <ArtsitContainer>
-      {data.sanityHomePage.artistsHighlights.map(({ name, slug, metaData, id, from, abstract, thumbnail }) => {
+      {data.sanityHomePage.artistsHighlights.map(({ slug, metaData, id, from, abstract, thumbnail, name }) => {
         return (
           <PostArtist name={name} thumbnail={thumbnail} slug={slug} from={from} metaData={metaData} key={id} abstract={abstract} />
         )
